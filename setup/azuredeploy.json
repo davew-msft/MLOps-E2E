@@ -2,24 +2,6 @@
     "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "workspaceName": {
-            "type": "string",
-            "metadata": {
-                "description": "Workspace Name for Azure Databricks."
-            }
-        },
-        "sqlServerUsername": {
-            "metadata": {
-                "description": "SQL server admin username"
-            },
-            "type": "string"
-        },
-        "sqlServerPassword": {
-            "metadata": {
-                "description": "SQL server admin password"
-            },
-            "type": "securestring"
-        },
         "location": {
             "metadata": {
                 "description": "Location or Region"
@@ -43,7 +25,25 @@
                 "uksouth",
                 "ukwest"
             ]
-        }    
+        }, 
+        "workspaceName": {
+            "type": "string",
+            "metadata": {
+                "description": "Workspace Name for Azure Databricks."
+            }
+        },
+        "sqlServerUsername": {
+            "metadata": {
+                "description": "SQL server admin username"
+            },
+            "type": "string"
+        },
+        "sqlServerPassword": {
+            "metadata": {
+                "description": "SQL server admin password"
+            },
+            "type": "securestring"
+        }   
     },
     "variables": {
         "namePrefix": "[resourceGroup().name]",
