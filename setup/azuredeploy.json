@@ -1,0 +1,211 @@
+{
+    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "workspaceName": {
+            "type": "string",
+            "metadata": {
+                "description": "Workspace Name for Azure Databricks."
+            }
+        },
+        "sqlServerUsername": {
+            "metadata": {
+                "description": "SQL server admin username"
+            },
+            "type": "string"
+        },
+        "sqlServerPassword": {
+            "metadata": {
+                "description": "SQL server admin password"
+            },
+            "type": "securestring"
+        },
+        "location": {
+            "metadata": {
+                "description": "Location or Region"
+            },
+            "type": "string",
+            "defaultValue": "southcentralus",
+            "allowedValues": [
+                "westus",
+                "westus2",
+                "eastus",
+                "eastus2",
+                "centralus",
+                "northcentralus",
+                "southcentralus",
+                "westeurope",
+                "northeurope",
+                "southeastasia",
+                "eastasia",
+                "australiaeast",
+                "australiasoutheast",
+                "uksouth",
+                "ukwest"
+            ]
+        }    
+    },
+    "variables": {
+        "namePrefix": "[resourceGroup().name]",
+        "uniqueNamePrefix": "[toLower(concat(resourceGroup().name, uniqueString(subscription().subscriptionId)))]",
+        "sqlVersion": "2014-04-01",
+        "sqlServerName": "[concat(variables('uniqueNamePrefix'),'srv')]",
+        "sqlDatabaseName": "[concat(variables('uniqueNamePrefix'),'db')]",
+        "sqlServerUsername": "[parameters('sqlServerUsername')]",
+        "sqlServerVersion": "12.0",
+        "startIpAddress": "0.0.0.0",
+        "endIpAddress": "255.255.255.255",
+        "edition": "Standard",
+        "databaseTier": "S0",
+        "collation": "SQL_Latin1_General_CP1_CI_AS",
+        "maxSizeBytes": "2147483648",
+        "sqlServerResourceId": "[resourceId('Microsoft.Sql/servers', variables('sqlServerName'))]",
+        "stgVersion": "2015-06-15",
+        "storageAccountType": "Standard_LRS",
+        "sourceStorageAccountName": "[concat('source', uniqueString(subscription().subscriptionId))]",
+        "targetStorageAccountName": "[concat('target', uniqueString(subscription().subscriptionId))]",
+        "sbVersion": "2014-09-01",
+        "sbNameIngest": "[concat(variables('uniqueNamePrefix'), 'servicebusingest')]",
+        "sbKeyName": "RootManageSharedAccessKey",
+        "sbResourceIdIngest": "[resourceId('Microsoft.Eventhub/namespaces/authorizationRules', variables('sbNameIngest'), variables('sbKeyName'))]",
+        "ehInNameIngest": "[concat(variables('namePrefix'), 'ehiningest')]",
+        "ehSendPolicyKeyName": "SendPolicy",
+        "ehSendPolicyResourceIdIngest": "[resourceId('Microsoft.EventHub/namespaces/eventHubs/authorizationRules', variables('sbNameIngest'), variables('ehInNameIngest'), variables('ehSendPolicyKeyName'))]",
+        "ehResourceIdIngest": "[concat(concat(concat('Microsoft.Eventhub/namespaces/', variables('sbNameIngest')), '/eventHubs/'), variables('ehInNameIngest'))]",
+        "tier": "premium",
+        "managedResourceGroupName": "[concat('databricks-rg-', parameters('workspaceName'), '-', uniqueString(parameters('workspaceName'), resourceGroup().id))]",
+        "managedResourceGroupId": "[concat(subscription().id, '/resourceGroups/', variables('managedResourceGroupName'))]"
+    },
+    "resources": [{
+            "name": "[variables('sourceStorageAccountName')]",
+            "type": "Microsoft.Storage/storageAccounts",
+            "location": "[parameters('location')]",
+            "apiVersion": "[variables('stgVersion')]",
+            "properties": {
+                "accountType": "[variables('storageAccountType')]"
+            }
+        },
+        {
+            "name": "[variables('targetStorageAccountName')]",
+            "type": "Microsoft.Storage/storageAccounts",
+            "location": "[parameters('location')]",
+            "apiVersion": "[variables('stgVersion')]",
+            "properties": {
+                "accountType": "[variables('storageAccountType')]"
+            }
+        },
+        {
+        "name": "[variables('sqlServerName')]",
+        "type": "Microsoft.Sql/servers",
+        "location": "[parameters('location')]",
+        "apiVersion": "[variables('sqlVersion')]",
+        "properties": {
+            "administratorLogin": "[parameters('sqlServerUsername')]",
+            "administratorLoginPassword": "[parameters('sqlServerPassword')]",
+            "version": "[variables('sqlServerVersion')]"
+        },
+        "resources": [{
+            "name": "[variables('sqlDatabaseName')]",
+            "type": "databases",
+            "location": "[parameters('location')]",
+            "apiVersion": "[variables('sqlVersion')]",
+            "dependsOn": [
+                "[variables('sqlServerResourceId')]"
+            ],
+            "properties": {
+                "edition": "[variables('edition')]",
+                "requestedServiceObjectiveName": "[variables('databaseTier')]",
+                "collation": "[variables('collation')]",
+                "maxSizeBytes": "[variables('maxSizeBytes')]"
+            }
+        }, {
+            "apiVersion": "[variables('sqlVersion')]",
+            "type": "firewallrules",
+            "location": "[parameters('location')]",
+            "name": "AllowAllWindowsAzureIps",
+            "dependsOn": [
+                "[variables('sqlServerResourceId')]"
+            ],
+            "properties": {
+                "startIpAddress": "[variables('startIpAddress')]",
+                "endIpAddress": "[variables('endIpAddress')]"
+            }
+        }]
+    }, {
+        "apiVersion": "[variables('sbVersion')]",
+        "name": "[variables('sbNameIngest')]",
+        "type": "Microsoft.Eventhub/namespaces",
+        "location": "[parameters('location')]",
+        "properties": {
+            "region": "[parameters('location')]"
+        },
+        "resources": [{
+            "apiVersion": "[variables('sbVersion')]",
+            "name": "[variables('ehInNameIngest')]",
+            "type": "eventHubs",
+            "location": "[parameters('location')]",
+            "dependsOn": [
+                "[concat('Microsoft.Eventhub/namespaces/', variables('sbNameIngest'))]"
+            ],
+            "properties": {
+                "path": "[variables('ehInNameIngest')]"
+            },
+            "resources": [{
+                "apiVersion": "2015-08-01",
+                "name": "[variables('ehSendPolicyKeyName')]",
+                "type": "authorizationRules",
+                "location": "[parameters('location')]",
+                "dependsOn": [
+                    "[variables('ehResourceIdIngest')]"
+                ],
+                "properties": {
+                    "rights": [
+                        "Send",
+                        "Listen"
+                    ]
+                }
+            }]
+        }]
+    },
+    {
+        "apiVersion": "2018-04-01",
+        "location": "[parameters('location')]",
+        "name": "[parameters('workspaceName')]",
+        "sku": {
+            "name": "[variables('tier')]"
+        },
+        "properties": {
+            "ManagedResourceGroupId": "[variables('managedResourceGroupId')]"
+        },
+        "type": "Microsoft.Databricks/workspaces"
+    }
+    ],
+    "outputs": {
+        "ehNameIngest": {
+            "type": "string",
+            "value": "[variables('ehInNameIngest')]"
+        },
+        "eventHubConnectionStringIngest": {
+            "type": "string",
+            "value": "[listkeys(variables('ehSendPolicyResourceIdIngest'), variables('sbVersion')).primaryConnectionString]"
+        },
+        "sqlServerName": {
+            "type": "string",
+            "value": "[variables('sqlServerName')]"
+        },
+        "sqlDatabaseName": {
+            "type": "string",
+            "value": "[variables('sqlDatabaseName')]"
+        },
+        "sqlServerUsername": {
+            "type": "string",
+            "value": "[variables('sqlServerUsername')]"
+        },
+        "sqlConnectionString": {
+            "type": "string",
+            "value": "[concat('Server=tcp:',variables('sqlServerName'),'.database.windows.net,1433;Database=',variables('sqlDatabaseName'),';User ID=',parameters('sqlServerUsername'),';Password=',parameters('sqlServerPassword'),';Trusted_Connection=False;Encrypt=True;Connection Timeout=30')]"
+        },
+        "databricksOverviewUrl": { "type": "string", "value": "[concat('https://portal.azure.com/#resource/subscriptions/', subscription().subscriptionId, '/resourceGroups/', resourceGroup().name, '/providers/Microsoft.Databricks/workspaces/', parameters('workspaceName'),'/overview')]"
+        }
+    }
+}
