@@ -1,0 +1,379 @@
+{
+    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "factoryName": {
+            "type": "string",
+            "metadata": "Data Factory Name",
+            "defaultValue": "adfaidays"
+        },
+        "MyAzureBlobLinkedService_connectionString": {
+            "type": "secureString",
+            "metadata": "Secure string for 'connectionString' of 'MyAzureBlobLinkedService'"
+        },
+        "New_connectionString": {
+            "type": "secureString",
+            "metadata": "Secure string for 'connectionString' of 'New'"
+        },
+        "adfinteg_accessToken": {
+            "type": "secureString",
+            "metadata": "Secure string for 'accessToken' of 'adfinteg'"
+        },
+        "Purchases_properties_typeProperties_fileName": {
+            "type": "string",
+            "defaultValue": "adworks-bike-purchases.csv"
+        },
+        "Purchases_properties_typeProperties_folderPath": {
+            "type": "string",
+            "defaultValue": "sourcedata/bikes"
+        },
+        "PotentialBuyers_properties_typeProperties_fileName": {
+            "type": "string",
+            "defaultValue": "potential-bike-buyers.csv"
+        },
+        "PotentialBuyers_properties_typeProperties_folderPath": {
+            "type": "string",
+            "defaultValue": "sourcedata/bikes"
+        },
+        "OutputDataBikes_properties_typeProperties_fileName": {
+            "type": "string",
+            "defaultValue": ""
+        },
+        "OutputDataBikes_properties_typeProperties_folderPath": {
+            "type": "string",
+            "defaultValue": "outputdata/bikes"
+        }
+    },
+    "variables": {
+        "factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+    },
+    "resources": [
+        {
+            "name": "[concat(parameters('factoryName'), '/Purchases')]",
+            "type": "Microsoft.DataFactory/factories/datasets",
+            "apiVersion": "2018-07-01-preview",
+            "properties": {
+                "linkedServiceName": {
+                    "referenceName": "New",
+                    "type": "LinkedServiceReference"
+                },
+                "annotations": [],
+                "type": "AzureBlob",
+                "structure": [
+                    {
+                        "name": "LoyaltyCardID",
+                        "type": "String"
+                    },
+                    {
+                        "name": "Region",
+                        "type": "String"
+                    },
+                    {
+                        "name": "Age",
+                        "type": "String"
+                    },
+                    {
+                        "name": "Bikes",
+                        "type": "String"
+                    }
+                ],
+                "typeProperties": {
+                    "format": {
+                        "type": "TextFormat",
+                        "columnDelimiter": ",",
+                        "rowDelimiter": "",
+                        "nullValue": "\\N",
+                        "treatEmptyAsNull": true,
+                        "skipLineCount": 0,
+                        "firstRowAsHeader": true
+                    },
+                    "fileName": "[parameters('Purchases_properties_typeProperties_fileName')]",
+                    "folderPath": "[parameters('Purchases_properties_typeProperties_folderPath')]"
+                }
+            },
+            "dependsOn": [
+                "[concat(variables('factoryId'), '/linkedServices/New')]"
+            ]
+        },
+        {
+            "name": "[concat(parameters('factoryName'), '/PotentialBuyers')]",
+            "type": "Microsoft.DataFactory/factories/datasets",
+            "apiVersion": "2018-07-01-preview",
+            "properties": {
+                "linkedServiceName": {
+                    "referenceName": "New",
+                    "type": "LinkedServiceReference"
+                },
+                "annotations": [],
+                "type": "AzureBlob",
+                "structure": [
+                    {
+                        "name": "LoyaltyCardID",
+                        "type": "String"
+                    },
+                    {
+                        "name": "Region",
+                        "type": "String"
+                    },
+                    {
+                        "name": "FirstName",
+                        "type": "String"
+                    },
+                    {
+                        "name": "MiddleName",
+                        "type": "String"
+                    },
+                    {
+                        "name": "LastName",
+                        "type": "String"
+                    },
+                    {
+                        "name": "BirthDate",
+                        "type": "String"
+                    },
+                    {
+                        "name": "MaritalStatus",
+                        "type": "String"
+                    },
+                    {
+                        "name": "Gender",
+                        "type": "String"
+                    },
+                    {
+                        "name": "EmailAddress",
+                        "type": "String"
+                    },
+                    {
+                        "name": "YearlyIncome",
+                        "type": "String"
+                    },
+                    {
+                        "name": "TotalChildren",
+                        "type": "String"
+                    },
+                    {
+                        "name": "NumberChildrenAtHome",
+                        "type": "String"
+                    },
+                    {
+                        "name": "Education",
+                        "type": "String"
+                    },
+                    {
+                        "name": "Occupation",
+                        "type": "String"
+                    },
+                    {
+                        "name": "HouseOwnerFlag",
+                        "type": "String"
+                    },
+                    {
+                        "name": "NumberCarsOwned",
+                        "type": "String"
+                    },
+                    {
+                        "name": "AddressLine1",
+                        "type": "String"
+                    },
+                    {
+                        "name": "AddressLine2",
+                        "type": "String"
+                    },
+                    {
+                        "name": "Phone",
+                        "type": "String"
+                    },
+                    {
+                        "name": "DateFirstPurchase",
+                        "type": "String"
+                    },
+                    {
+                        "name": "CommuteDistance",
+                        "type": "String"
+                    }
+                ],
+                "typeProperties": {
+                    "format": {
+                        "type": "TextFormat",
+                        "columnDelimiter": ",",
+                        "rowDelimiter": "",
+                        "nullValue": "\\N",
+                        "treatEmptyAsNull": true,
+                        "skipLineCount": 0,
+                        "firstRowAsHeader": true
+                    },
+                    "fileName": "[parameters('PotentialBuyers_properties_typeProperties_fileName')]",
+                    "folderPath": "[parameters('PotentialBuyers_properties_typeProperties_folderPath')]"
+                }
+            },
+            "dependsOn": [
+                "[concat(variables('factoryId'), '/linkedServices/New')]"
+            ]
+        },
+        {
+            "name": "[concat(parameters('factoryName'), '/OutputDataBikes')]",
+            "type": "Microsoft.DataFactory/factories/datasets",
+            "apiVersion": "2018-07-01-preview",
+            "properties": {
+                "linkedServiceName": {
+                    "referenceName": "New",
+                    "type": "LinkedServiceReference"
+                },
+                "annotations": [],
+                "type": "AzureBlob",
+                "typeProperties": {
+                    "format": {
+                        "type": "TextFormat",
+                        "columnDelimiter": ",",
+                        "rowDelimiter": "",
+                        "nullValue": "\\N",
+                        "treatEmptyAsNull": true,
+                        "skipLineCount": 0,
+                        "firstRowAsHeader": false
+                    },
+                    "fileName": "[parameters('OutputDataBikes_properties_typeProperties_fileName')]",
+                    "folderPath": "[parameters('OutputDataBikes_properties_typeProperties_folderPath')]"
+                }
+            },
+            "dependsOn": [
+                "[concat(variables('factoryId'), '/linkedServices/New')]"
+            ]
+        },
+        {
+            "name": "[concat(parameters('factoryName'), '/MyAzureBlobLinkedService')]",
+            "type": "Microsoft.DataFactory/factories/linkedServices",
+            "apiVersion": "2018-07-01-preview",
+            "properties": {
+                "description": "Replace with the valid credential before running data flow job.",
+                "annotations": [],
+                "type": "AzureStorage",
+                "typeProperties": {
+                    "connectionString": "[parameters('MyAzureBlobLinkedService_connectionString')]"
+                }
+            },
+            "dependsOn": []
+        },
+        {
+            "name": "[concat(parameters('factoryName'), '/New')]",
+            "type": "Microsoft.DataFactory/factories/linkedServices",
+            "apiVersion": "2018-07-01-preview",
+            "properties": {
+                "description": "aidayse2e",
+                "annotations": [],
+                "type": "AzureBlobStorage",
+                "typeProperties": {
+                    "connectionString": "[parameters('New_connectionString')]"
+                }
+            },
+            "dependsOn": []
+        },
+        {
+            "name": "[concat(parameters('factoryName'), '/BikesDF')]",
+            "type": "Microsoft.DataFactory/factories/dataflows",
+            "apiVersion": "2018-07-01-preview",
+            "properties": {
+                "sources": [
+                    {
+                        "dataset": {
+                            "referenceName": "PotentialBuyers",
+                            "type": "DatasetReference"
+                        },
+                        "name": "Buyers",
+                        "script": "source(output(\n\t\tLoyaltyCardID as string,\n\t\tRegion as string,\n\t\tFirstName as string,\n\t\tMiddleName as string,\n\t\tLastName as string,\n\t\tBirthDate as string,\n\t\tMaritalStatus as string,\n\t\tGender as string,\n\t\tEmailAddress as string,\n\t\tYearlyIncome as string,\n\t\tTotalChildren as string,\n\t\tNumberChildrenAtHome as string,\n\t\tEducation as string,\n\t\tOccupation as string,\n\t\tHouseOwnerFlag as string,\n\t\tNumberCarsOwned as string,\n\t\tAddressLine1 as string,\n\t\tAddressLine2 as string,\n\t\tPhone as string,\n\t\tDateFirstPurchase as string,\n\t\tCommuteDistance as string\n\t),\n\tallowSchemaDrift: false,\n\tvalidateSchema: false) ~> Buyers"
+                    },
+                    {
+                        "dataset": {
+                            "referenceName": "Purchases",
+                            "type": "DatasetReference"
+                        },
+                        "name": "Purchases",
+                        "script": "source(output(\n\t\tLoyaltyCardID as string,\n\t\tRegion as string,\n\t\tAge as string,\n\t\tBikes as string\n\t),\n\tallowSchemaDrift: false,\n\tvalidateSchema: false) ~> Purchases"
+                    }
+                ],
+                "sinks": [
+                    {
+                        "dataset": {
+                            "referenceName": "OutputDataBikes",
+                            "type": "DatasetReference"
+                        },
+                        "name": "BikeOutput",
+                        "script": "JoinOnLoyalityCardID sink(saveMode:'overwrite' , mapColumn(\n\t\tLoyaltyCardID = Buyers@LoyaltyCardID,\n\t\tRegion = Buyers@Region,\n\t\tFirstName,\n\t\tMiddleName,\n\t\tLastName,\n\t\tBirthDate,\n\t\tMaritalStatus,\n\t\tGender,\n\t\tEmailAddress,\n\t\tYearlyIncome,\n\t\tTotalChildren,\n\t\tNumberChildrenAtHome,\n\t\tEducation,\n\t\tOccupation,\n\t\tHouseOwnerFlag,\n\t\tNumberCarsOwned,\n\t\tAddressLine1,\n\t\tAddressLine2,\n\t\tPhone,\n\t\tDateFirstPurchase,\n\t\tCommuteDistance,\n\t\tLoyaltyCardID2 = Purchases@LoyaltyCardID,\n\t\tRegion2 = Purchases@Region,\n\t\tAge,\n\t\tBikes\n\t)) ~> BikeOutput"
+                    }
+                ],
+                "transformations": [
+                    {
+                        "name": "JoinOnLoyalityCardID",
+                        "script": "Buyers, Purchases join(Buyers@LoyaltyCardID == Purchases@LoyaltyCardID,\n\tjoinType:'outer',\n\tbroadcast: 'none')~> JoinOnLoyalityCardID"
+                    }
+                ],
+                "parameters": {}
+            },
+            "dependsOn": [
+                "[concat(variables('factoryId'), '/datasets/PotentialBuyers')]",
+                "[concat(variables('factoryId'), '/datasets/Purchases')]",
+                "[concat(variables('factoryId'), '/datasets/OutputDataBikes')]"
+            ]
+        },
+        {
+            "name": "[concat(parameters('factoryName'), '/adfinteg')]",
+            "type": "Microsoft.DataFactory/factories/linkedServices",
+            "apiVersion": "2018-07-01-preview",
+            "properties": {
+                "annotations": [],
+                "type": "AzureDatabricks",
+                "typeProperties": {
+                    "domain": "https://southeastasia.azuredatabricks.net",
+                    "accessToken": {
+                        "type": "SecureString",
+                        "value": "[parameters('adfinteg_accessToken')]"
+                    },
+                    "newClusterNodeType": "Standard_DS3_v2",
+                    "newClusterNumOfWorker": "1:2",
+                    "newClusterSparkEnvVars": {
+                        "PYSPARK_PYTHON": "/databricks/python3/bin/python3"
+                    },
+                    "newClusterVersion": "4.3.x-scala2.11"
+                }
+            },
+            "dependsOn": []
+        },
+        {
+            "name": "[concat(parameters('factoryName'), '/BikesPL')]",
+            "type": "Microsoft.DataFactory/factories/pipelines",
+            "apiVersion": "2018-07-01-preview",
+            "properties": {
+                "activities": [
+                    {
+                        "name": "BikesDF",
+                        "type": "ExecuteDataFlow",
+                        "dependsOn": [],
+                        "policy": {
+                            "timeout": "7.00:00:00",
+                            "retry": 0,
+                            "retryIntervalInSeconds": 30,
+                            "secureOutput": false,
+                            "secureInput": false
+                        },
+                        "userProperties": [],
+                        "typeProperties": {
+                            "dataflow": {
+                                "referenceName": "BikesDF",
+                                "type": "DataFlowReference"
+                            },
+                            "linkedService": {
+                                "referenceName": "adfinteg",
+                                "type": "LinkedServiceReference"
+                            },
+                            "staging": {}
+                        }
+                    }
+                ],
+                "annotations": []
+            },
+            "dependsOn": [
+                "[concat(variables('factoryId'), '/dataflows/BikesDF')]",
+                "[concat(variables('factoryId'), '/linkedServices/adfinteg')]"
+            ]
+        }
+    ]
+}

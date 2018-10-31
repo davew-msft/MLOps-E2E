@@ -1,0 +1,36 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "factoryName": {
+            "value": "adfaidays"
+        },
+        "MyAzureBlobLinkedService_connectionString": {
+            "value": ""
+        },
+        "New_connectionString": {
+            "value": ""
+        },
+        "adfinteg_accessToken": {
+            "value": ""
+        },
+        "Purchases_properties_typeProperties_fileName": {
+            "value": "adworks-bike-purchases.csv"
+        },
+        "Purchases_properties_typeProperties_folderPath": {
+            "value": "sourcedata/bikes"
+        },
+        "PotentialBuyers_properties_typeProperties_fileName": {
+            "value": "potential-bike-buyers.csv"
+        },
+        "PotentialBuyers_properties_typeProperties_folderPath": {
+            "value": "sourcedata/bikes"
+        },
+        "OutputDataBikes_properties_typeProperties_fileName": {
+            "value": ""
+        },
+        "OutputDataBikes_properties_typeProperties_folderPath": {
+            "value": "outputdata/bikes"
+        }
+    }
+}
