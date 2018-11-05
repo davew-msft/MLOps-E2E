@@ -49,6 +49,44 @@
     },
     "resources": [
         {
+            "name": "[concat(parameters('factoryName'), '/BikesPL')]",
+            "type": "Microsoft.DataFactory/factories/pipelines",
+            "apiVersion": "2018-07-01-preview",
+            "properties": {
+                "activities": [
+                    {
+                        "name": "BikesDF",
+                        "type": "ExecuteDataFlow",
+                        "dependsOn": [],
+                        "policy": {
+                            "timeout": "7.00:00:00",
+                            "retry": 0,
+                            "retryIntervalInSeconds": 30,
+                            "secureOutput": false,
+                            "secureInput": false
+                        },
+                        "userProperties": [],
+                        "typeProperties": {
+                            "dataflow": {
+                                "referenceName": "BikesDF",
+                                "type": "DataFlowReference"
+                            },
+                            "linkedService": {
+                                "referenceName": "adfinteg",
+                                "type": "LinkedServiceReference"
+                            },
+                            "staging": {}
+                        }
+                    }
+                ],
+                "annotations": []
+            },
+            "dependsOn": [
+                "[concat(variables('factoryId'), '/dataflows/BikesDF')]",
+                "[concat(variables('factoryId'), '/linkedServices/adfinteg')]"
+            ]
+        },
+        {
             "name": "[concat(parameters('factoryName'), '/Purchases')]",
             "type": "Microsoft.DataFactory/factories/datasets",
             "apiVersion": "2018-07-01-preview",
@@ -268,53 +306,6 @@
             "dependsOn": []
         },
         {
-            "name": "[concat(parameters('factoryName'), '/BikesDF')]",
-            "type": "Microsoft.DataFactory/factories/dataflows",
-            "apiVersion": "2018-07-01-preview",
-            "properties": {
-                "sources": [
-                    {
-                        "dataset": {
-                            "referenceName": "PotentialBuyers",
-                            "type": "DatasetReference"
-                        },
-                        "name": "Buyers",
-                        "script": "source(output(\n\t\tLoyaltyCardID as string,\n\t\tRegion as string,\n\t\tFirstName as string,\n\t\tMiddleName as string,\n\t\tLastName as string,\n\t\tBirthDate as string,\n\t\tMaritalStatus as string,\n\t\tGender as string,\n\t\tEmailAddress as string,\n\t\tYearlyIncome as string,\n\t\tTotalChildren as string,\n\t\tNumberChildrenAtHome as string,\n\t\tEducation as string,\n\t\tOccupation as string,\n\t\tHouseOwnerFlag as string,\n\t\tNumberCarsOwned as string,\n\t\tAddressLine1 as string,\n\t\tAddressLine2 as string,\n\t\tPhone as string,\n\t\tDateFirstPurchase as string,\n\t\tCommuteDistance as string\n\t),\n\tallowSchemaDrift: false,\n\tvalidateSchema: false) ~> Buyers"
-                    },
-                    {
-                        "dataset": {
-                            "referenceName": "Purchases",
-                            "type": "DatasetReference"
-                        },
-                        "name": "Purchases",
-                        "script": "source(output(\n\t\tLoyaltyCardID as string,\n\t\tRegion as string,\n\t\tAge as string,\n\t\tBikes as string\n\t),\n\tallowSchemaDrift: false,\n\tvalidateSchema: false) ~> Purchases"
-                    }
-                ],
-                "sinks": [
-                    {
-                        "dataset": {
-                            "referenceName": "OutputDataBikes",
-                            "type": "DatasetReference"
-                        },
-                        "name": "BikeOutput",
-                        "script": "JoinOnLoyalityCardID sink(saveMode:'overwrite' , mapColumn(\n\t\tLoyaltyCardID = Buyers@LoyaltyCardID,\n\t\tRegion = Buyers@Region,\n\t\tFirstName,\n\t\tMiddleName,\n\t\tLastName,\n\t\tBirthDate,\n\t\tMaritalStatus,\n\t\tGender,\n\t\tEmailAddress,\n\t\tYearlyIncome,\n\t\tTotalChildren,\n\t\tNumberChildrenAtHome,\n\t\tEducation,\n\t\tOccupation,\n\t\tHouseOwnerFlag,\n\t\tNumberCarsOwned,\n\t\tAddressLine1,\n\t\tAddressLine2,\n\t\tPhone,\n\t\tDateFirstPurchase,\n\t\tCommuteDistance,\n\t\tLoyaltyCardID2 = Purchases@LoyaltyCardID,\n\t\tRegion2 = Purchases@Region,\n\t\tAge,\n\t\tBikes\n\t)) ~> BikeOutput"
-                    }
-                ],
-                "transformations": [
-                    {
-                        "name": "JoinOnLoyalityCardID",
-                        "script": "Buyers, Purchases join(Buyers@LoyaltyCardID == Purchases@LoyaltyCardID,\n\tjoinType:'outer',\n\tbroadcast: 'none')~> JoinOnLoyalityCardID"
-                    }
-                ],
-                "parameters": {}
-            },
-            "dependsOn": [
-                "[concat(variables('factoryId'), '/datasets/PotentialBuyers')]",
-                "[concat(variables('factoryId'), '/datasets/Purchases')]",
-                "[concat(variables('factoryId'), '/datasets/OutputDataBikes')]"
-            ]
-        },
-        {
             "name": "[concat(parameters('factoryName'), '/adfinteg')]",
             "type": "Microsoft.DataFactory/factories/linkedServices",
             "apiVersion": "2018-07-01-preview",
@@ -338,41 +329,58 @@
             "dependsOn": []
         },
         {
-            "name": "[concat(parameters('factoryName'), '/BikesPL')]",
-            "type": "Microsoft.DataFactory/factories/pipelines",
+            "name": "[concat(parameters('factoryName'), '/BikesDF')]",
+            "type": "Microsoft.DataFactory/factories/dataflows",
             "apiVersion": "2018-07-01-preview",
             "properties": {
-                "activities": [
+                "sources": [
                     {
-                        "name": "BikesDF",
-                        "type": "ExecuteDataFlow",
-                        "dependsOn": [],
-                        "policy": {
-                            "timeout": "7.00:00:00",
-                            "retry": 0,
-                            "retryIntervalInSeconds": 30,
-                            "secureOutput": false,
-                            "secureInput": false
+                        "dataset": {
+                            "referenceName": "PotentialBuyers",
+                            "type": "DatasetReference"
                         },
-                        "userProperties": [],
-                        "typeProperties": {
-                            "dataflow": {
-                                "referenceName": "BikesDF",
-                                "type": "DataFlowReference"
-                            },
-                            "linkedService": {
-                                "referenceName": "adfinteg",
-                                "type": "LinkedServiceReference"
-                            },
-                            "staging": {}
-                        }
+                        "name": "Buyers",
+                        "script": "source(output(LoyaltyCardID as string,Region as string,FirstName as string,MiddleName as string,LastName as string,BirthDate as string,MaritalStatus as string,Gender as string,EmailAddress as string,YearlyIncome as string,TotalChildren as string,NumberChildrenAtHome as string,Education as string,Occupation as string,HouseOwnerFlag as string,NumberCarsOwned as string,AddressLine1 as string,AddressLine2 as string,Phone as string,DateFirstPurchase as string,CommuteDistance as string),allowSchemaDrift: false,validateSchema: false) ~> Buyers"
+                    },
+                    {
+                        "dataset": {
+                            "referenceName": "Purchases",
+                            "type": "DatasetReference"
+                        },
+                        "name": "Purchases",
+                        "script": "source(output(LoyaltyCardID as string,Region as string,Age as string,Bikes as string),allowSchemaDrift: false,validateSchema: false) ~> Purchases"
                     }
                 ],
-                "annotations": []
+                "sinks": [
+                    {
+                        "dataset": {
+                            "referenceName": "OutputDataBikes",
+                            "type": "DatasetReference"
+                        },
+                        "name": "BikeOutput",
+                        "script": "BikesTrans sink(saveMode:'overwrite' , mapColumn(MaritalStatus = MaritalStatusTrans,Gender = GenderTrans,YearlyIncome,TotalChildren,NumberChildrenAtHome,Education = EducationTrans,HouseOwnerFlag,NumberCarsOwned,CommuteDistance = CommuteDistanceTrans,Region = RegionTrans,Age = AgeTrans,Bikes = BikeBuyerTrans)) ~> BikeOutput"
+                    }
+                ],
+                "transformations": [
+                    {
+                        "name": "JoinOnLoyalityCardID",
+                        "script": "Buyers, Purchases join(Buyers@LoyaltyCardID == Purchases@LoyaltyCardID,joinType:'outer',broadcast: 'none')~> JoinOnLoyalityCardID"
+                    },
+                    {
+                        "name": "SelectColumns",
+                        "script": "JoinOnLoyalityCardID select(mapColumn(MaritalStatus,Gender,YearlyIncome,TotalChildren,NumberChildrenAtHome,Education,HouseOwnerFlag,NumberCarsOwned,CommuteDistance,Region = Buyers@Region,BirthDate,Age,Bikes))~> SelectColumns"
+                    },
+                    {
+                        "name": "BikesTrans",
+                        "script": "SelectColumns derive(BikesTrans = iif(isNull(Bikes), 0, 1),MaritalStatusTrans = iif(MaritalStatus == 'S', 1, 2 ),GenderTrans = iif(Gender == 'M', 1, 2),EducationTrans = case(Education == 'High School', 1, Education == 'Partial College', 2, Education == 'Partial 1', 3, Education == 'Bachelors', 4, Education == 'Graduate Degree', 5, 0),CommuteDistanceTrans = case(CommuteDistance == '0-1 Miles', 1, CommuteDistance == '1-2 Miles', 2, CommuteDistance == '2-5 Miles', 5, CommuteDistance == '5-10 Miles', 10, 0),RegionTrans = case(Region == 'United States', 1, Region == 'Canada', 1, Region == 'Germany', 2, Region == 'France', 2, Region == 'United Kingdom', 2, Region == 'Australia', 3, 0),AgeTrans = toInteger(toInteger((currentDate() - toDate(BirthDate)))/365),BikeBuyerTrans = iif(isNull(Bikes ), 0, 1)) ~> BikesTrans"
+                    }
+                ],
+                "parameters": {}
             },
             "dependsOn": [
-                "[concat(variables('factoryId'), '/dataflows/BikesDF')]",
-                "[concat(variables('factoryId'), '/linkedServices/adfinteg')]"
+                "[concat(variables('factoryId'), '/datasets/PotentialBuyers')]",
+                "[concat(variables('factoryId'), '/datasets/Purchases')]",
+                "[concat(variables('factoryId'), '/datasets/OutputDataBikes')]"
             ]
         }
     ]
