@@ -2,7 +2,7 @@
 
 ### The datasets and base notebooks were provided with data from the SQL Server 2017 Adventureworks Data Warehouse [AdventureWorksDW2017.bak](https://docs.microsoft.com/en-us/sql/samples/adventureworks-install-configure?view=sql-server-2017) and the [Azure Machine Learning Notebooks](https://github.com/Azure/MachineLearningNotebooks)
 
-![End-to-end Custom AI Solution](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/e2e.png.png)
+![End-to-end Custom AI Solution](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/e2e.png)
 
 
 ## Prerequisites
@@ -44,15 +44,17 @@ Note: If you encounter issues with resources please check by running the followi
 
 You can provision using the Deploy to Azure button above or by using the Azure CLI.
 
-Choose your Subscription, and enter a Resource Group Name, SQL Server Username, and SQL Server Password.  Then click the `Next` button.
+### Provisioning using the Azure Portal
+
+Choose your Subscription, and enter a Resource Group group, Location (Southeast Asia for the ADF Data Flow Preview) SQL Server Username, SQL Server Password, and agree to the Terms and Conditions. Then click the `Purchase` button.
 
 ![setup](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/setup.png)
 
-Preview the Resource Types and click the `Deploy` button.
+When the Deployment completes you will receive a notification in the Azure Portal.  Click the `Go to resource group` button.
 
 ![preview](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/preview.png)
 
-After about 3 minutes the deployment should complete.  Click the green link `Manage` your resources to open the resource group in the Azure portal.
+After you open the resource group in the Azure portal you should see these deployed resources
 
 ![deploy](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/deploy.png)
 
@@ -69,50 +71,11 @@ After about 3 minutes the deployment should complete.  Click the green link `Man
 az group deployment create -g mlbigdata --template-file azureclideploy.json --parameters @parameters-mlbigdata.json
 ```
 Once the provisioning is finished, we can run `az resource list -g mlbigdata -o table` to check what resources were launched. Our listed resources includes: 
-    * 2 storage accounts
-    * 1 event hub
+    * 1 Storage account
+    * 1 Data Factory
     * 1 Databricks workspace
-    * 1 SQL Database.
-
-## Copying the source data
-
-1. Use Microsoft Azure Storage Explorer to copy the blob container
-
-You can download Microsoft Azure Storage Explorer [HERE](https://azure.microsoft.com/en-us/features/storage-explorer/) for Linux, Mac, or Windows 
-
-Once you install and open it click on the connection plug icon and choose `Use a connection string`.  Click `Next`
-
-![connect](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/connect.png)
-
-Copy the following connection string
-
-```
-BlobEndpoint=https://ainellarealta.blob.core.windows.net/;QueueEndpoint=https://ainellarealta.queue.core.windows.net/;FileEndpoint=https://ainellarealta.file.core.windows.net/;TableEndpoint=https://ainellarealta.table.core.windows.net/;SharedAccessSignature=sv=2017-11-09&ss=bfqt&srt=sco&sp=rl&se=2019-12-31T07:01:12Z&st=2018-09-10T00:01:12Z&spr=https&sig=rePvURzoJp6H%2F2%2BcnAzTDCdyk4MdynWNskGkQ1uAbg4%3D
-
-```
-Paste it into the Connection string dialog box. Click `Next`
-
-![attach](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/attach.png)
-
-Click `Connect`
-
-![summary](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/summary.png)
-
-The Storage Account container should now be available under storage accounts.  Right click on the container named `football` and choose `Copy Blob Container`
-
-![container](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/container.png)
-
-Click on the connection plug icon and this time choose `Add an Azure Account`.  Click `Sign in...`
-
-![signin](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/signin.png)
-
-Sign in to your Azure Account and navigate to the `source` plus hash characters storage account created during the azure deployment.  Right click and choose `Paste Blob Container`
-
-![paste](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/paste.png)
-
-The Activities section of Microsoft Azure Storage Explorer should look something like this
-
-![activities](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/activities.png)
+    * 1 SQL Server
+    * 1 SQL database.
 
 ## Create Azure Databricks Cluster
 
