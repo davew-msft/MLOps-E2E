@@ -23,6 +23,14 @@ To deploy the Azure resources required for this lab, you will need:
 
 **Note** that you will be deploying a number of Azure resources into your Azure Subscription when either clicking on the [Deploy to Azure](https://github.com/DataSnowman/MLonBigData/blob/master/setup/README.md) button, or by alternatively deploying by using an ARM template and parameters file via the Azure CLI.
 
+# Deploy Bike Buyer Template to Azure
+<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FDataSnowman%2FMLonBigData%2Fmaster%2Fsetup%2Fazuredeploy.json" target="_blank">
+    <img src="http://azuredeploy.net/deploybutton.png"/>
+</a>
+<a href="http://armviz.io/#/?load=https%3A%2F%2Fraw.githubusercontent.com%2FDataSnowman%2FMLonBigData%2Fmaster%2Fsetup%2Fazuredeploy.json" target="_blank">
+    <img src="http://armviz.io/visualizebutton.png"/>
+</a>
+
 Note: If you encounter issues with resources please check by running the following commands in the Azure CLI (Note more information on using the CLI is found in the `Provisioning using the Azure CLI` section below):
   
   `az login`
