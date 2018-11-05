@@ -1,12 +1,8 @@
-## Welcome to a hands-on workshop for **Machine Learning on Big Data** using Azure Databricks
+# Welcome to a hands-on workshop for **Machine Learning on Big Data** using Azure Databricks, Azure Data Factory, and Azure Machine Learning service
 
-### The datasets and base notebooks were provided by Azure Databricks
+### The datasets and base notebooks were provided with data from the SQL Server 2017 Adventureworks Data Warehouse [AdventureWorksDW2017.bak](https://docs.microsoft.com/en-us/sql/samples/adventureworks-install-configure?view=sql-server-2017) and the [Azure Machine Learning Notebooks](https://github.com/Azure/MachineLearningNotebooks)
 
-You can find these example notebooks [here](https://databricks.com/resources/type/example-notebooks)
-
-The dataset has been downloaded from [Kaggle](https://www.kaggle.com/secareanualin/football-events). It provides a granular view of 9,074 games, from the biggest 5 European football (soccer) leagues: England, Spain, Germany, Italy, France, from 2011/2012 season to 2016/2017 season as of 25.01.2017.  In this example the datasets can be copied from an Azure Storage account.  Details are below in the section `Copying the source data`.
-
-![European-Soccer-Events-Analysis-Diagram](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/European-Soccer-Events-Analysis-Diagram.png)
+![End-to-end Custom AI Solution](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/e2e.png.png)
 
 
 ## Prerequisites
@@ -23,7 +19,10 @@ To deploy the Azure resources required for this lab, you will need:
 
 **Note** that you will be deploying a number of Azure resources into your Azure Subscription when either clicking on the [Deploy to Azure](https://github.com/DataSnowman/MLonBigData/blob/master/setup/README.md) button, or by alternatively deploying by using an ARM template and parameters file via the Azure CLI.
 
-# Deploy Bike Buyer Template to Azure
+## Deploy Bike Buyer Template to Azure
+
+**Important** `While Azure Data Factory Data Flows is in Preview please use Southeast Asia Region to deploy this solution
+
 <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FDataSnowman%2FMLonBigData%2Fmaster%2Fsetup%2Fazuredeploy.json" target="_blank">
     <img src="http://azuredeploy.net/deploybutton.png"/>
 </a>
@@ -43,13 +42,9 @@ Note: If you encounter issues with resources please check by running the followi
 
 ## Choices for Provisioning
 
-You can provision using the Deploy to Azure button or using the Azure CLI.
+You can provision using the Deploy to Azure button above or by using the Azure CLI.
 
-### Provisioning using the Deploy to Azure button
-
-1) Click on the [Deploy to Azure](https://github.com/DataSnowman/MLonBigData/blob/master/setup/README.md) button on the README in the setup folder.
-
-Choose your Subscription, and enter a Resource Group Name, Azure Databricks Workspace Name, SQL Server Username, and SQL Server Password.  Then click the `Next` button.
+Choose your Subscription, and enter a Resource Group Name, SQL Server Username, and SQL Server Password.  Then click the `Next` button.
 
 ![setup](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/setup.png)
 
