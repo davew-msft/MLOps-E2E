@@ -1,13 +1,7 @@
 {
     "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json",
     "contentVersion": "1.0.0.0",
-    "parameters": {
-        "workspaceName": {
-            "type": "string",
-            "metadata": {
-                "description": "Workspace Name for Azure Databricks."
-            }
-        },
+    "parameters": { 
         "sqlServerUsername": {
             "metadata": {
                 "description": "SQL server admin username"
@@ -19,9 +13,8 @@
                 "description": "SQL server admin password"
             },
             "type": "securestring"
-        }
+        } 
     },
-
     "variables": {
         "namePrefix": "[resourceGroup().name]",
         "uniqueNamePrefix": "[toLower(concat(resourceGroup().name, uniqueString(subscription().subscriptionId)))]",
@@ -40,31 +33,16 @@
         "sqlServerResourceId": "[resourceId('Microsoft.Sql/servers', variables('sqlServerName'))]",
         "stgVersion": "2015-06-15",
         "storageAccountType": "Standard_LRS",
-        "sourceStorageAccountName": "[concat('source', uniqueString(subscription().subscriptionId))]",
-        "targetStorageAccountName": "[concat('target', uniqueString(subscription().subscriptionId))]",
-        "sbVersion": "2014-09-01",
-        "sbNameIngest": "[concat(variables('uniqueNamePrefix'), 'servicebusingest')]",
-        "sbKeyName": "RootManageSharedAccessKey",
-        "sbResourceIdIngest": "[resourceId('Microsoft.Eventhub/namespaces/authorizationRules', variables('sbNameIngest'), variables('sbKeyName'))]",
-        "ehInNameIngest": "[concat(variables('namePrefix'), 'ehiningest')]",
-        "ehSendPolicyKeyName": "SendPolicy",
-        "ehSendPolicyResourceIdIngest": "[resourceId('Microsoft.EventHub/namespaces/eventHubs/authorizationRules', variables('sbNameIngest'), variables('ehInNameIngest'), variables('ehSendPolicyKeyName'))]",
-        "ehResourceIdIngest": "[concat(concat(concat('Microsoft.Eventhub/namespaces/', variables('sbNameIngest')), '/eventHubs/'), variables('ehInNameIngest'))]",
-        "tier": "premium",
-        "managedResourceGroupName": "[concat('databricks-rg-', parameters('workspaceName'), '-', uniqueString(parameters('workspaceName'), resourceGroup().id))]",
-        "managedResourceGroupId": "[concat(subscription().id, '/resourceGroups/', variables('managedResourceGroupName'))]"
+        "storageAccountName": "[concat('stg', uniqueString(subscription().subscriptionId))]",
+        "adbworkspaceName": "[concat('adb', uniqueString(subscription().subscriptionId))]",
+        "adbtier": "premium",
+        "managedResourceGroupName": "[concat('databricks-rg-', variables('adbworkspaceName'), '-', uniqueString(variables('adbworkspaceName'), resourceGroup().id))]",
+        "managedResourceGroupId": "[concat(subscription().id, '/resourceGroups/', variables('managedResourceGroupName'))]",
+        "adfname": "[concat('adf', uniqueString(subscription().subscriptionId))]",
+        "adfapiVersion": "2018-06-01"
     },
     "resources": [{
-            "name": "[variables('sourceStorageAccountName')]",
-            "type": "Microsoft.Storage/storageAccounts",
-            "location": "[variables('location')]",
-            "apiVersion": "[variables('stgVersion')]",
-            "properties": {
-                "accountType": "[variables('storageAccountType')]"
-            }
-        },
-        {
-            "name": "[variables('targetStorageAccountName')]",
+            "name": "[variables('storageAccountName')]",
             "type": "Microsoft.Storage/storageAccounts",
             "location": "[variables('location')]",
             "apiVersion": "[variables('stgVersion')]",
@@ -109,64 +87,30 @@
                 "endIpAddress": "[variables('endIpAddress')]"
             }
         }]
-    }, {
-        "apiVersion": "[variables('sbVersion')]",
-        "name": "[variables('sbNameIngest')]",
-        "type": "Microsoft.Eventhub/namespaces",
-        "location": "[variables('location')]",
-        "properties": {
-            "region": "[variables('location')]"
-        },
-        "resources": [{
-            "apiVersion": "[variables('sbVersion')]",
-            "name": "[variables('ehInNameIngest')]",
-            "type": "eventHubs",
-            "location": "[variables('location')]",
-            "dependsOn": [
-                "[concat('Microsoft.Eventhub/namespaces/', variables('sbNameIngest'))]"
-            ],
-            "properties": {
-                "path": "[variables('ehInNameIngest')]"
-            },
-            "resources": [{
-                "apiVersion": "2015-08-01",
-                "name": "[variables('ehSendPolicyKeyName')]",
-                "type": "authorizationRules",
-                "location": "[variables('location')]",
-                "dependsOn": [
-                    "[variables('ehResourceIdIngest')]"
-                ],
-                "properties": {
-                    "rights": [
-                        "Send",
-                        "Listen"
-                    ]
-                }
-            }]
-        }]
-    },
+    }, 
     {
         "apiVersion": "2018-04-01",
         "location": "[variables('location')]",
-        "name": "[parameters('workspaceName')]",
+        "name": "[variables('adbworkspaceName')]",
         "sku": {
-            "name": "[variables('tier')]"
+            "name": "[variables('adbtier')]"
         },
         "properties": {
             "ManagedResourceGroupId": "[variables('managedResourceGroupId')]"
         },
         "type": "Microsoft.Databricks/workspaces"
+    },
+    {
+        "type": "Microsoft.DataFactory/factories",
+        "name": "[variables('adfname')]",
+        "apiVersion": "[variables('adfapiVersion')]",
+        "location": "[variables('location')]",
+        "identity": {
+            "type": "SystemAssigned"
+        }
     }
     ],
     "outputs": {
-        "ehNameIngest": {
-            "type": "string",
-            "value": "[variables('ehInNameIngest')]"
-        },
-        "eventHubConnectionStringIngest": {
-            "type": "string",
-            "value": "[listkeys(variables('ehSendPolicyResourceIdIngest'), variables('sbVersion')).primaryConnectionString]"
-        },
         "sqlServerName": {
             "type": "string",
             "value": "[variables('sqlServerName')]"
@@ -183,7 +127,7 @@
             "type": "string",
             "value": "[concat('Server=tcp:',variables('sqlServerName'),'.database.windows.net,1433;Database=',variables('sqlDatabaseName'),';User ID=',parameters('sqlServerUsername'),';Password=',parameters('sqlServerPassword'),';Trusted_Connection=False;Encrypt=True;Connection Timeout=30')]"
         },
-        "databricksOverviewUrl": { "type": "string", "value": "[concat('https://portal.azure.com/#resource/subscriptions/', subscription().subscriptionId, '/resourceGroups/', resourceGroup().name, '/providers/Microsoft.Databricks/workspaces/', parameters('workspaceName'),'/overview')]"
+        "databricksOverviewUrl": { "type": "string", "value": "[concat('https://portal.azure.com/#resource/subscriptions/', subscription().subscriptionId, '/resourceGroups/', resourceGroup().name, '/providers/Microsoft.Databricks/workspaces/', variables('adbworkspaceName'),'/overview')]"
         }
     }
 }

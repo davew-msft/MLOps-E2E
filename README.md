@@ -64,7 +64,7 @@ After you open the resource group in the Azure portal you should see these deplo
 
 2. Navigate to the folder `MLonBigData\setup` If using **Windows Explorer** you can launch the command prompt by going to the address bar and typing `cmd` (for the Windows command prompt) or `bash` (for the Linux command prompt assuming it is installed already) and type `az --version` to check the installation.  Look for the `parameters-mlbigdata.json` file you cloned during the Prerequisites above.  
 
-3. When you logged in to the CLI in step 1 above you will see a json list of all the Azure account you have access to. Run `az account show` to see you current active account.  Run `az account list -o table` if you want to see all of you Azure account in a table. If you would like to switch to another Azure account run `az account set --subscription <your SubscriptionId>` to set the active subcription.  Run `az group create -n mlbigdata -l southcentralus` to create a resource group called `mlbigdata`.
+3. When you logged in to the CLI in step 1 above you will see a json list of all the Azure account you have access to. Run `az account show` to see you current active account.  Run `az account list -o table` if you want to see all of you Azure account in a table. If you would like to switch to another Azure account run `az account set --subscription <your SubscriptionId>` to set the active subcription.  Run `az group create -n mlbigdata -l southeastasia` to create a resource group called `mlbigdata`.
 
 4. Next run the following command to provision the Azure resources:
 ```
@@ -99,7 +99,7 @@ Click on `Workspace` in the left navigation bar and right-click on the user and 
 
 ![import](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/import.png)
 
-Select the dbc file that was cloned from the GitHub repo and click the `Import` button
+Select the BikeBuyerOps.dbc file that was cloned from the GitHub repo. The location should be MLonBigData\BikeBuyer\ADBnotebooks Click the `Import` button
 
 ![importNotebooks](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/importNotebooks.png)
 
