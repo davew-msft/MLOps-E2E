@@ -77,6 +77,10 @@ Once the provisioning is finished, we can run `az resource list -g mlbigdata -o 
     * 1 SQL Server
     * 1 SQL database.
 
+## Data Scientist is using Anaconda and Jupyter Notebooks
+
+If you are interested in this scenario [start here](https://github.com/DataSnowman/MLonBigData/tree/master/BikeBuyer/OriginalDataScientistWork)
+
 ## Create Azure Databricks Cluster
 
 Launch the Azure Databricks Workspace by clicking on the `Launch Workspace` button in the Azure Portal
