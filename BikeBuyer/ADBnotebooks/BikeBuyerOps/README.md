@@ -2,6 +2,29 @@
 
 ![Data Science with Azure Databricks and AML SDK](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/dsWithAzureDatabricksAML.png)
 
+## Create an Azure Machine Learning service Workspace in the Reasource Group created earlier
+
+![AMLserviceWorkspace](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/amlServiceWorkspace.png)
+
+![CreateAMLserviceWorkspace](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/createAMLserviceWorkspace.png)
+
+![CreateAMLserviceWorkspace2](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/createAMLserviceWorkspace2.png)
+
+You will need to enter these AML service Workspace Parameters into Cmd 5 of the 01.Installation_and_Configuration notebook.
+
+![AMLserviceWorkspaceParameters](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/amlServiceWorkspaceParameters.png)
+
+![AMLserviceWorkspaceParametersCmd5](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/amlServiceWorkspaceParametersCmd5.png)
+
+Note that you will need to install the AML service SDK as a library 
+
+Install SDK as a library (Mandatory)
+Now we support installing AML SDK as library from GUI. When attaching a library follow [this](https://docs.databricks.com/user-guide/libraries.html) and add the below string as your PyPi package (during private preview). You can select the option to attach the library to all clusters or just one cluster.
+
+Provide this full string to install the SDK:
+
+`azureml-sdk[databricks]`
+
 ## Create Azure Databricks Cluster (or use the one you already created in the Data Engineering step that uses the Ingest.ipynb)
 
 Launch the Azure Databricks Workspace by clicking on the `Launch Workspace` button in the Azure Portal
