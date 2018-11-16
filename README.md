@@ -77,49 +77,28 @@ Once the provisioning is finished, we can run `az resource list -g mlbigdata -o 
     * 1 SQL Server
     * 1 SQL database.
 
-## Data Scientist is using Anaconda and Jupyter Notebooks
+## Data Scientist using Anaconda and Jupyter Notebooks
 
 If you are interested in this scenario [start here](https://github.com/DataSnowman/MLonBigData/tree/master/BikeBuyer/OriginalDataScientistWork)
 
-## Create Azure Databricks Cluster
+![Original Data Scientist Work](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/originalDataScientistWork.png)
 
-Launch the Azure Databricks Workspace by clicking on the `Launch Workspace` button in the Azure Portal
+## Data Engineer using Azure Databricks and Jupyter Notebook
 
-![launchWorkspace](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/launchWorkspace.png)
+If you are interested in this scenario [start here](https://github.com/DataSnowman/MLonBigData/tree/master/BikeBuyer/ADBnotebooks/DataEngineering)
 
-Click on `Clusters` in the left navigation bar and click on the `+ Create Cluster` button
+![Data Engineering with Azure Databricks](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/deWithAzureDatabricks.png)
 
-![createCluster](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/createCluster.png)
+## Data Scientist using Azure Databricks and Databricks Notebooks and Azure Machine Learning service SDK
 
-Name your cluster, choose the Standard Cluster Mode, 4.2 Databricks Runtime Version (or newer), Python Version 3, and reduce the max workers to 3.  Click the `Create Cluster` button.
+If you are interested in this scenario [start here](https://github.com/DataSnowman/MLonBigData/tree/master/BikeBuyer/ADBnotebooks/BikeBuyerOps)
 
-![cluster](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/cluster.png)
+![Data Science with Azure Databricks and AML SDK](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/dsWithAzureDatabricksAML.png)
 
-## Importing and running Databricks notebooks
+## Data Engineer using Azure Data Factory Data Flow and Azure Databricks
 
-### Importing notebooks using the dbc file
+If you are interested in this scenario [start here](https://github.com/DataSnowman/MLonBigData/tree/master/BikeBuyer/ADF)
 
-Click on `Workspace` in the left navigation bar and right-click on the user and select `Import`
-
-![import](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/import.png)
-
-Select the BikeBuyerOps.dbc file that was cloned from the GitHub repo. The location should be MLonBigData\BikeBuyer\ADBnotebooks Click the `Import` button
-
-![importNotebooks](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/importNotebooks.png)
-
-
-### Running the Data Engineer notebooks
-
-### Running the Data Scientist notebooks
-
-### Running the Notebooks loading SQL
-
-## Connecting to Databricks and SQL Database using Power BI
-
-
+![Original Data Scientist Work](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/deWithAzureDataFactoryDF.png)
 
 Hope you enjoyed this workshop.
-
-## Thank you to the members of Databricks that created the notebooks for this tutorial:
-* **Name One** 
-* **Name Two**
