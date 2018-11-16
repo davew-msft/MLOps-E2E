@@ -2,17 +2,27 @@
 
 ![Data Science with Azure Databricks and AML SDK](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/dsWithAzureDatabricksAML.png)
 
-## Create an Azure Machine Learning service Workspace in the Reasource Group created earlier
+## Create an Azure Machine Learning service Workspace in the Reasource Group created earlier using the Azure Portal
+
+Search for `Machine Learning service workspace` in the Azure Portal
 
 ![AMLserviceWorkspace](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/amlServiceWorkspace.png)
 
+Click `Create`
+
 ![CreateAMLserviceWorkspace](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/createAMLserviceWorkspace.png)
+
+File out parameters (remember to use the same Resource group and Location as your deployment)
+
+Click `Create`
 
 ![CreateAMLserviceWorkspace2](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/createAMLserviceWorkspace2.png)
 
 You will need to enter these AML service Workspace Parameters into Cmd 5 of the 01.Installation_and_Configuration notebook.
 
 ![AMLserviceWorkspaceParameters](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/amlServiceWorkspaceParameters.png)
+
+Here is what the 01.Installation_and_Configuration notebook looks like.
 
 ![AMLserviceWorkspaceParametersCmd5](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/amlServiceWorkspaceParametersCmd5.png)
 
