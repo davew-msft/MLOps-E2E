@@ -30,18 +30,29 @@ Here are the files inside of the `bikes` folder
 
 ## Author an Azure Data Factory Data Flow
 
+Click on Author & Monitor
 
-authorAndMonitorDataFactory.png
+![authorAndMonitorDataFactory](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/authorAndMonitorDataFactory.png)
 
-clickPencil.png
+Click on the pencil (edit) icon
 
-createConnections.png
+![clickPencil](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/clickPencil.png)
 
-blobLinkedService.png
+Click on Connections on the bottom of the left navigation panel.  Click on `+ New`
 
-blobLinkedServiceCfg1.png
+![createConnections](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/createConnections.png)
 
-blobLinkedServiceCfg2.png
+Click on the Data Store Linked Service and select `Azure Blob Storage`.  Click on `Continue`
+
+![blobLinkedService](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/blobLinkedService.png)
+
+Type in a name for the new Linked Service.  Choose AutoResolveIntegrationRuntime, Use Account key, Connection String, and From Azure subscription
+
+![blobLinkedServiceCfg1](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/blobLinkedServiceCfg1.png)
+
+Select your Azure Subscription, and Storage account name.  Click `Test` and then `Finish`
+
+![blobLinkedServiceCfg2](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/blobLinkedServiceCfg2.png)
 
 ## Create Azure Databricks Cluster (or use the one you already created in the Data Engineering step that uses the Ingest.ipynb)
 
@@ -53,18 +64,35 @@ Go to User Settings
 
 ![userSettings](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/userSettings.png)
 
+Click `Generate New Token`
+
 ![generateNewToken](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/generateNewToken.png)
+
+Create a Comment to identify the token.  Click `Generate`
 
 ![launchWorkspace](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/generateNewTokenDialog.png)
 
+Copy and paste the token somewhere safe to keep.  You will need it in a bit to configure a Databricks Compute Linked Service.  Click `Done`
+
 ![copyToken](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/copyToken.png)
+
+You can now see the created token
 
 ![tokenCreated](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/tokenCreated.png)
 
+Return to ADF Connections on the bottom of the left navigation panel.  Click on `+ New`  
+Click on the Compute Linked Service and select `Azure Databricks`.  Click on `Continue`
+
 ![databricksLinkedService](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/databricksLinkedService.png)
 
-![databricksLinkedServiceCfg1](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/atabricksLinkedServiceCfg1.png)
+Type in a name for the new Linked Service.  Choose AutoResolveIntegrationRuntime, From Azure subscription, Azure Subscription, and Databricks Workspace.
+
+![databricksLinkedServiceCfg1](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/databricksLinkedServiceCfg1.png)
+
+Select New job cluster, Access token, and paste in the Access token you created above.  Choose a Cluster version, Cluster node type, Python Version, and Fixed or Outscaling worker option. Click `Test` and then `Finish`
 
 ![databricksLinkedServiceCfg2](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/databricksLinkedServiceCfg2.png)
+
+You should now see your two new Linked Services
 
 ![connectionsCreated.](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/connectionsCreated.png)
