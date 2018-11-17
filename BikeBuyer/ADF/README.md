@@ -54,7 +54,7 @@ Select your Azure Subscription, and Storage account name.  Click `Test` and then
 
 ![blobLinkedServiceCfg2](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/blobLinkedServiceCfg2.png)
 
-## Create Azure Databricks Cluster (or use the one you already created in the Data Engineering step that uses the Ingest.ipynb)
+### Create Azure Databricks Cluster (or use the one you already created in the Data Engineering step that uses the Ingest.ipynb)
 
 Launch the Azure Databricks Workspace by clicking on the `Launch Workspace` button in the Azure Portal
 
@@ -96,3 +96,9 @@ Select New job cluster, Access token, and paste in the Access token you created 
 You should now see your two new Linked Services
 
 ![connectionsCreated.](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/connectionsCreated.png)
+
+### Create Datasets
+
+### Create Data Flow
+
+### Create Pipeline
