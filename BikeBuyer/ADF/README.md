@@ -114,22 +114,74 @@ You should now see your two new Linked Services
 
 ### Create Datasets
 
+Click the + next to Filter Resources to Add New Factory Resource and select `Dataset`
+
 ![addNewFactoryResource1](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/addNewFactoryResource.png)
+
+Select Azure Blob and click `Finish`
 
 ![newBlobDataset1](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/newBlobDataset.png)
 
+Name the dataset `Purchases`, select the AzureBlobStorage Linked service.  Browse to the `adworks-bike-purchases.csv` file in MLonBigData\BikeBuyer\LoyaltyCardBuyers.  Scroll down and check the box `Column names in the first row`. Test Connection.  It should look like this.
+
 ![datasetPurchases](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/datasetPurchases.png)
+
+Click the Schema tab add click `Import Schema`
+
+![importSchema1](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/importSchema.png)
+
+Select Azure Blob and click `Finish`
 
 ![newBlobDataset2](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/newBlobDataset.png)
 
+Name the dataset `PotentialBuyers`, select the AzureBlobStorage Linked service.  Browse to the `potential-bike-buyers.csv` file in MLonBigData\BikeBuyer\LoyaltyCardBuyers.  Scroll down and check the box `Column names in the first row`.  Test Connection.  It should look like this.
+
 ![datasetPotentialBuyers](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/datasetPotentialBuyers.png)
+
+Click the Schema tab add click `Import Schema`
+
+![importSchema1](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/importSchema.png)
+
+Select Azure Blob and click `Finish`
 
 ![newBlobDataset3](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/newBlobDataset.png)
 
+Name the dataset `OutputDataBikes`, select the AzureBlobStorage Linked service.  Enter a file path of `outputdata/bikes`.  The file has not been created yet so you can't point to anything. Test Connection.  It should look like this.
+
 ![datasetOutputDataBikes](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/datasetOutputDataBikes.png)
+
+Click on `Publish All`
 
 ![datasetsPublish](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/datasetsPublish.png)
 
 ### Create Data Flow
+
+Click the + next to Filter Resources to Add New Factory Resource and select `Data Flow`
+
+![buyersDataflow1](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/buyersDataflow1.png)
+
+![buyersDataflow2](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/buyersDataflow2.png)
+
+![purchasesDataflow1](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/purchasesDataflow1.png)
+
+![purchasesDataflow2](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/purchasesDataflow2.png
+
+![joinDataflow1](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/joinDataflow1.png)
+
+![joinDataflow2](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/joinDataflow2.png
+
+![selectDataflow1](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/selectDataflow1.png)
+
+![selectDataflow2](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/selectDataflow2.png)
+
+![derivedColumnDataflow1](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/derivedColumnDataflow1.png)
+
+![derivedColumnDataflow2](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/derivedColumnDataflow2.png)
+
+![sinkDataflow1](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/sinkDataflow1.png)
+
+![sinkDataflow2](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/sinkDataflow2.png)
+
+jobRunningOnCluster.png
 
 ### Create Pipeline
