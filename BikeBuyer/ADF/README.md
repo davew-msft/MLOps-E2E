@@ -156,32 +156,89 @@ Click on `Publish All`
 
 ### Create Data Flow
 
-Click the + next to Filter Resources to Add New Factory Resource and select `Data Flow`
+Click the + next to Filter Resources to Add New Factory Resource and select `Data Flow`.  Type `Buyers` as the Output stream name, and select `PotentialBuyers` as the Source Dataset
 
 ![buyersDataflow1](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/buyersDataflow1.png)
 
+Click on the Define Schema tab and click `Import from dataset`
+
 ![buyersDataflow2](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/buyersDataflow2.png)
+
+Type `Purchases` as the Output stream name, and select `Purchases` as the Source Dataset
 
 ![purchasesDataflow1](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/purchasesDataflow1.png)
 
-![purchasesDataflow2](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/purchasesDataflow2.png
+Click on the Define Schema tab and click `Import from dataset`
+
+![purchasesDataflow2](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/purchasesDataflow2.png)
+
+Click on the + sign in front of the `Buyers` Source and select `Join`
 
 ![joinDataflow1](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/joinDataflow1.png)
 
-![joinDataflow2](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/joinDataflow2.png
+Type `JoinLoyaltyCardID` as the Output stream name, Left stream should default to `Buyers`, select `Purchases` for Right stream, Join type Full outer, and Join conditions `LoyaltyCardID = LoyaltyCardID` 
+
+![joinDataflow2](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/joinDataflow2.png)
+
+Click on the + sign in front of the `JoinLoyaltyCardID` Join and select `Select`
 
 ![selectDataflow1](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/selectDataflow1.png)
 
+Name the Output stream name `SelectColumns` and select the 13 columns in the image below
+
 ![selectDataflow2](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/selectDataflow2.png)
+
+Click on the + sign in front of the `SelectColumns` Select and select `Derived Column`
 
 ![derivedColumnDataflow1](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/derivedColumnDataflow1.png)
 
+Name the `BikesTrans` Output stream name the following 8 columns and use these formulas:
+
+`BikesTrans` --> `iif(isNull(Bikes), 0, 1)`
+
+`MaritalStatusTrans` --> `iif(MaritalStatus == 'S', 1, 2 )`
+
+`GenderTrans` --> `iif(Gender == 'M', 1, 2)`
+
+`EducationTrans` --> `case(Education == 'High School', 1, Education == 'Partial College', 2, Education == 'Partial 1', 3, Education == 'Bachelors', 4, Education == 'Graduate Degree', 5, 0)`
+
+`CommuteDistanceTrans` --> `case(CommuteDistance == '0-1 Miles', 1, CommuteDistance == '1-2 Miles', 2, CommuteDistance == '2-5 Miles', 5, CommuteDistance == '5-10 Miles', 10, 0)`
+
+`RegionTrans` --> `case(Region == 'United States', 1, Region == 'Canada', 1, Region == 'Germany', 2, Region == 'France', 2, Region == 'United Kingdom', 2, Region == 'Australia', 3, 0)`
+
+`AgeTrans` --> `toInteger(toInteger((currentDate() - toDate(BirthDate)))/365)`
+
+`BikeBuyerTrans` --> `iif(isNull(Bikes ), 0, 1)`
+
 ![derivedColumnDataflow2](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/derivedColumnDataflow2.png)
+
+Click on the + sign in front of the `BikesTrans` Dervived Column and select `Sink`
 
 ![sinkDataflow1](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/sinkDataflow1.png)
 
+Name the Output stream name `BikeOutput` and chose `OutputDataBikes` Sink Dataset
+
 ![sinkDataflow2](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/sinkDataflow2.png)
 
-jobRunningOnCluster.png
+Map the Input to the following Outputs
+
+![sinkMap](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/sinkMap.png)
+
+Click on `Publish All`
+
+![publishAll](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/publishAll.png)
+
 
 ### Create Pipeline
+
+Click the + next to Filter Resources to Add New Factory Resource and select `Pipeline`.  Type `BikesPL` as the Output stream name, and fill out the Settings as follows:
+
+![pipelineBikePL](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/pipelineBikePL.png)
+
+Publish All and then click `Trigger Now` and `Finish`
+
+![triggerNow](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/triggerNow.png)
+
+If you look in your Databricks Cluster you will be able to see the job.
+
+![jobRunningOnCluster](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/jobRunningOnCluster.png)
