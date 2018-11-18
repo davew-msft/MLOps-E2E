@@ -28,6 +28,19 @@ Here are the files inside of the `bikes` folder
 
 ![blobSourceDataFiles](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/blobSourceDataFiles.png)
 
+## Create an Azure Data Factory V2 with Data Flow
+
+Create a Data Factory in the Azure Portal
+
+![createADF](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/createADF.png)
+
+
+![createADF2](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/createADF2.png)
+
+
+![adfResources](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/adfResources.png)
+
+
 ## Author an Azure Data Factory Data Flow
 
 Click on Author & Monitor
