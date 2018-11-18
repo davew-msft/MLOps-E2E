@@ -37,9 +37,7 @@
         "adbworkspaceName": "[concat('adb', uniqueString(subscription().subscriptionId))]",
         "adbtier": "premium",
         "managedResourceGroupName": "[concat('databricks-rg-', variables('adbworkspaceName'), '-', uniqueString(variables('adbworkspaceName'), resourceGroup().id))]",
-        "managedResourceGroupId": "[concat(subscription().id, '/resourceGroups/', variables('managedResourceGroupName'))]",
-        "adfname": "[concat('adf', uniqueString(subscription().subscriptionId))]",
-        "adfapiVersion": "2018-06-01"
+        "managedResourceGroupId": "[concat(subscription().id, '/resourceGroups/', variables('managedResourceGroupName'))]"
     },
     "resources": [{
             "name": "[variables('storageAccountName')]",
@@ -99,15 +97,6 @@
             "ManagedResourceGroupId": "[variables('managedResourceGroupId')]"
         },
         "type": "Microsoft.Databricks/workspaces"
-    },
-    {
-        "type": "Microsoft.DataFactory/factories",
-        "name": "[variables('adfname')]",
-        "apiVersion": "[variables('adfapiVersion')]",
-        "location": "[variables('location')]",
-        "identity": {
-            "type": "SystemAssigned"
-        }
     }
     ],
     "outputs": {
