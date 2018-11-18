@@ -34,9 +34,11 @@ Create a Data Factory in the Azure Portal
 
 ![createADF](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/createADF.png)
 
+Enter a unique Name, select your Subscription, use existing Resource Group and select the Resource Group created earlier by the ARM template.  Choose V2 with data flow (preview), and Southeast Asia Location.  Click `Create`
 
 ![createADF2](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/createADF2.png)
 
+The Data Factory (V2) should show up in your Resource group once the deployment is completed
 
 ![adfResources](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/adfResources.png)
 
