@@ -89,16 +89,16 @@ If you are interested in this scenario [start here](https://github.com/DataSnowm
 
 ![Data Engineering with Azure Databricks](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/deWithAzureDatabricks.png)
 
+## Data Engineer using Azure Data Factory Data Flow and Azure Databricks
+
+If you are interested in this scenario [start here](https://github.com/DataSnowman/MLonBigData/tree/master/BikeBuyer/ADF)
+
+![deWithAzureDataFactoryDF](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/deWithAzureDataFactoryDF.png)
+
 ## Data Scientist using Azure Databricks and Databricks Notebooks and Azure Machine Learning service SDK
 
 If you are interested in this scenario [start here](https://github.com/DataSnowman/MLonBigData/tree/master/BikeBuyer/ADBnotebooks/BikeBuyerOps)
 
 ![Data Science with Azure Databricks and AML SDK](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/dsWithAzureDatabricksAML.png)
-
-## Data Engineer using Azure Data Factory Data Flow and Azure Databricks
-
-If you are interested in this scenario [start here](https://github.com/DataSnowman/MLonBigData/tree/master/BikeBuyer/ADF)
-
-![Original Data Scientist Work](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/deWithAzureDataFactoryDF.png)
 
 Hope you enjoyed this workshop.

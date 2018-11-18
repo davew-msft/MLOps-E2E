@@ -114,6 +114,22 @@ You should now see your two new Linked Services
 
 ### Create Datasets
 
+![addNewFactoryResource1](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/addNewFactoryResource.png)
+
+![newBlobDataset1](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/newBlobDataset.png)
+
+![datasetPurchases](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/datasetPurchases.png)
+
+![newBlobDataset2](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/newBlobDataset.png)
+
+![datasetPotentialBuyers](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/datasetPotentialBuyers.png)
+
+![newBlobDataset3](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/newBlobDataset.png)
+
+![datasetOutputDataBikes](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/datasetOutputDataBikes.png)
+
+![datasetsPublish](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/datasetsPublish.png)
+
 ### Create Data Flow
 
 ### Create Pipeline
