@@ -1,5 +1,7 @@
 # Welcome to a hands-on workshop for **Machine Learning on Big Data** using Azure Databricks, Azure Data Factory, and Azure Machine Learning service
 
+## `Note:` If you would like to view my presentation of this content in Beijing DevDays in November 2018 you can view it [HERE](https://1drv.ms/v/s!AmFpgz3VMIP0hqxdcm30uQvgEZd3jg)
+
 ### The datasets and base notebooks were provided with data from the SQL Server 2017 Adventureworks Data Warehouse [AdventureWorksDW2017.bak](https://docs.microsoft.com/en-us/sql/samples/adventureworks-install-configure?view=sql-server-2017) and the [Azure Machine Learning Notebooks](https://github.com/Azure/MachineLearningNotebooks)
 
 ![End-to-end Custom AI Solution](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/e2e.png)
