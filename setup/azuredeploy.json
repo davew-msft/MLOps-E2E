@@ -117,7 +117,7 @@
         "type": "Microsoft.DataFactory/factories",
         "apiVersion": "[variables('adfApiVersion')]",
         "name": "[variables('adfName')]",
-        "location": "[variables('location')]",
+        "location": "[parameters('location')]",
         "identity": {
             "type": "SystemAssigned"
         },
