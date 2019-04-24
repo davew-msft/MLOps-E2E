@@ -2,6 +2,13 @@
     "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json",
     "contentVersion": "1.0.0.0",
     "parameters": { 
+        "resourcePrefix": {
+            "type": "string",
+            "defaultValue": "csa",
+            "metadata": {
+                "description": "Short Prefix (10 characters or less) for all resources created by this template"
+            }
+        },
         "sqlServerUsername": {
             "metadata": {
                 "description": "SQL server admin username"
@@ -20,8 +27,8 @@
         "uniqueNamePrefix": "[toLower(concat(resourceGroup().name, uniqueString(subscription().subscriptionId)))]",
         "location": "[resourceGroup().location]",
         "sqlVersion": "2014-04-01",
-        "sqlServerName": "[concat(variables('uniqueNamePrefix'),'srv')]",
-        "sqlDatabaseName": "[concat(variables('uniqueNamePrefix'),'db')]",
+        "sqlServerName": "[concat(parameters('resourcePrefix'),variables('uniqueNamePrefix'),'srv')]",
+        "sqlDatabaseName": "[concat(parameters('resourcePrefix'),variables('uniqueNamePrefix'),'db')]",
         "sqlServerUsername": "[parameters('sqlServerUsername')]",
         "sqlServerVersion": "12.0",
         "startIpAddress": "0.0.0.0",
@@ -33,8 +40,8 @@
         "sqlServerResourceId": "[resourceId('Microsoft.Sql/servers', variables('sqlServerName'))]",
         "stgVersion": "2015-06-15",
         "storageAccountType": "Standard_LRS",
-        "storageAccountName": "[concat('stg', uniqueString(subscription().subscriptionId))]",
-        "adbworkspaceName": "[concat('adb', uniqueString(subscription().subscriptionId))]",
+        "storageAccountName": "[concat(parameters('resourcePrefix'), uniqueString(subscription().subscriptionId))]",
+        "adbworkspaceName": "[concat(parameters('resourcePrefix'), uniqueString(subscription().subscriptionId))]",
         "adbtier": "premium",
         "managedResourceGroupName": "[concat('databricks-rg-', variables('adbworkspaceName'), '-', uniqueString(variables('adbworkspaceName'), resourceGroup().id))]",
         "managedResourceGroupId": "[concat(subscription().id, '/resourceGroups/', variables('managedResourceGroupName'))]"
