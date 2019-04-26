@@ -19,11 +19,11 @@ To deploy the Azure resources required for this lab, you will need:
 
     `git clone https://github.com/DataSnowman/MLonBigData.git`
 
-**Note** that you will be deploying a number of Azure resources into your Azure Subscription when either clicking on the [Deploy to Azure](https://github.com/DataSnowman/MLonBigData/blob/master/setup/README.md) button, or by alternatively deploying by using an ARM template and parameters file via the Azure CLI.
+**Note** that you will be deploying a number of Azure resources into your Azure Subscription when either clicking on the `Deploy to Azure` button below, or by alternatively deploying by using an ARM template and parameters file via the Azure CLI.
 
 ## Deploy Bike Buyer Template to Azure
 
-**Important** `While Azure Data Factory Data Flows is in Preview please use Southeast Asia Region to deploy this solution
+**Important** `For the DevDays in Taipei please use the Southeast Asia Region to deploy this solution
 
 <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FDataSnowman%2FMLonBigData%2Fmaster%2Fsetup%2Fazuredeploy.json" target="_blank">
     <img src="http://azuredeploy.net/deploybutton.png"/>
@@ -48,7 +48,7 @@ You can provision using the Deploy to Azure button above or by using the Azure C
 
 ### Provisioning using the Azure Portal
 
-Choose your Subscription, and enter a Resource Group group, Location (Southeast Asia for the ADF Data Flow Preview) SQL Server Username, SQL Server Password, and agree to the Terms and Conditions. Then click the `Purchase` button.
+Choose your Subscription, and enter a Resource group, Location (Southeast Asia for the DevDays in Taipei) Resource Prefix (Short Prefix of 10 characters or less for all resources created by this template so they are unique), SQL Server Username, SQL Server Password, and agree to the Terms and Conditions. Then click the `Purchase` button.
 
 ![setup](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/setup.png)
 
