@@ -1,8 +1,12 @@
-# This is the scenario where the Data Engineering is being done using Azure Databricks
+# This is the scenario where the Data Engineering is being done using Azure Databricks Notebooks
 
 ![Data Engineering with Azure Databricks](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/deWithAzureDatabricks.png)
 
 ## Create Azure Databricks Cluster
+
+In the Azure portal click on the Azure Databricks Service
+
+![deploy](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/deploy.png)
 
 Launch the Azure Databricks Workspace by clicking on the `Launch Workspace` button in the Azure Portal
 
@@ -12,7 +16,8 @@ Click on `Clusters` in the left navigation bar and click on the `+ Create Cluste
 
 ![createCluster](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/createCluster.png)
 
-Name your cluster, choose the Standard Cluster Mode, 4.2 Databricks Runtime Version (or newer), Python Version 3, and reduce the max workers to 3.  Click the `Create Cluster` button.
+Name your cluster, choose the Standard Cluster Mode, 5.2 Databricks Runtime Version (or newer), Python Version 3, Terminate after 
+60 minutes of inactivity, and reduce the max workers to 3.  Click the `Create Cluster` button.
 
 ![cluster](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/cluster.png)
 
@@ -29,3 +34,7 @@ Select the Ingest.ipynb file that was cloned from the GitHub repo. The location 
 ![importNotebooks](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/importJupyterNotebooks.png)
 
 ### Run the Ingest.ipynb notebook
+
+Select `Run All` to run all the cells in the Ingest Notebook
+
+![IngestNotebook](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/ingestnotebook.png)

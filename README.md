@@ -85,7 +85,7 @@ If you are interested in this scenario [start here](https://github.com/DataSnowm
 
 ![Original Data Scientist Work](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/originalDataScientistWork.png)
 
-## Data Engineer using Azure Databricks and Jupyter Notebook
+## Data Engineer using Azure Databricks Notebooks
 
 If you are interested in this scenario [start here](https://github.com/DataSnowman/MLonBigData/tree/master/BikeBuyer/ADBnotebooks/DataEngineering)
 
