@@ -45,7 +45,8 @@ Click on `Clusters` in the left navigation bar and click on the `+ Create Cluste
 
 ![createCluster](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/createCluster.png)
 
-Name your cluster, choose the Standard Cluster Mode, 4.2 Databricks Runtime Version (or newer), Python Version 3, and reduce the max workers to 3.  Click the `Create Cluster` button.
+Name your cluster, choose the Standard Cluster Mode, 5.2 Databricks Runtime Version (or newer), Python Version 3, Terminate after 
+60 minutes of inactivity, and reduce the max workers to 3.  Click the `Create Cluster` button.
 
 ![cluster](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/cluster.png)
 
