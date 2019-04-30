@@ -30,11 +30,11 @@ Here are the files inside of the `bikes` folder
 
 ## Author an Azure Data Factory Data Flow
 
-Click on Author & Monitor
+In your Resource group click on the Data factory (V2) and then click on Author & Monitor
 
 ![authorAndMonitorDataFactory](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/authorAndMonitorDataFactory.png)
 
-Click on the pencil (edit) icon
+Click on the pencil (Author) icon
 
 ![clickPencil](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/clickPencil.png)
 
@@ -46,17 +46,13 @@ Click on the Data Store Linked Service and select `Azure Blob Storage`.  Click o
 
 ![blobLinkedService](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/blobLinkedService.png)
 
-Type in a name for the new Linked Service.  Choose AutoResolveIntegrationRuntime, Use Account key, Connection String, and From Azure subscription
+Type in a name (like `AzureBlobStorage`) for the new Linked Service.  Choose AutoResolveIntegrationRuntime, Use Account key, Connection String, From Azure subscription, select your Azure Subscription, and Storage account name.  Click `Test` and then `Finish`
 
 ![blobLinkedServiceCfg1](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/blobLinkedServiceCfg1.png)
 
-Select your Azure Subscription, and Storage account name.  Click `Test` and then `Finish`
+### Generate New Token for Azure Databricks Cluster
 
-![blobLinkedServiceCfg2](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/blobLinkedServiceCfg2.png)
-
-### Create Azure Databricks Cluster (or use the one you already created in the Data Engineering step that uses the Ingest.ipynb)
-
-Launch the Azure Databricks Workspace by clicking on the `Launch Workspace` button in the Azure Portal
+In your Resource group click on the Azure Databricks Service and the launch the Azure Databricks Workspace by clicking on the `Launch Workspace` button in the Azure Portal
 
 ![launchWorkspace](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/launchWorkspace.png)
 
@@ -68,7 +64,7 @@ Click `Generate New Token`
 
 ![generateNewToken](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/generateNewToken.png)
 
-Create a Comment to identify the token.  Click `Generate`
+Create a Comment (Like `ADF Data Flow`) to identify the token.  Click `Generate`
 
 ![launchWorkspace](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/generateNewTokenDialog.png)
 
@@ -85,11 +81,11 @@ Click on the Compute Linked Service and select `Azure Databricks`.  Click on `Co
 
 ![databricksLinkedService](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/databricksLinkedService.png)
 
-Type in a name for the new Linked Service.  Choose AutoResolveIntegrationRuntime, From Azure subscription, Azure Subscription, and Databricks Workspace.
+Type in a name for the new Linked Service.  Choose AutoResolveIntegrationRuntime, From Azure subscription, Azure Subscription, Databricks Workspace, and New job cluster.
 
 ![databricksLinkedServiceCfg1](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/databricksLinkedServiceCfg1.png)
 
-Select New job cluster, Access token, and paste in the Access token you created above.  Choose a Cluster version, Cluster node type, Python Version, and Fixed or Outscaling worker option. Click `Test` and then `Finish`
+Select Access token, and paste in the Access token you created above.  Choose a Cluster version, Cluster node type, Python Version, and Fixed or Outscaling worker option. Click `Test` and then `Finish`
 
 ![databricksLinkedServiceCfg2](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/databricksLinkedServiceCfg2.png)
 
@@ -99,23 +95,27 @@ You should now see your two new Linked Services
 
 ### Create Datasets
 
-Click the + next to Filter Resources to Add New Factory Resource and select `Dataset`
+Click the + next to Filter Resources to add new Factory Resources and select `Dataset`
 
 ![addNewFactoryResource1](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/addNewFactoryResource.png)
 
-Select Azure Blob and click `Finish`
+Select Azure Blob and click `Continue`
 
 ![newBlobDataset1](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/newBlobDataset.png)
 
-Name the dataset `Purchases`, select the AzureBlobStorage Linked service.  Browse to the `adworks-bike-purchases.csv` file in MLonBigData\BikeBuyer\LoyaltyCardBuyers.  Scroll down and check the box `Column names in the first row`. Test Connection.  It should look like this.
+Choose the format type of your data.  Select DelimitedText and click `Continue`
+
+![newBlobDatasetFormat](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/newBlobDatasetFormat.png)
+
+Name the dataset `Purchases`, select the AzureBlobStorage Linked service.  Browse to the `adworks-bike-purchases.csv` file in sourcedata\bikes.  Check the box `First row has header`. Import schema From connection/store and click `Continue`.  
 
 ![datasetPurchases](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/datasetPurchases.png)
 
-Click the Schema tab add click `Import Schema`
+It should look like this
 
-![importSchema1](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/importSchema.png)
+![datasetPurchases2](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/datasetPurchases2.png)
 
-Select Azure Blob and click `Finish`
+`Start updating here`
 
 ![newBlobDataset2](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/newBlobDataset.png)
 
