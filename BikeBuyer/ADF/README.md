@@ -115,25 +115,45 @@ It should look like this
 
 ![datasetPurchases2](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/datasetPurchases2.png)
 
-`Start updating here`
+Click the + next to Filter Resources to add new Factory Resources and select `Dataset`
 
-![newBlobDataset2](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/newBlobDataset.png)
+![addNewFactoryResource1](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/addNewFactoryResource.png)
 
-Name the dataset `PotentialBuyers`, select the AzureBlobStorage Linked service.  Browse to the `potential-bike-buyers.csv` file in MLonBigData\BikeBuyer\LoyaltyCardBuyers.  Scroll down and check the box `Column names in the first row`.  Test Connection.  It should look like this.
+Select Azure Blob and click `Continue`
+
+![newBlobDataset1](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/newBlobDataset.png)
+
+Choose the format type of your data.  Select DelimitedText and click `Continue`
+
+![newBlobDatasetFormat](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/newBlobDatasetFormat.png)
+
+Name the dataset `PotentialBuyers`, select the AzureBlobStorage Linked service.  Browse to the `potential-bike-buyers.csv` file in sourcedata\bikes.  Check the box `First row has header`. Import schema From connection/store and click `Continue`. 
 
 ![datasetPotentialBuyers](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/datasetPotentialBuyers.png)
 
-Click the Schema tab add click `Import Schema`
+It should look like this
 
-![importSchema1](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/importSchema.png)
+![datasetPurchases2](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/datasetPotentialBuyers2.png)
 
-Select Azure Blob and click `Finish`
+Click the + next to Filter Resources to add new Factory Resources and select `Dataset`
 
-![newBlobDataset3](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/newBlobDataset.png)
+![addNewFactoryResource1](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/addNewFactoryResource.png)
 
-Name the dataset `OutputDataBikes`, select the AzureBlobStorage Linked service.  Enter a file path of `outputdata/bikes`.  The file has not been created yet so you can't point to anything. Test Connection.  It should look like this.
+Select Azure Blob and click `Continue`
+
+![newBlobDataset1](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/newBlobDataset.png)
+
+Choose the format type of your data.  Select DelimitedText and click `Continue`
+
+![newBlobDatasetFormat](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/newBlobDatasetFormat.png)
+
+Name the dataset `OutputDataBikes`, select the AzureBlobStorage Linked service.  Enter a file path of `outputdata/bikes`.  The file has not been created yet so you can't point to anything. Check the box `First row has header`. Import schema None and click `Continue`.   
 
 ![datasetOutputDataBikes](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/datasetOutputDataBikes.png)
+
+It should look like this
+
+![datasetOutputDataBikes2](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/datasetOutputDataBikes2.png)
 
 Click on `Publish All`
 
