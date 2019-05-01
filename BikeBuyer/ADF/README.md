@@ -161,27 +161,27 @@ Click on `Publish All`
 
 ### Create Data Flow
 
-Click the + next to Filter Resources to Add New Factory Resource and select `Data Flow`.  Type `Buyers` as the Output stream name, and select `PotentialBuyers` as the Source Dataset
+Click the + next to Filter Resources to add new Factory Resources and select `Data Flow`.
+
+![addNewFactoryResource1](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/addNewFactoryResource.png)
+
+Click Finish
+
+![Finish](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/finish.png)
+
+Click in the Add Source box.  Type `Buyers` as the Output stream name, and select `PotentialBuyers` as the Source Dataset
 
 ![buyersDataflow1](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/buyersDataflow1.png)
 
-Click on the Define Schema tab and click `Import from dataset`
-
-![buyersDataflow2](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/buyersDataflow2.png)
-
-Type `Purchases` as the Output stream name, and select `Purchases` as the Source Dataset
+Click in the Add Source box.  Type `Purchases` as the Output stream name, and select `Purchases` as the Source Dataset
 
 ![purchasesDataflow1](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/purchasesDataflow1.png)
-
-Click on the Define Schema tab and click `Import from dataset`
-
-![purchasesDataflow2](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/purchasesDataflow2.png)
 
 Click on the + sign in front of the `Buyers` Source and select `Join`
 
 ![joinDataflow1](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/joinDataflow1.png)
 
-Type `JoinLoyaltyCardID` as the Output stream name, Left stream should default to `Buyers`, select `Purchases` for Right stream, Join type Full outer, and Join conditions `LoyaltyCardID = LoyaltyCardID` 
+Type `JoinLoyaltyCardID` as the Output stream name, Left stream should default to `Buyers`, select `Purchases` for Right stream, Join type Full outer, and Join conditions `LoyaltyCardID == LoyaltyCardID` 
 
 ![joinDataflow2](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/joinDataflow2.png)
 
@@ -197,7 +197,7 @@ Click on the + sign in front of the `SelectColumns` Select and select `Derived C
 
 ![derivedColumnDataflow1](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/derivedColumnDataflow1.png)
 
-Name the `BikesTrans` Output stream name the following 8 columns and use these formulas:
+Name the Output stream name `BikesTrans` and add the following 8 columns and use these formulas:
 
 `BikesTrans` --> `iif(isNull(Bikes), 0, 1)`
 
@@ -209,7 +209,7 @@ Name the `BikesTrans` Output stream name the following 8 columns and use these f
 
 `CommuteDistanceTrans` --> `case(CommuteDistance == '0-1 Miles', 1, CommuteDistance == '1-2 Miles', 2, CommuteDistance == '2-5 Miles', 5, CommuteDistance == '5-10 Miles', 10, 0)`
 
-`RegionTrans` --> `case(Region == 'United States', 1, Region == 'Canada', 1, Region == 'Germany', 2, Region == 'France', 2, Region == 'United Kingdom', 2, Region == 'Australia', 3, 0)`
+`RegionTrans` --> `case(SelectColumns@Region == 'United States', 1, SelectColumns@Region == 'Canada', 1, SelectColumns@Region == 'Germany', 2, SelectColumns@Region == 'France', 2, SelectColumns@Region == 'United Kingdom', 2, SelectColumns@Region == 'Australia', 3, 0)`
 
 `AgeTrans` --> `toInteger(toInteger((currentDate() - toDate(BirthDate)))/365)`
 
@@ -236,9 +236,17 @@ Click on `Publish All`
 
 ### Create Pipeline
 
-Click the + next to Filter Resources to Add New Factory Resource and select `Pipeline`.  Type `BikesPL` as the Output stream name, and fill out the Settings as follows:
+Click the + next to Filter Resources to add new Factory Resources and select `Pipeline`.  
 
-![pipelineBikePL](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/pipelineBikePL.png)
+![addNewFactoryResource1](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/addNewFactoryResource.png)
+
+Drag the Data Flow activity from the Move and Transform grouping to the palette on the right
+
+![activitiesDF](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/activitiesDF.png)
+
+Use exiting Data Flow and select an Existing Data Flow (one you just created).  Click Finish.
+
+![activitiesDFexistingDF](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/activitiesDFexistingDF.png)
 
 Publish All and then click `Trigger Now` and `Finish`
 
