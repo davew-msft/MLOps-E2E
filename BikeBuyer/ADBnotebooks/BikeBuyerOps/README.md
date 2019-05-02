@@ -24,7 +24,7 @@ Four additional services should be added to your resource group
 
 Click on the Machine Learning service workspace
 
-You will need to enter these AML service Workspace Parameters into Cmd 5 of the 01.Installation_and_Configuration notebook.
+You will need to enter these AML service workspace Parameters into Cmd 5 of the 01.Installation_and_Configuration notebook.
 
 ![AMLserviceWorkspaceParameters](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/amlServiceWorkspaceParameters.png)
 
@@ -86,3 +86,66 @@ Navigate to the imported notebooks. Click on `Workspace` in the left navigation 
 
 ![notebooks](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/notebooks.png)
 
+Enter these AML service workspace Parameters into Cmd 5
+
+![AMLserviceWorkspaceParametersCmd5](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/amlServiceWorkspaceParametersCmd5.png)
+
+Run Cmd 4
+
+Run Cmd 5
+
+Run Cmd 6 to Authenticate to Azure (will user browser and code) via Azure SDK
+
+Run the remainder of the cells
+
+Click on `Workspace` in the left navigation bar and click on the user>BikeBuyerOps> 02.Bike_Buyer_Ingest
+
+Add a cell just below Cmd 3 Data Injestion
+
+Cut and paste the following import statements
+
+import os
+
+import urllib
+
+![addCell](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/addCell.png)
+
+Click on Run All
+
+This will run all of the cells in the notebook
+
+Click on `Workspace` in the left navigation bar and click on the user>BikeBuyerOps> 03a.Bike_Buyer_Build_model
+
+Click on Run All
+
+Click on `Workspace` in the left navigation bar and click on the user>BikeBuyerOps> 03b.Bike_Buyer_Build_model_runHistory
+
+Click on Run All
+
+Click on `Workspace` in the left navigation bar and click on the user>BikeBuyerOps> 04.Bike_Buyer_Deploy_to_ACI
+
+In Cmd 14 Comment out `myservice.delete()` so it does not delete the image created in this notebook
+
+`#comment to not delete the web service`
+
+`#myservice.delete()`
+
+Click on Run All
+
+Click on `Workspace` in the left navigation bar and click on the user>BikeBuyerOps> 05.Bike_Buyer_Deploy_to_AKS_existingImage
+
+In Cmd 12 Comment out `#aks_service.delete()` and `aks_target.delete()` so it does not delete the image created in this notebook
+
+`#comment to not delete the web service`
+
+`#aks_service.delete()`
+
+`#image.delete()`
+
+`#model.delete()`
+
+`#aks_target.delete()`
+
+Click on Run All
+
+For clean up the AKS cluster by deleting the compute resources under the Compute area of the AML service workspace
