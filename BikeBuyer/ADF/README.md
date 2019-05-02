@@ -189,7 +189,7 @@ Click on the + sign in front of the `JoinLoyaltyCardID` Join and select `Select`
 
 ![selectDataflow1](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/selectDataflow1.png)
 
-Name the Output stream name `SelectColumns` and select the 13 columns in the image below
+Name the Output stream name `SelectColumns` and select the 13 columns in the image below.  You may want to delete the columns that you don't use.  You can always add or Re-map the columns if you make a mistake.
 
 ![selectDataflow2](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/selectDataflow2.png)
 
@@ -248,10 +248,73 @@ Use exiting Data Flow and select an Existing Data Flow (one you just created).  
 
 ![activitiesDFexistingDF](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/activitiesDFexistingDF.png)
 
-Publish All and then click `Trigger Now` and `Finish`
+Publish All and then click `Trigger Now`
 
 ![triggerNow](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/triggerNow.png)
 
-If you look in your Databricks Cluster you will be able to see the job.
+Click `Finish`
 
-![jobRunningOnCluster](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/jobRunningOnCluster.png)
+![triggerNowFinish](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/triggerNowFinish.png)
+
+Click on the Monitor (Orange Cirlce) icon in the left pannel to monitor the job.
+
+![monitor](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/monitor.png)
+
+Once the pipeline succeeds check to see if the files are in Blob.  If it errors please troubleshoot.
+
+![outputFilesBlob](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/outputFilesBlob.png)
+
+
+### Add Sink to Azure SQL Database to Data Flow
+
+Click on the + sign in front of the `BikesTrans` Dervived Column and select `Sink`
+
+![sinkDataflow1](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/sinkDataflow1.png)
+
+Name the Output stream name `BikeOutputSQL` and click +New next to Sink dataset (This is neccessary because we did not create the Azure SQL DB dataset earlier)
+
+![sinkPlusNew](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/sinkPlusNew.png)
+
+Choose Azure SQL Database and click Continue
+
+![azureSQLdbdataset](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/azureSQLdbdataset.png)
+
+
+Name it `BikeOutputSQL` and clink on the Linked service drop down and select +New
+
+![azureSQLdbDatasetLinkedService1](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/azureSQLdbDatasetLinkedService1.png)
+
+Select Connection String and choose From Azure Subscription.  Choose the Azure Subscription, Server name, Database name, SQL Authentication, and enter the User name and password for the SQL Database you created during the deployment. Test the Connection and click Finish. 
+
+![azureSQLdbDatasetLinkedService2](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/azureSQLdbDatasetLinkedService2.png)
+
+Select Create new table with `dbo` schema and `BikeOutputSQL` table name.
+Click Finish
+
+![azureSQLdbDatasetLinkedService3](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/azureSQLdbDatasetLinkedService3.png)
+
+Click on `Publish All`
+You might need to correct the RegionTrans column in the `BikesTrans` Dervived Column.
+
+Click `Trigger Now`
+
+![triggerNow](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/triggerNow.png)
+
+Click `Finish`
+
+![triggerNowFinish](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/triggerNowFinish.png)
+
+Click on the Monitor (Orange Cirlce) icon in the left pannel to monitor the job.
+
+![monitor](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/monitor.png)
+
+Once the pipeline succeeds check to see if the table has been loaded in Azure SQL database.  You might want to install [Azure Data Studio](https://docs.microsoft.com/en-us/sql/azure-data-studio/download) which is a cross-OS-platform (Linux, Mac, Window) tool to connect to your database.
+
+Here is how to build a connection in Azure Data Studio.  You can get the Server Name for Azure SQL database in the Azure Portal under Overview area.
+
+![azureDataStudioConnection](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/azureDataStudioConnection.png)
+
+Here is the query.  You should get 18484 rows.
+
+![azureDataStudioQuery](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/azureDataStudioQuery.png)
+
