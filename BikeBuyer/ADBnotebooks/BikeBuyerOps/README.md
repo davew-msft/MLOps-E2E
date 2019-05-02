@@ -2,7 +2,7 @@
 
 ![Data Science with Azure Databricks and AML SDK](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/dsWithAzureDatabricksAML.png)
 
-## Create an Azure Machine Learning service Workspace in the Reasource Group created earlier using the Azure Portal
+## Create an Azure Machine Learning service workspace in the Resource Group created earlier using the Azure Portal
 
 Search for `Machine Learning service workspace` in the Azure Portal
 
@@ -17,6 +17,12 @@ File out parameters (remember to use the same Resource group and Location as you
 Click `Create`
 
 ![CreateAMLserviceWorkspace2](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/createAMLserviceWorkspace2.png)
+
+Four additional services should be added to your resource group
+
+![amlservices](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/amlservices.png)
+
+Click on the Machine Learning service workspace
 
 You will need to enter these AML service Workspace Parameters into Cmd 5 of the 01.Installation_and_Configuration notebook.
 
@@ -62,4 +68,21 @@ Select the BikeBuyerOps.dbc file that was cloned from the GitHub repo. The locat
 
 ![importNotebooks](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/importNotebooks.png)
 
+### Install azureml-sdk
+
+Click on `Workspace` in the left navigation bar and right-click on the user and select `Create>Library`.  Choose PyPI and paste `azureml-sdk[databricks]` into the Package, and click Create
+
+![amlsdklibrary](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/amlsdklibrary.png)
+
+Click the Install automatically on all clusters check box
+
+![amlsdklibrary2](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/amlsdklibrary2.png)
+
+It should install and eventually have a Installed Status
+
 ### Run the 5 notebooks in order starting with 01.Installation_and_Configuration.ipynb and finishing with 05.Bike_Buyer_Deploy_to_AKS_existingImage.ipynb
+
+Navigate to the imported notebooks. Click on `Workspace` in the left navigation bar and click on the user>BikeBuyerOps> 01.Installation_and_Configuration
+
+![notebooks](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/notebooks.png)
+
