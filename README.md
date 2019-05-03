@@ -103,4 +103,18 @@ If you are interested in this scenario [start here](https://github.com/DataSnowm
 
 ![Data Science with Azure Databricks and AML SDK](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/dsWithAzureDatabricksAML.png)
 
+## Data Scientist using Azure Machine Learning service Visual Interface
+
+If you are interested in this scenario [start here](https://github.com/DataSnowman/MLonBigData/tree/master/BikeBuyer/AMLvisualinterface)
+
+![Data Science with AML Visual interface](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/amlVisualinterface.png)
+
+## Data Scientist using Azure Machine Learning service Notebook VMs
+
+If you are interested in this scenario [start here](https://github.com/DataSnowman/MLonBigData/tree/master/BikeBuyer/AMLnotebookVMs)
+
+![Data Science with AML Notebook VMs 1](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/amlNotebookVMs1.png)
+
+![Data Science with AML Notebook VMs 2](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/amlNotebookVMs2.png)
+
 Hope you enjoyed this workshop.
