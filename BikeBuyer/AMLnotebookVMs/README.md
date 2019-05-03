@@ -37,5 +37,40 @@ Four additional services should be added to your resource group
 
 ![amlservices](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/amlservices.png)
 
-Click on the Machine Learning service workspace
+Click on the Machine Learning service workspace.  You should now see a new choice under Authoring.  Choose Notebook VMs
+
+![amlServiceWorkspaceOverview](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/amlServiceWorkspaceOverview.png)
+
+Click on +New
+
+![amlNotebookVMsConsole](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/amlNotebookVMsConsole.png)
+
+Enter an Name for the Notebook VM, choose a VM size, and click create
+
+![amlNotebookVMsCreate](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/amlNotebookVMsCreate.png)
+
+Notice how the status is `Creating`.  This is where you can go to Stop, Start, Restart, Delete, or Create Notebook VMs
+
+![amlNotebookVMsConsole2](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/amlNotebookVMsConsole2.png)
+
+After a few minutes the Status will change to `Running`.  Now you can click on the URI link `Jupyter`
+
+![amlNotebookVMsConsole3](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/amlNotebookVMsConsole3.png)
+
+This will open the Jupyter Notebook Server.  Navigate to your user folder. Click on Upload and navigate to the `Bike Buyer Model.ipynb` file that you cloned earlier.  Find in MLonBigData\BikeBuyer\OriginalDataScientistWork 
+
+![amlNotebookVMsUpload](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/amlNotebookVMsUpload.png)
+
+Click on the blue Upload button.  Then click on the `Bike Buyer Model.ipynb` notebook to open it.  
+
+![amlNotebookVMsUpload2](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/amlNotebookVMsUpload2.png)
+
+The notebook should look like this.
+
+![bikeBuyerModelipynb.png](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/bikeBuyerModelipynb.png)
+
+## Need to add fix to upload the file
+
+
+
 
