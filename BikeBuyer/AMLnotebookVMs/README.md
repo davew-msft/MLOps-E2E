@@ -88,6 +88,12 @@ Navigate up one level in Jupyter and then click on the `Bike Buyer Model.ipynb` 
 
 ![amlNotebookRunAll](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/amlNotebookRunAll.png)
 
+`Note that you can also upload the file using the terminal (vs the GUI upload above) in Juypter and a command like this`
+
+```sh
+wget https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/BikeBuyer/OriginalDataScientistWork/data/data-scientist-model.csv  -o /data/data-scientist-model.csv 
+```
+
 The pkl file `SupportVectorClassifier_20181104.pkl` should be created 
 
 ![amlNotebookPklModel](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/amlNotebookPklModel.png)
