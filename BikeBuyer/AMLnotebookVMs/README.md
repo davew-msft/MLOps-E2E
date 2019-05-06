@@ -69,8 +69,31 @@ The notebook should look like this.
 
 ![bikeBuyerModelipynb.png](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/bikeBuyerModelipynb.png)
 
-## Need to add fix to upload the file
+Create a new folder by clicking on New>Folder
 
+![amlNotebookNewFolder](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/amlNotebookNewFolder.png)
 
+This creates an Untitled Folder.  Click in the box and click Rename.  Rename the folder `data`
 
+![amlNotebookRenameFolder](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/amlNotebookRenameFolder.png)
 
+Open the data folder and click the Upload button to navigate to the `data-scientist-model.csv` file which should be located in the path MLonBigData\BikeBuyer\OriginalDataScientistWork\data in your cloned GitHub repo
+
+![amlNotebookUploadData](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/amlNotebookUploadData.png)
+
+Click on the blue Upload button. 
+![amlNotebookUploadDataBlue](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/amlNotebookUploadDataBlue.png)
+
+Navigate up one level in Jupyter and then click on the `Bike Buyer Model.ipynb` notebook to open it again.  Click on the Cell menu and choose `Run All` 
+
+![amlNotebookRunAll](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/amlNotebookRunAll.png)
+
+The pkl file `SupportVectorClassifier_20181104.pkl` should be created 
+
+![amlNotebookPklModel](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/amlNotebookPklModel.png)
+
+## Stop the Notebook VM
+
+When you are done using the Notebook VM go back to the Notebook VMs console and click `Stop`.  You can return here to start it again, but this way you are not charged for compute while it is not being used.
+
+![amlNotebookVMsConsole3Stop](https://raw.githubusercontent.com/DataSnowman/MLonBigData/master/images/amlNotebookVMsConsole3.png)
