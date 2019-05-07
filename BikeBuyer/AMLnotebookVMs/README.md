@@ -8,7 +8,7 @@
 
 To run the Bike Buyer Model notebook you will need:
 
-1) [Create](https://www.anaconda.com/download/) an Azure Machine Learning service workspace 
+1) [Create](https://docs.microsoft.com/en-us/azure/machine-learning/service/setup-create-workspace) an Azure Machine Learning service workspace 
 2) Clone this GitHub repository using Git and the following commands: 
 
     ```sh
