@@ -25,6 +25,7 @@ Name | Value |  Example Value|
 Subscription ID| | 52061d21-01dd-4f9e-aca9-60fff4d67ee2|
 Resource Group| | MLOpsWorkshop|
 Location||East US|
+Workshop Name ||mlops|
 
 **We will need these values later**
 

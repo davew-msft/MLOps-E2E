@@ -4,6 +4,15 @@ Version-controlling notebooks is challenging.  In this lab we are going to wire-
 
 ### Discussion topics before we start this section  
 
+* What is databricks?  Basic navigation of the workspace
+* git integration
+* notebook walkthrough
+* navigating a notebook
+
+## Spin up a Cluster
+
+It can be as small as possible.  You don't need to wait for this to complete.  
+
 
 ## "Clone" this repo into AzDO 
 
@@ -21,4 +30,25 @@ git push -u azdo --all
 ```
 
 1. Open DBX, go to User Settings, choose `AzDO` as the Git provider.  
+
+
+## Version Controlling Notebooks -PRACTICE
+
+...is not easy.  
+
+You will need to follow these steps generally:
+
+* Import an existing notebook into dbx
+* Under Revision History link it to **a new folder** in AzDO.  
+  * Don't use DBXNotebooks.  Consider using just `Notebooks` folder
+
+Take some time and load all of the ipynb notebook files from DBXNotebooks into databricks, and then sync them to your AzDO repo.  Ensure you can make changes and commit them back to AzDO as you work.  
+
+
+## Running the DBXNotebooks
+
+Load and run each ipynb file in the DBXNotebooks folder.  
+
+* 01.Installation_and_Configuration.ipynb
+* 
 
