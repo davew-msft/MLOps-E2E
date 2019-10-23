@@ -1,16 +1,4 @@
 # Databricks notebook source
-# MAGIC %md Azure ML & Azure Databricks notebooks by Parashar Shah.
-# MAGIC 
-# MAGIC Copyright (c) Microsoft Corporation. All rights reserved.
-# MAGIC 
-# MAGIC Licensed under the MIT License.
-
-# COMMAND ----------
-
-# MAGIC %md Please ensure you have run this notebook before proceeding.
-
-# COMMAND ----------
-
 # MAGIC %md Now we support installing AML SDK as library from GUI. When attaching a library follow this https://docs.databricks.com/user-guide/libraries.html and add the below string as your PyPi package (during private preview). You can select the option to attach the library to all clusters or just one cluster.
 # MAGIC 
 # MAGIC Provide this full string to install the SDK:
