@@ -32,7 +32,7 @@ git push -u azdo --all
 1. Open DBX, go to User Settings, choose `AzDO` as the Git provider.  
 
 
-## Version Controlling Notebooks -PRACTICE
+## Version Controlling Notebooks - PRACTICE
 
 ...is not easy.  
 
@@ -45,10 +45,9 @@ You will need to follow these steps generally:
 Take some time and load all of the ipynb notebook files from DBXNotebooks into databricks, and then sync them to your AzDO repo.  Ensure you can make changes and commit them back to AzDO as you work.  
 
 
-## Running the DBXNotebooks
+## Ensure the AML SDK is installed in your workspace/cluster
 
-Load and run each ipynb file in the DBXNotebooks folder.  
+Load, run, and save to AzDO:  01.Installation_and_Configuration.ipynb
 
-* 01.Installation_and_Configuration.ipynb
-* 
+
 

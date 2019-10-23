@@ -37,8 +37,10 @@ At the end of this workshop, you will be better able to
 1. [Lab 1:  Setup the resources needed for this workshop](Lab1/README.md)
 1. [Lab 2:  Learn about Azure Machine Learning Services](Lab2/README.md)
 1. [Lab 2a: Getting Databricks Ready for DevOps/MLOps](Lab2a/README.md)
-1. [Lab 3: ](Lab3/README.md)  
+1. [Lab 3:  Build and Deploy an ML Model](Lab3/README.md)  
 
 
 1. **Remove the RG you created to prevent incurring Azure costs**
 
+TODO:  move notebooks to DBXNotebooks
+sync azdo to gh, etc
