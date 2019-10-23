@@ -3,7 +3,7 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
      "resourcePrefix": {"value" : "cloudscale"},
-     "sqlServerUsername": { "value" : "adbuser" },
-     "sqlServerPassword": { "value" : "BigDataAI2018!" }
+     "sqlServerUsername": { "value" : "dbadmin" },
+     "sqlServerPassword": { "value" : "Password01!!" }
   }
 }
