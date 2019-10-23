@@ -90,9 +90,9 @@ az resource list -g $ResGroup -o table
 This may take some time.  
 
 |Questions|
-----------
+|----------|
 |Do you know how to check the status of your deployment? |
 |Why is your deployment named `azureclideploy` in the Azure Portal?|
-||How can you ensure everything deployed successfully, even if there was failure the first time? |
-How can we delete all resources at the end of the day? |
+|How can you ensure everything deployed successfully, even if there was failure the first time? |
+|How can we delete all resources at the end of the day? |
 
