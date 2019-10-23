@@ -4,9 +4,8 @@
     "parameters": { 
         "resourcePrefix": {
             "type": "string",
-            "defaultValue": "csa",
             "metadata": {
-                "description": "Short Prefix (10 characters or less) for all resources created by this template"
+                "description": "Short Prefix (10 characters or less) for all resources created by this template.  Consider using your a variant of your name."
             }
         },
         "sqlServerUsername": {

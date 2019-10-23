@@ -10,6 +10,14 @@ Discussion topics before we start this section:
 * To speed up Azure deployments we use ARM Templates.  What is your experience?  
 
 
+We are going to deploy the following to Azure : 
+* 1 Storage account
+* 1 Data Factory
+* 1 Databricks workspace
+* 1 SQL Server
+* 1 SQL database
+
+
 ### Prerequisites
 
 * We will use `bash` and `az cli` commands throughout the workshop.  You can use Powershell as an alternative, but the commands will be different.  
@@ -73,18 +81,17 @@ cd mlops
 az group deployment create \
     -g $ResGroup \
     --template-file setup/azureclideploy.json \
-    --parameters @parameters.json
+    --parameters setup/parameters.json
 
-    
+# check that everything deployed successfully
+az resource list -g $ResGroup -o table
 ```
 
-4. Next run the following command to provision the Azure resources:
-```
-az group deployment create -g mlbigdata --template-file azureclideploy.json --parameters @parameters-mlbigdata.json
-```
-Once the provisioning is finished, we can run `az resource list -g mlbigdata -o table` to check what resources were launched. Our listed resources includes: 
-    * 1 Storage account
-    * 1 Data Factory
-    * 1 Databricks workspace
-    * 1 SQL Server
-    * 1 SQL database.
+This may take some time.  
+
+Questions|
+----------
+Do you know how to check the status of your deployment? |
+Why is your deployment named `azureclideploy` in the Azure Portal?|
+How can we delete all resources at the end of the day? |
+
