@@ -1,6 +1,6 @@
 ## Lab 1:  Workshop Setup
 
-Discussion topics before we start this section:  
+### Discussion topics before we start this section  
 
 * We use `bash` and `az cli` commands throughout this lab.  What is your comfort level with bash? 
 * Why do we need to do "resource prefixing"?  
@@ -93,5 +93,6 @@ Questions|
 ----------
 Do you know how to check the status of your deployment? |
 Why is your deployment named `azureclideploy` in the Azure Portal?|
+How can you ensure everything deployed successfully, even if there was failure the first time? |
 How can we delete all resources at the end of the day? |
 
