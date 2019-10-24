@@ -2,6 +2,11 @@
 
 This lab assembles all of the pieces needed in AzDO to be ready to deploy an ML model using MLOps principles.  
 
+Creating MLOps pipelines can be a little tough.  Luckily there is a starter repo that can help you with the scaffolding:  
+
+`https://github.com/solliancenet/mcw-mlops-starter` 
+
+Take a few minutes to familiarize yourself with some of the code.  I have already built/merged this code into our repo.  You can use this in the future as the basis for your own MLOps pipelines  
 
 ### Discussion topics before we start this section  
 
@@ -10,13 +15,8 @@ This lab assembles all of the pieces needed in AzDO to be ready to deploy an ML 
 
 ## Steps
 
-1. Create a new AzDO project called `mlops-quickstart`.
-1. Within the new project: Select **Repos** and **Import**
-2. Provide the following GitHub URL: 
-
-`https://github.com/solliancenet/mcw-mlops-starter` 
-
-3. Select and open the `azure-pipelines.yml` file.
+1. Navigate to your Azure Repo in AzDO for this repo.  
+1. Select and open the `azure-pipelines.yml` file.
 
 2. Select **Edit** and update the `variables:` accordingly.  
 
@@ -41,3 +41,4 @@ This lab assembles all of the pieces needed in AzDO to be ready to deploy an ML 
    
     ![Provide connection name, and Azure Resource Group and then select Ok. The resource group should match the value you provided in the YAML file.](../images/09.png 'Add an Azure Resource Manager service connection dialog')
 
+Click OK and then go back in to Update and `Verify Connection`.  

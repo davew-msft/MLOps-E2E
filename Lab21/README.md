@@ -1,6 +1,6 @@
 ## Lab 21:  Setup and Run a Build Pipeline
 
-In this lab we build the build pipeline for our ML model.  We start by cloning a repo that is purpose-built to build AMLS-based AzDO pipelines.  This lab is lengthy and sometimes frustrating due to connectivity issues.  These are "one-time" issues.  
+In this lab we build the build pipeline for our ML model. This lab is lengthy and sometimes frustrating due to connectivity issues.  These are "one-time" issues.  
 
 
 ### Discussion topics before we start this section  
@@ -10,11 +10,7 @@ In this lab we build the build pipeline for our ML model.  We start by cloning a
 
 ## Steps
 
-1. From left navigation select **Pipelines>CreatePipeline** 
-
-2. Select **Azure Repos Git** as your code repository.
-
-3. Select **mlops-quickstart** as your repository.
+1. From left navigation select **Pipelines** .  Our pipeline already shows up because we have our template yml file.  It probably also has a failure run because you just updated the variables.  That's ok.  
 
 4. Review the YAML file.  
 
