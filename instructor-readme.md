@@ -2,6 +2,8 @@
 
 Notes:
 
+* you will need access to the glove data and the csvs.  These are in my public data blobstore.  
+
 * OriginalDataScientistWork has a version of this for flat Jupyter and pandas.  
 
 ## Other Resources
