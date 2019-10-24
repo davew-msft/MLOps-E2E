@@ -143,11 +143,11 @@ model.layers[0].set_weights([embedding_matrix])
 model.layers[0].trainable = False
 print("Creating model structure completed.")
 
-opt = optimizers.RMSprop(lr=0.1)
+opt = optimizers.RMSprop(lr=0.001)
 
 print("Training model...")
 model.compile(optimizer=opt,loss='binary_crossentropy', metrics=['acc'])
-model.fit(x_train, y_train, epochs=1, batch_size=32, validation_data=(x_val, y_val))
+model.fit(x_train, y_train, epochs=5, batch_size=32, validation_data=(x_val, y_val))
 print("Training model completed.")
 
 print("Saving model files...")
