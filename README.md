@@ -25,7 +25,7 @@ The solution will look something like this:
 
 Our company sells bikes.  We have data about who does and does not buy bikes.  We'd like to use that data to build a predictive model to determine who will buy bikes in the future.  
 
-On Day 2 of the workshop we'll look at the second part of the business use case...we want to look at our specifications documents and determine if they are compliant or not with bicycle industry regulations (work with me on this use case).  
+On Day 2 of the workshop we'll look at the second part of the business use case...we want to look at our specifications documents and determine if they are compliant or not with bicycle industry regulations (work with me on this use case).  We are going to build an MLOps solution that uses Deep Learning against the specifications text to determine if we are in compliance.  
 
 ## Workshop Objectives
 
@@ -34,7 +34,7 @@ In this workshop, you will learn how to:
 * use the az cli to deploy resources to Azure
 * setup and configure Azure Databricks for analytics
 * setup and configure Azure ML Services to integrate your data science work into your DevOps pipelines.  
-* understand how to *Think Like a Data Scientist*
+* *Think Like a Data Scientist*
 
 
 ## Workshop Agenda
@@ -80,11 +80,15 @@ This task should be done by both the data scientist and DevOps engineer:
 1. [Lab21:  Setup and Run a Build Pipeline](Lab21/README.md)
 1. [Lab22:  Setup and Run a Release Pipeline](Lab22/README.md)
 1. [Lab23:  Test Our Pipelines](Lab23/README.md)
+1. [Lab24:  Monitoring Model Performance](Lab24/README.md)
 
 
 ## WrapUp
 
 1. **Remove the RG you created to prevent incurring Azure costs**
 
-TODO:  move notebooks to DBXNotebooks
+TODO:  
+
+change lr back to .1
 sync azdo to gh, etc
+

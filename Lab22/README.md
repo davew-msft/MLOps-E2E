@@ -14,7 +14,7 @@ TODO
 
     ![To create new Release Pipeline navigate to Pipelines, Releases and select New pipeline.](media/19.png 'New Release Pipeline')
 
-2. Select **Empty job**. (near the bottom likely)
+2. Select **Empty job**. 
 
     ![Select empty job to start building the release pipeline.](../images/20.png 'Select a template: Empty job')
 
@@ -28,10 +28,6 @@ TODO
 
     ![Provide information to add the build artifact.](../images/23.png 'Add a build artifact')
     
-1. Open **View stage tasks** link.
-
-    ![Open view stage tasks link.](../images/24.png 'View Stage Tasks')
-
 2. Open the **Variables** tab.
 
     ![Open variables tab.](../images/25.png 'Release Pipeline Variables')
@@ -145,7 +141,7 @@ TODO
 
 ### Task 10: Save the Release Pipeline
 
-1. Provide name: `mlops-quickstart-release`.
+1. Provide name: `Classifier Release Pipeline`.
 
 2. Select: **Save**.
 
