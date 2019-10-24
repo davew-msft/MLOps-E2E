@@ -1,7 +1,12 @@
 
 
+Notes:
+
+* OriginalDataScientistWork has a version of this for flat Jupyter and pandas.  
 
 ## Other Resources
+
+also, see OtherResources folder
 
 [Other Workshops](https://github.com/Azure/data-ai-iot)  
 

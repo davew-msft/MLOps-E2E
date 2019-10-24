@@ -40,14 +40,25 @@ You will need to follow these steps generally:
 
 * Import an existing notebook into dbx
 * Under Revision History link it to **a new folder** in AzDO.  
-  * Don't use DBXNotebooks.  Consider using just `Notebooks` folder
+  * Don't use DBXNotebooks.  Consider using just `Notebooks` folder.  You can't use DBX and git to save a notebook back to DBXNotebooks folder without getting a git error.  This is by design.  
 
-Take some time and load all of the ipynb notebook files from DBXNotebooks into databricks, and then sync them to your AzDO repo.  Ensure you can make changes and commit them back to AzDO as you work.  
+Take some time and load all of the ipynb notebook files from DBXNotebooks into databricks, and then sync them to your AzDO repo.  Ensure you can make changes and commit them back to AzDO as you work. 
+
+**You do not need to run these notebooks yet. Just get them loaded into your workspace and wired up to AzDO**
+
+[01.Installation_and_Configuration.ipynb](../DBXNotebooks/01.Installation_and_Configuration.ipynb)  
+[02.Bike_Buyer_Ingest.ipynb](../DBXNotebooks/02.Bike_Buyer_Ingest.ipynb)  
+[03a.Bike_Buyer_Build_model.ipynb](../DBXNotebooks/03a.Bike_Buyer_Build_model.ipynb)  
+[03b.Bike_Buyer_Build_model_runHistory.ipynb](../DBXNotebooks/03b.Bike_Buyer_Build_model_runHistory.ipynb)  
+[04.Bike_Buyer_Deploy_to_ACI.ipynb](../DBXNotebooks/04.Bike_Buyer_Deploy_to_ACI.ipynb)  
+[05.Bike_Buyer_Deploy_to_AKS_existingImage.ipynb](../DBXNotebooks/05.Bike_Buyer_Deploy_to_AKS_existingImage.ipynb)  
 
 
 ## Ensure the AML SDK is installed in your workspace/cluster
 
 Load, run, and save to AzDO:  01.Installation_and_Configuration.ipynb
+
+This will configure the AML SDK within your dbx workspace.  
 
 
 
