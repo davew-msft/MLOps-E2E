@@ -1,0 +1,74 @@
+trigger:
+- master
+
+pool:
+  vmImage: 'Ubuntu-16.04'
+
+variables:
+  resourcegroup: 'Quick-Starts-XXXXX'
+  workspace: 'quick-starts-ws-XXXXX'
+  experiment: 'quick-starts-mlops'
+  aml_compute_target: 'gpucluster'
+  model_name: 'compliance-classifier'
+  image_name: 'compliance-classifier-image'
+
+steps:
+
+- task: UsePythonVersion@0
+  inputs:
+    versionSpec: '3.6'
+    architecture: 'x64'   
+
+- task: Bash@3
+  displayName: 'Install Requirements'
+  inputs:
+    targetType: filePath
+    filePath: 'environment_setup/install_requirements.sh'
+    workingDirectory: 'environment_setup'
+
+- task: AzureCLI@1
+  displayName: 'Install the CLI'
+  inputs:
+    azureSubscription: 'quick-starts-sc'
+    scriptLocation: inlineScript
+    inlineScript: 'az extension add -n azure-cli-ml'
+
+- task: AzureCLI@1
+  displayName: 'Attach folder to workspace'
+  inputs:
+    azureSubscription: 'quick-starts-sc'
+    scriptLocation: inlineScript
+    inlineScript: 'az ml folder attach -e $(experiment) -w $(workspace) -g $(resourcegroup) --path $(Build.SourcesDirectory)'
+
+- task: AzureCLI@1
+  displayName: 'Get or create AML Compute Target'
+  inputs:
+    azureSubscription: 'quick-starts-sc'
+    scriptLocation: inlineScript
+    inlineScript: 'az ml run submit-script -d ./environment_setup/dependencies.yml 
+    ./aml_service/create_aml_cluster.py --aml_compute_target $(aml_compute_target) 
+    --path $(Build.SourcesDirectory)'
+
+- task: AzureCLI@1
+  displayName: 'Master Pipeline'
+  inputs:
+    azureSubscription: 'quick-starts-sc'
+    scriptLocation: inlineScript
+    inlineScript: 'az ml run submit-script -d ./environment_setup/dependencies.yml 
+    ./aml_service/pipelines_master.py --aml_compute_target $(aml_compute_target) 
+    --model_name $(model_name) --build_number $(Build.BuildNumber) --image_name $(image_name) --path $(Build.SourcesDirectory)'
+
+- task: CopyFiles@2
+  displayName: 'Copy Files to: $(Build.ArtifactStagingDirectory)'
+  inputs:
+    SourceFolder: '$(Build.SourcesDirectory)'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+    Contents: '**'
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: devops-for-ai'
+  inputs:
+    ArtifactName: 'devops-for-ai'
+    publishLocation: 'container'
+    pathtoPublish: '$(Build.ArtifactStagingDirectory)' 
+    TargetPath: '$(Build.ArtifactStagingDirectory)'

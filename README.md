@@ -48,6 +48,8 @@ Alternate Labs:
 
 1. Load data to ADLS2 with ADF and Databricks
 
+
+
 ## Day 2 Agenda - DevOps/MLOps in Depth
 
 We are going to build the DL/NLP model to look at their specification documents.  We'll use Jupyter notebooks, AMLS, and AzDO to manage the MLOps pipelines.  This will build on Day 1 by adding in AzDO Pipelines concepts.  We'll determine how to retrieve the best model, package it with a WebApp, and deploy an inferencing web service.  Then we'll figure out how to monitor the model's performance after it is deployed (on AKS).  Our model will be deployed as ONNX format, which means it can be run on the Edge or anywhere else.  
@@ -60,10 +62,27 @@ The overall approach used in this lab is to orchestrate continuous integration a
 
 **Day 2 has only a few dependencies on Day 1 workshop.  Make sure you run Lab 1 above and you should be fine**
 
+These labs can be divided between data scientists and DevOps engineers.  
+
+
+These tasks are geared toward data scientists:  
+
 1. [Lab10:  Setup](Lab10/README.md)
 1. [Lab11:  Create a Classifier Model](Lab11/README.md)
+1. [Lab12:  Register the Model](Lab12/README.md)
+
+These tasks are geared toward DevOps engineers and can be down in parallel with the tasks above, if desired.  
+
+1. [Lab20:  Setup AzDO](Lab20/README.md)
+
+This task should be done by both the data scientist and DevOps engineer:  
+
+1. [Lab21:  Setup and Run a Build Pipeline](Lab21/README.md)
+1. [Lab22:  Setup and Run a Release Pipeline](Lab22/README.md)
+1. [Lab23:  Test Our Pipelines](Lab23/README.md)
 
 
+## WrapUp
 
 1. **Remove the RG you created to prevent incurring Azure costs**
 
