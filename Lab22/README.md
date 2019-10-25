@@ -1,12 +1,11 @@
 ## Lab 22:  Setup and Run a Release Pipeline
 
-TODO
+Once the build pipeline is created and a model is tested and its "metric" (accuracy in this case) is logged, we want to know whether we should deploy it.  
 
 
 ### Discussion topics before we start this section  
 
-1. 
-2. 
+1. review the workflow
 
 ## Steps
 

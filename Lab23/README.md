@@ -1,6 +1,6 @@
 ## Lab 23:  Test Our Pipelines
 
-TODO
+Now that we have the build and release pipelines configured, let's test them.  
 
 
 ### Discussion topics before we start this section  

@@ -87,8 +87,5 @@ This task should be done by both the data scientist and DevOps engineer:
 
 1. **Remove the RG you created to prevent incurring Azure costs**
 
-TODO:  
 
-change lr back to .1
-sync azdo to gh, etc
 
