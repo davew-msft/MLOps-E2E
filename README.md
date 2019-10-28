@@ -1,5 +1,7 @@
 # MLOps End to End Workshop
 
+https://github.com/davew-msft/MLOps-E2E
+
 ## What Technologies are Covered
 
 * Databricks (dbx)
