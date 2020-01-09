@@ -90,4 +90,9 @@ This task should be done by both the data scientist and DevOps engineer:
 1. **Remove the RG you created to prevent incurring Azure costs**
 
 
+## Reference Material
+
+* [Microsoft's MLOpsPython repo](https://github.com/microsoft/MLOpsPython)
+* [MLOps on Azure](https://github.com/microsoft/MLOps)
+
 
