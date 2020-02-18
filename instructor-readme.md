@@ -23,7 +23,7 @@ also, see OtherResources folder
 [Streaming stock analysis with delta lake](https://pages.databricks.com/rs/094-YMS-629/images/streaming-stock-data-analysis-setup.html) setup  
 
 [part 2](https://pages.databricks.com/rs/094-YMS-629/images/streaming-stock-data-analysis-main.html)  
-
+ 
 
 
 **[ML on Big Data](https://github.com/DataSnowman/MLonBigData/tree/master/BikeBuyer/ADBnotebooks/BikeBuyerOps) This is the scenario where the Data Science is being done using Azure Databricks and the Azure Machine Learning service SDK.  bike buyer data**
