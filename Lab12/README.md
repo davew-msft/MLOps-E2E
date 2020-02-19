@@ -24,7 +24,7 @@ You can also manually upload a model.  You would do this, for instance, if you h
    a. Name: `compliance-classifier`  
    b. Select the `model.h5` file from your local disk.
 
-   ![Register a Model in Azure Portal by providing the model file from your local computer.](media/62.png 'Register a Model Dialog')
+   ![Register a Model in Azure Portal by providing the model file from your local computer.](../images/62.png) 'Register a Model Dialog'
    
 > Note that you now have a **version 2** of the registered model: `compliance-classifier`.
 
