@@ -6,7 +6,7 @@ Notes:
 
 * OriginalDataScientistWork has a version of this for flat Jupyter and pandas.  
 
-## Other Resources
+## Other Resources   
 
 also, see OtherResources folder
 
