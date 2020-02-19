@@ -5,7 +5,7 @@
 * We use `bash` and `az cli` commands throughout this lab.  What is your comfort level with bash? 
 * Why do we need to do "resource prefixing"?  
 * What is your preferred IDE?  I like to use vscode
-* Cloud Shell overview?  Why tmux?  
+* Cloud Shell overview?  
 * What is your git experience?  
 * To speed up Azure deployments we use ARM Templates.  What is your experience?  
 
@@ -46,19 +46,17 @@ you'll likely need the following, which can be installed now or as we progress t
 You need one resource group.  
 
 * Suggested name (used throughout this workshop):  `MLOpsWorkshop`.  
-* Suggested region:  `East US`.
+* Suggested region:  `East US 2`.
 
 
 
 Run the following to create the RG using Cloud Shell:
 
 ``` bash
-tmux
-
 #vars/changeme
-ResGroup='MLOpsWorkshop'
-Subscription='davew demo'
-location='eastus'
+ResGroup='MLOpsHackathon'
+Subscription='davew'
+location='eastus2'
 
 # ensure you are connected to the desired subscription
 az account list --output table

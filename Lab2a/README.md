@@ -19,12 +19,15 @@ It can be as small as possible.  You don't need to wait for this to complete.
 We want to utilize the ipynb files that already exist in this repo, in DBX.  And we want to version control them appropriately.  
 
 1.  Create a repo in AzDO
+2.  Create a personal access token and copy it somewhere secure
 1.  on your laptop (or cloud shell), add this new "remote" to your repo and push the latest code.  
 
-Something like this, but you may need to add "alternate credentials" first:
+Note, I am calling my "remote" `azdo` because origin is already used when you cloned my repo.  
+
+The remote URL needs to follow a structure similar to this:  
 
 ```bash
-git remote add azdo https://gitclone@dev.azure.com/davewentzel/MLOps-E2E/_git/MLOps-E2E
+git remote add azdo https://something:<pat here>@dev.azure.com/davewentzel/MLOps-E2E/_git/MLOps-E2E
 git push -u azdo --all
 
 ```
