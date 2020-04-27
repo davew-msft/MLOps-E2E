@@ -37,8 +37,6 @@ git push -u azdo --all
 
 ## Version Controlling Notebooks - PRACTICE
 
-...is not easy.  
-
 You will need to follow these steps generally:
 
 * Import an existing notebook into dbx

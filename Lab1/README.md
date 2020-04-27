@@ -32,7 +32,7 @@ We are going to deploy the following to Azure :
 you'll likely need the following, which can be installed now or as we progress through the workshop:
 
 * [Azure Storage Explorer](https://azure.microsoft.com/en-au/features/storage-explorer/)
-* VSCode
+* vscode
 * Clone this GitHub repository using Git and the following commands: 
 
     `git clone https://github.com/davew-msft/MLOps-E2E`
