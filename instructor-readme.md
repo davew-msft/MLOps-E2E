@@ -2,13 +2,15 @@
 
 Notes:
 
-* you will need access to the glove data and the csvs.  These are in my public data blobstore.  
+* check if the starter repo has been updated, and if so, pull that into my repo.
 
 * OriginalDataScientistWork has a version of this for flat Jupyter and pandas.  
 
 ## Other Resources   
 
 also, see OtherResources folder
+
+for future labs:  automl, hyperdrive
 
 [Other Workshops](https://github.com/Azure/data-ai-iot)  
 
