@@ -65,9 +65,10 @@ run_amlcompute.auto_prepare_environment = True
 run_amlcompute.environment.python.conda_dependencies = CondaDependencies.create(pip_packages=[
     'numpy',
     'pandas',
-    'tensorflow==1.12.2',
-    'keras==2.2.4',
-    'azureml-sdk'
+    'tensorflow==2.0.0',
+    'keras==2.3.1',
+    'azureml-sdk',
+    'azureml-dataprep[pandas]'
 ])
 
 scripts_folder = 'scripts'
@@ -119,7 +120,7 @@ experiment_name = run.experiment.name
 pipeline_run = Experiment(ws, experiment_name).submit(pipeline)
 print("Pipeline is submitted for execution")
 
-pipeline_run.wait_for_completion(show_output=True)
+pipeline_run.wait_for_completion(show_output=True, timeout_seconds=43200)
 
 print("Downloading evaluation results...")
 # access the evaluate_output

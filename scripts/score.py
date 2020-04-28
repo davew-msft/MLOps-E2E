@@ -18,8 +18,8 @@ def init():
         print("Model loaded from disk.")
         print(model.summary())
 
-        inputs_dc = ModelDataCollector("model_telemetry", identifier="inputs")
-        prediction_dc = ModelDataCollector("model_telemetry", identifier="predictions", feature_names=["prediction"])
+        inputs_dc = ModelDataCollector("model_telemetry", designation="inputs")
+        prediction_dc = ModelDataCollector("model_telemetry", designation="predictions", feature_names=["prediction"])
     except Exception as e:
         print(e)
         
