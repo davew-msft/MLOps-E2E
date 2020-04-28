@@ -6,7 +6,18 @@ Creating MLOps pipelines can be a little tough.  Luckily there is a starter repo
 
 `https://github.com/solliancenet/mcw-mlops-starter` 
 
-Take a few minutes to familiarize yourself with some of the code.  I have already built/merged this code into our repo.  You can use this in the future as the basis for your own MLOps pipelines  
+Take a few minutes to familiarize yourself with some of the code.  I have already built/merged this code into our repo.  You can use this in the future as the basis for your own MLOps pipelines.  
+
+If you want to merge the starter repo into your code (or you want to update this repo) then follow these steps. (There's probably an easier way to do this). :
+
+```bash
+git clone https://github.com/solliancenet/mcw-mlops-starter
+rm -rf mcw-mlops-starter/.git/
+rm -rf mcw-mlops-starter/README.md 
+cp -R mcw-mlops-starter/. MLOps-E2E/
+# now check to ensure we aren't overwriting any of our custom changes
+rm -rf mcw-mlops-starter/
+```
 
 ### Discussion topics before we start this section  
 

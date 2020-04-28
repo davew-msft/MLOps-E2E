@@ -2,16 +2,7 @@
 
 Notes:
 
-* check if the starter repo has been updated, and if so, pull that into my repo.  There's probably an easier way to do this:
-
-```bash
-git clone https://github.com/solliancenet/mcw-mlops-starter
-rm -rf mcw-mlops-starter/.git/
-rm -rf mcw-mlops-starter/README.md 
-cp -R mcw-mlops-starter/. MLOps-E2E/
-# now check to ensure we aren't overwriting any of our custom changes
-rm -rf mcw-mlops-starter/
-```
+* check if the starter repo has been updated, and if so, pull that into my repo.  (There's probably an easier way to do this).  [Instructions are here](./Lab20/README.md)
 
 * OriginalDataScientistWork has a version of this for flat Jupyter and pandas.  
 
