@@ -1,6 +1,6 @@
 ## Lab 2a:  Getting Databricks Ready for MLOps/DevOps
 
-Version-controlling notebooks is challenging.  In this lab we are going to wire-up our Databricks workshop to connect to our AzDO environment. We could also use [github or BitBucket](https://medium.com/@cprosenjit/azure-databricks-version-management-35fc78e11d7#targetText=Azure%20Databricks%20Configuration&targetText=Integrate%20Azure%20Databricks%20with%20Azure,extra%20authentication%20to%20be%20supplied.&targetText=2.2%20Select%20a%20Notebook%2C%20click,and%20input%20path%20as%20appropriate.). 
+Version-controlling notebooks is challenging.  In this lab we are going to wire-up our Databricks workspace to connect to our AzDO environment. We could also use [github or BitBucket](https://medium.com/@cprosenjit/azure-databricks-version-management-35fc78e11d7#targetText=Azure%20Databricks%20Configuration&targetText=Integrate%20Azure%20Databricks%20with%20Azure,extra%20authentication%20to%20be%20supplied.&targetText=2.2%20Select%20a%20Notebook%2C%20click,and%20input%20path%20as%20appropriate.). 
 
 ### Discussion topics before we start this section  
 

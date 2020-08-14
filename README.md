@@ -2,14 +2,23 @@
 
 https://github.com/davew-msft/MLOps-E2E
 
+## Branches
+
+There are multiple branches of this workshop
+
+* `master` is currently set to `gh`
+* `azdo` is the original version, using Azure DevOps
+* `gh` has github actions instructions vs AzDO instructions
+
+
 ## What Technologies are Covered
 
 * Databricks (dbx)
 * Azure Machine Learning Service (AMLS)
 * Azure Container Instances (ACI)
 * Azure Kubernetes Service (AKS)
-* Azure DevOps (AzDO)
-* Jupyter Notebooks ([notebooks.azure.com](https://notebooks.azure.com))
+* Azure DevOps (AzDO) or GitHub (and gh actions)
+* Jupyter Notebooks ([notebooks.azure.com](https://notebooks.azure.com)).  This service is being retired, we should use the Jupyter server compute target of AMLS going forward.  
 
 ## Target audience
 

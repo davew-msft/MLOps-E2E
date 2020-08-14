@@ -64,3 +64,17 @@ Goto the root for other scenarios to complete the hackathon including straight j
 * AKS
 * AMLS
 * jupyter
+
+
+## One Day Notes
+
+* Lab 1
+* Create an Azure Machine Learning service workspace in the Resource Group created earlier using the Azure Portal
+
+* databricks stuff
+[01.Installation_and_Configuration.ipynb](../DBXNotebooks/01.Installation_and_Configuration.ipynb)  
+[02.Bike_Buyer_Ingest.ipynb](../DBXNotebooks/02.Bike_Buyer_Ingest.ipynb)  
+[03a.Bike_Buyer_Build_model.ipynb](../DBXNotebooks/03a.Bike_Buyer_Build_model.ipynb)  
+[03b.Bike_Buyer_Build_model_runHistory.ipynb](../DBXNotebooks/03b.Bike_Buyer_Build_model_runHistory.ipynb)  
+[04.Bike_Buyer_Deploy_to_ACI.ipynb](../DBXNotebooks/04.Bike_Buyer_Deploy_to_ACI.ipynb)  
+[05.Bike_Buyer_Deploy_to_AKS_existingImage.ipynb](../DBXNotebooks/05.Bike_Buyer_Deploy_to_AKS_existingImage.ipynb)  
