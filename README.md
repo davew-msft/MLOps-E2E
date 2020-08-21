@@ -82,17 +82,47 @@ These tasks are geared toward data scientists:
 1. [Lab11:  Create a Classifier Model](Lab11/README.md)
 1. [Lab12:  Register the Model](Lab12/README.md)
 
-These tasks are geared toward DevOps engineers and can be down in parallel with the tasks above, if desired.  
+We can now do our MLOps/DevOps processes using either Azure DevOps Pipelines or GitHub Actions.  
 
-1. [Lab20:  Setup AzDO](Lab20/README.md)
+### Azure DevOps 
 
-This task should be done by both the data scientist and DevOps engineer:  
+These tasks are geared toward **Azure DevOps** engineers and can be done in parallel with the tasks above, if desired.  If you are using **GitHub Actions** please see Labs 30-34.  
+
+1. [Lab20:  Setup AzDO](./Lab20/README.md)
+
+This task should be done by both the data scientist and DevOps engineer **when using Azure DevOps**:  
 
 1. [Lab21:  Setup and Run a Build Pipeline](Lab21/README.md)
 1. [Lab22:  Setup and Run a Release Pipeline](Lab22/README.md)
 1. [Lab23:  Test Our Pipelines](Lab23/README.md)
 1. [Lab24:  Monitoring Model Performance](Lab24/README.md)
 
+### GitHub Actions
+
+These tasks are geared toward **GitHub Actions** engineers and can be done in parallel with the tasks above, if desired.  If you are using **Azure DevOps** please see Labs 20-24.  
+
+1. [Lab30: Setup GitHub](./Lab20/README-gh.md):  this is an alternate lab if you'd rather use github for git repos and CI/CD pipelines
+
+This task should be done by both the data scientist and DevOps engineer **when using GitHub Actions**:  
+
+**TODO:  these labs are wip**
+
+1. [Lab31:  Setup and Run a Build Workflow](./Lab21/README-gh.md)
+1. [Lab32:  Setup and Run a Release Pipeline](Lab22/README-gh.md)
+1. [Lab33:  Test Our Pipelines](Lab23/README-gh.md)
+1. [Lab34:  Monitoring Model Performance](Lab24/README-gh.md)
+
+## AutoML Labs
+
+These labs aren't specific to automl but they build upon each other.  In these labs we'll look at employee attrition using a dataset provided by IBM.  
+
+1. [Lab40: Using Datasets and Datastores in AMLS](./Lab40/README.md):  we'll first get the data into a dataset and explore the data
+1. [Lab41: Automated Machine Learning (automl)](./Lab41/README.md):  we'll use the IBM dataset to look at the causes of employee attrition, using the AMLS GUI.  
+1. [Lab42: automl from a python notebook](./samples/automl-forecast-model.ipynb) :  We will look at running automl from within a python notebook using automl API calls.  We'll forecast energy demand using NYCs open dataset.  **Please see the [sample notebooks area](./samples/README.md) for other approaches using ARIMA and deep learning.**
+
+## Other Labs
+
+1. [Lab80: Batch inferencing](./samples/batch-inferencing.ipynb) :  generally most ML models are deployed for real-time inferencing and therefore are deployed on something like AKS as a container.  But this pattern doesn't work well for batch inferencing.  In this notebook we look at one possible pattern for batch inferencing by leveraging AMLS Pipelines feature.  
 
 ## WrapUp
 
@@ -103,5 +133,6 @@ This task should be done by both the data scientist and DevOps engineer:
 
 * [Microsoft's MLOpsPython repo](https://github.com/microsoft/MLOpsPython)
 * [MLOps on Azure](https://github.com/microsoft/MLOps)
+* [My Sample Notebooks](./samples/README.md)
 
 

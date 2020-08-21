@@ -1,0 +1,66 @@
+# Actions train a model on Azure Machine Learning
+name: aml-train-deploy-workflow 
+#on: [push, pull_request]
+on:
+  push:
+    branches:
+      - master
+    # TODO:  run for all checkins, or just certain paths?
+    # paths:
+    #   - 'code/*'
+jobs:
+  train:
+    runs-on: ubuntu-latest
+    steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - name: Check Out Repository
+      id: checkout_repository
+      uses: actions/checkout@v2
+        
+    # Connect to AMLS Workspace
+    - name: Connect Azure Machine Learning Workspace
+      id: aml_workspace
+      uses: Azure/aml-workspace@v1
+      with:
+          azure_credentials: ${{ secrets.AZURE_CREDENTIALS }}
+          # TODO: default is .cloud/.azure/workspace.json.  this will need to be changed
+          parameters_file: "workspace.json"
+    
+    # Connect or Create a Compute Target in Azure Machine Learning
+    - name: Connect/Create Azure Machine Learning Compute Target
+      id: aml_compute_training
+      uses: Azure/aml-compute@v1
+      with:
+          azure_credentials: ${{ secrets.AZURE_CREDENTIALS }}
+          # TODO: default is .cloud/.azure/compute.json.  this will need to be changed
+          # https://github.com/Azure/aml-compute
+          parameters_file: "compute.json"
+    
+    # Submit a training run to the Azure Machine Learning
+    - name: Submit training run
+      id: aml_run
+      uses: Azure/aml-run@v1
+      with:
+          azure_credentials: ${{ secrets.AZURE_CREDENTIALS }}
+          # TODO: default is .cloud/.azure/compute.json.  this will need to be changed
+          # definitely read these docs for the necessary options:
+          # https://github.com/Azure/aml-run
+          parameters_file: "run.json"
+
+    # Register model in Azure Machine Learning model registry
+    - name: Register model
+      id: aml_registermodel
+      uses: Azure/aml-registermodel@v1
+      with:
+          azure_credentials: ${{ secrets.AZURE_CREDENTIALS }}
+          run_id:  ${{ steps.aml_run.outputs.run_id }}
+          experiment_name: ${{ steps.aml_run.outputs.experiment_name }}
+
+    # Deploy model in Azure Machine Learning to ACI
+    - name: Deploy model
+      id: aml_deploy
+      uses: Azure/aml-deploy@v1
+      with:
+          azure_credentials: ${{ secrets.AZURE_CREDENTIALS }}
+          model_name:  ${{ steps.aml_registermodel.outputs.model_name }}
+          model_version: ${{ steps.aml_registermodel.outputs.model_version }}

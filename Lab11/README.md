@@ -15,7 +15,8 @@ This exercise is geared to a data scientist.
 ## Steps
 
 1. Deploy a GPU compute cluster (3 nodes, NC series is fine) as a `Machine Learning Compute` compute resource.  Name it `gpucluster`. 
-1. Browse to your Azure Notebooks project and navigate to `jupyter-notebooks/Deep Learning with Text.ipynb`. This is the notebook you will step through executing in this lab.
+1. Open Jupyter (from the Compute instance in AMLS) and navigate to `jupyter-notebooks/Deep Learning with Text.ipynb`. This is the notebook you will step through executing in this lab.
+  * if you want to build your own model using your own datasets then consider starting with `jupyter-notebooks-starter` folder.  
 1. Follow the instructions within the notebook to complete the lab.
 1. In Azure Notebooks navigate to the `models` folder (under `jupyter-notebooks`) and download the **model.h5** file to your local disk. We will use the downloaded model file in the next exercise. *Note that if the downloaded file name is changed to `utf-8''model.h5`, then rename the file back to `model.h5`*.
 

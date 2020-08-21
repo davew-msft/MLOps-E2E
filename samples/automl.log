@@ -1,0 +1,18 @@
+2020-08-19 17:39:27.967 - INFO - 16864 - azureml.train.automl.automlconfig._start_execution:260 - Submitting remote or ADB run.
+2020-08-20 10:24:36.458 - INFO - 16864 - azureml.train.automl.run._log_activity:46 - ActivityStarted: GetOutput
+2020-08-20 10:24:36.488 - INFO - 16864 - azureml.train.automl.run._log_activity:46 - ActivityStarted: GetOutput
+2020-08-20 10:24:36.507 - INFO - 16864 - azureml.train.automl.run._log_activity:46 - ActivityStarted: GetChildren
+2020-08-20 10:25:12.102 - INFO - 16864 - azureml.train.automl.run._log_activity:62 - ActivityCompleted: Activity=GetChildren, HowEnded=Success, Duration=35595.77[ms]
+2020-08-20 10:25:12.102 - INFO - 16864 - azureml.train.automl.run._log_activity:62 - ActivityCompleted: Activity=GetOutput, HowEnded=Success, Duration=35614.76[ms]
+2020-08-20 10:25:12.114 - INFO - 16864 - azureml.train.automl.run._log_activity:46 - ActivityStarted: DownloadModel
+2020-08-20 10:25:13.168 - CRITICAL - 16864 - azureml.train.automl.run.log_traceback:228 - Type: Unclassified
+Class: ModuleNotFoundError
+Message: No module named 'azureml.train.automl.runtime'
+Traceback:
+  File "run.py", line 922, in _download_automl_model
+    import azureml.train.automl.runtime
+
+ExceptionTarget: Unspecified
+2020-08-20 10:25:13.169 - WARNING - 16864 - azureml.train.automl.run._download_automl_model:948 - Cannot retrieve model since azureml-train-automl-runtime is not installed locally. Please install this dependency to enable returning a model from this method.
+2020-08-20 10:25:13.169 - INFO - 16864 - azureml.train.automl.run._log_activity:62 - ActivityCompleted: Activity=DownloadModel, HowEnded=Success, Duration=1054.85[ms]
+2020-08-20 10:25:13.170 - INFO - 16864 - azureml.train.automl.run._log_activity:62 - ActivityCompleted: Activity=GetOutput, HowEnded=Success, Duration=36712.62[ms]
