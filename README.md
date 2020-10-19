@@ -122,7 +122,14 @@ These labs aren't specific to automl but they build upon each other.  In these l
 
 ## Other Labs
 
-1. [Lab80: Batch inferencing](./samples/batch-inferencing.ipynb) :  generally most ML models are deployed for real-time inferencing and therefore are deployed on something like AKS as a container.  But this pattern doesn't work well for batch inferencing.  In this notebook we look at one possible pattern for batch inferencing by leveraging AMLS Pipelines feature.  
+1. [Lab80: Batch inferencing](./samples/batch-inferencing.ipynb) :  generally most ML models are deployed for real-time inferencing and therefore are deployed on something like AKS as a container.  But this pattern doesn't work well for batch inferencing.  In this notebook we look at one possible pattern for batch inferencing by leveraging AMLS Pipelines feature. 
+1. [Lab85: Batch Scoring Videos Using Deep Learning Models With Azure Machine Learning](./Lab85/README.md) 
+  * demonstrates batch inferencing using NNs by doing _neural style transfer_ to an uploaded video.  
+  * Upload a video file to storage.
+  * The video file will trigger Logic App to send a request to the AML pipeline published endpoint.
+  * The pipeline will then process the video, apply style transfer with MPI, and postprocess the video.
+The output will be saved back to blob storage once the pipeline is completed.
+  * _we can also do this using AKS_
 
 1. [Lab90: Time Series Analysis](./Lab90/README.md) :  we specifically look at time series analytics in these labs with a focus on how AMLS can help.  
 
