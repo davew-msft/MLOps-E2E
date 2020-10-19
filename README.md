@@ -124,6 +124,8 @@ These labs aren't specific to automl but they build upon each other.  In these l
 
 1. [Lab80: Batch inferencing](./samples/batch-inferencing.ipynb) :  generally most ML models are deployed for real-time inferencing and therefore are deployed on something like AKS as a container.  But this pattern doesn't work well for batch inferencing.  In this notebook we look at one possible pattern for batch inferencing by leveraging AMLS Pipelines feature.  
 
+1. [Lab90: Time Series Analysis](./Lab90/README.md) :  we specifically look at time series analytics in these labs with a focus on how AMLS can help.  
+
 ## WrapUp
 
 1. **Remove the RG you created to prevent incurring Azure costs**
