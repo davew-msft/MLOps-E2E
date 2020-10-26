@@ -1,9 +1,12 @@
 # Batch Scoring Deep Learning Models With Azure Machine Learning
 
 ## Overview
-As described in the associated page on the [Azure Reference Architecture center](https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/ai/batch-scoring-deep-learning), in this repository, we use the scenario of applying style transfer onto a video (collection of images). This architecture can be generalized for any batch scoring with deep learning scenario. An alternative solution using Azure Kubernetes Service can be found [here](https://github.com/Azure/Batch-Scoring-Deep-Learning-Models-With-AKS).
 
-## Design
+We want to apply `style transfer` onto a video (a video is really just a collection of images). I doubt any business would want to do this in the real world but this architecture can be generalized for any **batch scoring with deep learning scenario**. 
+
+An alternative solution using Azure Kubernetes Service can be found [here](https://github.com/Azure/Batch-Scoring-Deep-Learning-Models-With-AKS).
+
+## Architecture 
 ![Reference Architecture Diagram](https://happypathspublic.blob.core.windows.net/assets/batch_scoring_for_dl/batchscoringdl-aml-architecture-diagram.jpg)
 
 The above architecture works as follows:
@@ -21,12 +24,22 @@ The above architecture works as follows:
 
 ## Setup
 
+You can run this locally on your laptop but then you'll likely need to install a bunch of dependencies like conda, az cli, etc.  
+
+A better solution is to use vscode on your local development environment and then use `Remote-SSH: Connect to Host` and use your AMLS JupyterLab compute instance as your compute.  **For this lab I assume you are using this method**
+
+1. get your SSH IP address from your AMLS compute instance
+2. Open vscode 
+3. <button>F1</button>
+4. `Remote-SSH: Connect to Host`
+5. Enter your SSH IP address.  This should open a new vscode window
+
+
 ```bash
 
-## navigate to wherever you clone your dev repos
-git clone https://github.com/Azure/Batch-Scoring-Deep-Learning-Models-With-AML batch-score
-
-cd batch-score
+## clone this repo on the remote compute, if needed
+## git clone https://github.com/davew-msft/MLOps-E2E
+cd Lab85
 
 ## this will create a conda environment called __batchscoringdl_aml__
 conda env create -f environment.yml

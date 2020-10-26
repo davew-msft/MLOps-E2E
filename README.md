@@ -18,7 +18,7 @@ There are multiple branches of this workshop
 * Azure Container Instances (ACI)
 * Azure Kubernetes Service (AKS)
 * Azure DevOps (AzDO) or GitHub (and gh actions)
-* Jupyter Notebooks ([notebooks.azure.com](https://notebooks.azure.com)).  This service is being retired, we should use the Jupyter server compute target of AMLS going forward.  
+* JupyterLab Notebooks using vscode and AMLS Compute targets
 
 ## Target audience
 
