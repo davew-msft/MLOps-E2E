@@ -26,13 +26,11 @@ The above architecture works as follows:
 
 You can run this locally on your laptop but then you'll likely need to install a bunch of dependencies like conda, az cli, etc.  
 
-A better solution is to use vscode on your local development environment and then use `Remote-SSH: Connect to Host` and use your AMLS JupyterLab compute instance as your compute.  **For this lab I assume you are using this method**
+A better solution is to use JupyterLab from your AML compute instance. 
 
-1. get your SSH IP address from your AMLS compute instance
-2. Open vscode 
-3. <button>F1</button>
-4. `Remote-SSH: Connect to Host`
-5. Enter your SSH IP address.  This should open a new vscode window
+1. Open JupyterLab, then open a terminal
+
+![](../images/vscode85_2.png)
 
 
 ```bash
@@ -56,12 +54,12 @@ conda activate batchscoringdl_aml
 
 
 ## Steps
-Run through the following notebooks:
+Run through the following notebooks, opening each one in JupyterLab:
 1. [Test the scripts](notebooks/01_local_testing.ipynb)
 
-Remember, you open the ipynb file from vscode _running using remote ssh_.  The notebook should look something like this:  
+The notebook should look something like this:  
 
-![](../images/vscode85_1.png)
+![](../images/vscode85_3.png)
 
 
 2. [Setup AML](notebooks/02_setup_aml.ipynb).
