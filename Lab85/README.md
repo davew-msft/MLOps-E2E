@@ -41,18 +41,29 @@ A better solution is to use vscode on your local development environment and the
 ## git clone https://github.com/davew-msft/MLOps-E2E
 cd Lab85
 
+## login to Azure
+az login
+
 ## this will create a conda environment called __batchscoringdl_aml__
+echo ". /anaconda/etc/profile.d/conda.sh" >> ~/.bashrc
+echo "conda activate" >> ~/.bashrc
+conda activate
 conda env create -f environment.yml
 conda activate batchscoringdl_aml
 
-## login to Azure
-az login
+
 ```
 
 
 ## Steps
-Run throught the following notebooks:
+Run through the following notebooks:
 1. [Test the scripts](notebooks/01_local_testing.ipynb)
+
+Remember, you open the ipynb file from vscode _running using remote ssh_.  The notebook should look something like this:  
+
+![](../images/vscode85_1.png)
+
+
 2. [Setup AML](notebooks/02_setup_aml.ipynb).
 3. [Develop & publish AML pipeline](notebooks/03_develop_pipeline.ipynb)
 4. [Deploy Logic Apps](notebooks/04_deploy_logic_apps.ipynb)
