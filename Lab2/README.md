@@ -8,6 +8,13 @@ In this lab we are going to deploy and learn a little bit about what Azure Machi
 
 [What is MLOps and How Does AMLS Help - Presentation](AMLS.pptx) 
 
+### The AMLS workspace taxonomy
+
+[The taxonomy and AMLS explained](https://docs.microsoft.com/en-us/azure/machine-learning/concept-workspace)
+
+![](../images/amls.png)
+
+
 ### Discussion topics before we start this section  
 
 1. What is AMLS?  Why use it?  

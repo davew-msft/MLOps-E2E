@@ -1,0 +1,24 @@
+apiVersion: batch/v1
+kind: Job # Our training should be a Job since it is supposed to terminate at some point
+metadata:
+  name: mnist-training-v1 # Name of our job
+spec:
+  template: # Template of the Pod that is going to be run by the Job
+    metadata:
+      name: module2-ex1 # Name of the pod
+    spec:
+      containers: # List of containers that should run inside the pod, in our case there is only one.
+        - name: tensorflow
+          image: docker.io/dwentzel/tf-mnist:gpu # The image to run, you can replace by your own.
+          args: ["--max_steps", "500"] # Optional arguments to pass to our command. By default the command is defined by ENTRYPOINT in the Dockerfile
+          resources:
+            limits:
+              nvidia.com/gpu: 1 # We ask Kubernetes to assign 1 GPU to this container
+          volumeMounts:
+            - name: nvidia
+              mountPath: /usr/local/nvidia
+      volumes:
+        - name: nvidia
+          hostPath:
+            path: /usr/local/nvidia
+      restartPolicy: OnFailure # restart the pod if it fails

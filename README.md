@@ -130,8 +130,25 @@ These labs aren't specific to automl but they build upon each other.  In these l
   * The pipeline will then process the video, apply style transfer with MPI, and postprocess the video.
 The output will be saved back to blob storage once the pipeline is completed.
   * _we can also do this using AKS_
-
 1. [Lab90: Time Series Analysis](./Lab90/README.md) :  we specifically look at time series analytics in these labs with a focus on how AMLS can help.  
+
+## Kubeflow Labs
+
+MLOps currently has very few industry-wide best practices to improve time-to-market.  Obviously, we like MLOps using AMLS, but Kubeflow is an excellent alternative that we can integrate into AMLS.  We'll build a solution using Kubeflow in these labs.  
+
+>>The [kubeflow project](https://github.com/kubeflow/kubeflow) is dedicated to making deployments of machine learning (ML) workflows on Kubernetes simple, portable and scalable. Our goal is not to recreate other services, but to provide a straightforward way to deploy best-of-breed open-source systems for ML to diverse infrastructures. Anywhere you are running Kubernetes, you should be able to run Kubeflow.
+
+Kubeflow is really the following:
+* [JupyterHub](https://jupyterhub.readthedocs.io/en/latest/), which allows you to request an instance of a dedicated Jupyter Notebook.  We recommend using AMLS compute instances, but this is an excellent alternative.  The problem is it's harder to control costs by spinning down Jupyter container instances with kubernetes HPA (horizontal pod autoscaler).  
+* Training controllers:  this component makes training jobs deployment easier.  We will only deploy training controllers for tf jobs in this workshop, but there are controllers for PyTorch and others.  The AMLS analog is training compute instances, again the benefit being these are able to be better autoscaled when not in use.  
+* a model serving component:  this isn't much different from AMLS inference clusters.  
+
+### MLFlow vs Kubeflow
+Kubeflow is meant to build E2E workflow pipelines, MLFlow is used to track metrics and deploy models.  AMLS experiments and pipelines are really a superset of MLFlow and you can use the MLFlow APIs to talk to AMLS, essentially making AMLS a PaaS offering for an MLFlow server.  Kubeflow is its own thing that you deploy into an AKS/k8s cluster.  
+
+1. [Lab100: Kubeflow Prerequisites, Background, and Motivation](./Lab100/README.md)
+1. [Lab101: Containerizing a TensorFlow Model](./Lab101/README.md)
+1. [Lab102: Kubeflow Installation](./Lab102/README.md)
 
 ## WrapUp
 
