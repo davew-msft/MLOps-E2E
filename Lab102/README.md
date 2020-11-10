@@ -15,9 +15,9 @@ Now install Istio into your AKS cluster.  Note:  Istio releases after 1.6 don't 
 
 ```bash
 
-ISTIO_VERSION=1.4.10
+ISTIO_VERSION=1.6.10
 
-curl -sL "https://github.com/istio/istio/releases/download/$ISTIO_VERSION/istioctl-$ISTIO_VERSION-linux.tar.gz" | tar xz
+curl -sL "https://github.com/istio/istio/releases/download/$ISTIO_VERSION/istioctl-$ISTIO_VERSION-linux-amd64.tar.gz" | tar xz
 sudo mv ./istioctl /usr/local/bin/istioctl
 sudo chmod +x /usr/local/bin/istioctl
 istioctl operator init
@@ -26,11 +26,10 @@ istioctl profile dump default
 kubectl create ns istio-system
 kubectl apply -f /path_to/Lab102/istio.aks.yaml 
 #wait until everything is ready
-#kubectl describe pod can help with an y errors as can
+#kubectl describe pod can help with any errors as can
 #kubectl logs -n istio-operator -l name=istio-operator -f
 kubectl get all -n istio-system
 ```
-
 
 ### Install Kubeflow on AKS and create our kubeflow app
 
@@ -40,7 +39,7 @@ Kubeflow is really just a bunch of commands that look a lot like `kubectl` wrapp
 
 Find the release you want to download from here:  https://github.com/kubeflow/kfctl/releases/tag/v1.1.0 then copy the link address to the env var below.
 
-v1.0.2 seems to be the only thing that works with k8s 1.18.  As of this writing
+v1.1.0 seems to be the only thing that works with k8s 1.18.  As of this writing
 
 ```bash
 # vars
@@ -76,5 +75,13 @@ kfctl apply -V -f ${CONFIG_URI}
 # look in kf-istio-resources.yaml and change sni_hosts to sniHosts
 
 
+#check for errors and wait until everything is running
+kubectl get all -n kubeflow
 
+#let's connect to kubeflow dashboard using a proxy
+kubectl port-forward svc/istio-ingressgateway -n istio-system 8080:80
 ```
+
+Now browse to `http://localhost:8080`, this is kubeflow dashboard.  Take a minute to familiarize yourself with it.  
+
+**Don't close your terminal window yet, we will use it for subsequent labs**

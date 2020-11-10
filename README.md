@@ -149,6 +149,8 @@ Kubeflow is meant to build E2E workflow pipelines, MLFlow is used to track metri
 1. [Lab100: Kubeflow Prerequisites, Background, and Motivation](./Lab100/README.md)
 1. [Lab101: Containerizing a TensorFlow Model](./Lab101/README.md)
 1. [Lab102: Kubeflow Installation](./Lab102/README.md)
+1. [Lab103: Running JupyterHub with Kubeflow on AKS](./Lab103/README.md)
+1. [Lab104: Using tfjob to run training jobs](./Lab104/README.md)
 
 ## WrapUp
 

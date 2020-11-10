@@ -1,0 +1,17 @@
+apiVersion: kubeflow.org/v1
+kind: TFJob
+metadata:
+  name: lab104-gpu
+spec:
+  tfReplicaSpecs:
+    MASTER:
+      replicas: 1
+      template:
+        spec:
+          containers:
+            - image: docker.io/dwentzel/tf-mnist:gpu #changeme
+              name: tensorflow
+              resources:
+                limits:
+                  nvidia.com/gpu: 1
+          restartPolicy: OnFailure

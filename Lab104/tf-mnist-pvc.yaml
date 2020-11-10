@@ -1,0 +1,28 @@
+apiVersion: kubeflow.org/v1
+kind: TFJob
+metadata:
+  name: lab104-gpu-pvc
+spec:
+  tfReplicaSpecs:
+    MASTER:
+      replicas: 2
+      template:
+        spec:
+          containers:
+            - image: docker.io/dwentzel/tf-mnist:gpu #changeme
+              name: tensorflow
+              resources:
+                limits:
+                  nvidia.com/gpu: 1
+              volumeMounts:
+                # our classifier saves the summaries to /tmp/tensorflow so we want to mount there and the subpath
+                # allows us to use a different subdir for each training run
+                - name: my-azurefile
+                  subPath: lab104-gpu1
+                  mountPath: /tmp/tensorflow
+          restartPolicy: OnFailure        
+          volumes:
+            - name: azurefile
+              persistentVolumeClaim:
+              claimName: my-azurefile
+          

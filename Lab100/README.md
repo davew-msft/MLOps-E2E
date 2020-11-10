@@ -31,8 +31,8 @@ RES_GROUP=MLOpsWorkshop
 LOCATION="eastus"
 NODE_SIZE_GPU=Standard_NC6
 NODE_SIZE_CPU=Standard_D2_v2
-AKS_NAME="davew-aks-gpu" 
-NODE_COUNT=3 #number of AKS VMs
+AKS_NAME="davew-aks-gpu2" 
+NODE_COUNT=2 #number of AKS VMs
 
 az login
 az account set --subscription "${SUBSCRIPTION}"
