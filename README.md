@@ -132,6 +132,7 @@ The output will be saved back to blob storage once the pipeline is completed.
   * _we can also do this using AKS_
 1. [Lab90: Time Series Analysis](./Lab90/README.md) :  we specifically look at time series analytics in these labs with a focus on how AMLS can help.  
 
+
 ## Kubeflow Labs
 
 MLOps currently has very few industry-wide best practices to improve time-to-market.  Obviously, we like MLOps using AMLS, but Kubeflow is an excellent alternative that we can integrate into AMLS.  We'll build a solution using Kubeflow in these labs.  
@@ -152,6 +153,32 @@ Kubeflow is meant to build E2E workflow pipelines, MLFlow is used to track metri
 1. [Lab103: Running JupyterHub with Kubeflow on AKS](./Lab103/README.md)
 1. [Lab104: Using tfjob to run training jobs](./Lab104/README.md)
 
+## AMLS Deeper Dive Labs
+
+These labs will get you a little more intimate with the AMLS service.  You may want to start here on your journey with AMLS. Most of these are ipynb files and can be run either from your local workstation (vscode, pycharm, whatever) or using the JupyterLab notebooks on the AMLS compute engines (or anywhere else supporting .ipynb files)
+
+**Remember, we do all of these labs in code, but much of it can be examined using the AMLS workspace.**
+
+1. [Lab200: The Azure ML SDK](./Lab200/200-intro.ipynb) :  basic calls
+1. [Lab201: Running Experiments](./Lab200/201-experiments.ipynb) 
+  * running experiments using the diabetes sample data set
+  * creating .py files from a Jupyter notebook and executing those with logged experiments
+1. [Lab202: Working with conda and python envs using Jupyter notebooks](./Lab200/202-envs.ipynb)
+  * all about python environments
+  * When you run a Python script as an experiment in Azure Machine Learning, a Conda environment is created to define the execution context for the script
+  * we also create some AMLS datasets
+1. [Lab203: Working with Pipelines](./Lab200/203-pipelines.ipynb)
+  * Pipelines consist of one or more _steps_, which can be Python scripts, or specialized steps like an Auto ML training estimator or a data transfer step that copies data from one location to another. Each step can run in its own compute context.
+  * Pipelines are a good start on the automation journey, it also separates work so various team members can focus on particular areas in your solution. 
+1. [Lab204: Model Interpretability and Explainability with AMLS](./Lab200/204-interpret.ipynb)
+  * we use features of AMLS and LIME
+1. [Lab205: Monitoring a Model](./Lab200/205-monitor.ipynb)
+  * we quickly train and deploy a model for inferencing
+  * we monitor it using the service and AppInsights
+  * also sets up conda envs using yaml
+  * inference deployment uses ACI and not AKS
+1. [Lab206: Monitor Data Drift](./Lab200/206-drift.ipynb)
+  * Over time, models can become less effective at predicting accurately due to changing trends in feature data. This phenomenon is known as data drift, and it's important to monitor your machine learning solution to detect it so you can retrain your models if necessary.
 ## WrapUp
 
 1. **Remove the RG you created to prevent incurring Azure costs**

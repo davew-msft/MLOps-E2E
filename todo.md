@@ -1,5 +1,3 @@
-look at this first:  https://github.com/MicrosoftLearning/DP100
-
 https://github.com/microsoft/ignite-learning-paths-training-aiml/blob/main/aiml50/README.md
 
 containers/onnx:  https://github.com/microsoft/ignite-learning-paths-training-aiml/blob/main/aiml20/README.md
@@ -12,6 +10,10 @@ https://github.com/microsoft/ignite-learning-paths-training-aiml/blob/main/aiml2
 model deployment to iotedge:  https://github.com/nthacker/AML-service-labs/blob/master/lab-6/visual-studio/README.md
 
 airflow
+
+mlflow
+    https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/track-and-monitor-experiments/using-mlflow
+    details with dbr:  https://docs.microsoft.com/en-us/azure/machine-learning/how-to-use-mlflow-azure-databricks
 
 https://github.com/danielsc/azureml-workshop-2019
 
