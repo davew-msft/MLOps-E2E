@@ -11,9 +11,12 @@ https://github.com/microsoft/ignite-learning-paths-training-aiml/blob/main/aiml2
 
 model deployment to iotedge:  https://github.com/nthacker/AML-service-labs/blob/master/lab-6/visual-studio/README.md
 
+airflow
+
 https://github.com/danielsc/azureml-workshop-2019
 
 gh actions:  https://techcommunity.microsoft.com/t5/azure-ai/using-github-actions-amp-azure-machine-learning-for-mlops/ba-p/1419027
+https://techcommunity.microsoft.com/t5/azure-ai/using-github-actions-amp-azure-machine-learning-for-mlops/ba-p/1419027
 
 transfer learning:  https://github.com/maxluk/dogbreeds-webinar
 
