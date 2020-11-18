@@ -1,9 +1,13 @@
-https://github.com/microsoft/ignite-learning-paths-training-aiml/blob/main/aiml21/README.md
+https://github.com/microsoft/ignite-learning-paths-training-aiml/blob/main/aiml40/README.md
+
+another mlops demo/lab/workshop
+https://github.com/microsoft/ignite-learning-paths-training-aiml/blob/main/aiml50/README.md
+
 
 containers/onnx:  
 https://github.com/microsoft/ignite-learning-paths-training-aiml/blob/main/aiml20/README.md
 
-https://github.com/microsoft/ignite-learning-paths-training-aiml/blob/main/aiml40/README.md
+
 
 https://github.com/csiebler/azureml-workshop-2020
 
@@ -58,5 +62,3 @@ audio language in containers:  https://techcommunity.microsoft.com/t5/azure-ai/a
 https://techcommunity.microsoft.com/t5/azure-ai/accelerate-self-paced-learning-at-the-edge-with-speech/ba-p/1636986
 
 
-another mlops demo/lab/workshop
-https://github.com/microsoft/ignite-learning-paths-training-aiml/blob/main/aiml50/README.md
