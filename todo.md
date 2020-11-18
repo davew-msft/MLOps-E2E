@@ -1,11 +1,11 @@
-https://github.com/microsoft/ignite-learning-paths-training-aiml/blob/main/aiml50/README.md
+https://github.com/microsoft/ignite-learning-paths-training-aiml/blob/main/aiml21/README.md
 
-containers/onnx:  https://github.com/microsoft/ignite-learning-paths-training-aiml/blob/main/aiml20/README.md
+containers/onnx:  
+https://github.com/microsoft/ignite-learning-paths-training-aiml/blob/main/aiml20/README.md
+
 https://github.com/microsoft/ignite-learning-paths-training-aiml/blob/main/aiml40/README.md
 
 https://github.com/csiebler/azureml-workshop-2020
-
-https://github.com/microsoft/ignite-learning-paths-training-aiml/blob/main/aiml21/README.md
 
 model deployment to iotedge:  https://github.com/nthacker/AML-service-labs/blob/master/lab-6/visual-studio/README.md
 
@@ -56,3 +56,7 @@ https://github.com/lockedata/realtimeAIpipeline
 
 audio language in containers:  https://techcommunity.microsoft.com/t5/azure-ai/automatically-detect-audio-language-with-the-speech-language/ba-p/1694363
 https://techcommunity.microsoft.com/t5/azure-ai/accelerate-self-paced-learning-at-the-edge-with-speech/ba-p/1636986
+
+
+another mlops demo/lab/workshop
+https://github.com/microsoft/ignite-learning-paths-training-aiml/blob/main/aiml50/README.md
