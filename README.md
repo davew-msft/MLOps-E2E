@@ -159,47 +159,60 @@ These labs will get you a little more intimate with the AMLS service.  You may w
 
 **Remember, we do all of these labs in code, but much of it can be examined using the AMLS workspace.**
 
-1. [Lab200: The Azure ML SDK](./Lab200/200-intro.ipynb) :  basic calls
-1. [Lab201: Running Experiments](./Lab200/201-experiments.ipynb) 
-  * running experiments using the diabetes sample data set
-  * creating .py files from a Jupyter notebook and executing those with logged experiments
-1. [Lab202: Working with conda and python envs using Jupyter notebooks](./Lab200/202-envs.ipynb)
-  * all about python environments
-  * When you run a Python script as an experiment in Azure Machine Learning, a Conda environment is created to define the execution context for the script
-  * we also create some AMLS datasets
-1. [Lab203: Working with Pipelines](./Lab200/203-pipelines.ipynb)
-  * Pipelines consist of one or more _steps_, which can be Python scripts, or specialized steps like an Auto ML training estimator or a data transfer step that copies data from one location to another. Each step can run in its own compute context.
-  * Pipelines are a good start on the automation journey, it also separates work so various team members can focus on particular areas in your solution. 
-1. [Lab204: Model Interpretability and Explainability with AMLS](./Lab200/204-interpret.ipynb)
-  * we use features of AMLS and LIME
-1. [Lab205: Monitoring a Model](./Lab200/205-monitor.ipynb)
-  * we quickly train and deploy a model for inferencing
-  * we monitor it using the service and AppInsights
-  * also sets up conda envs using yaml
-  * inference deployment uses ACI and not AKS
-1. [Lab206: Monitor Data Drift](./Lab200/206-drift.ipynb)
-  * Over time, models can become less effective at predicting accurately due to changing trends in feature data. This phenomenon is known as data drift, and it's important to monitor your machine learning solution to detect it so you can retrain your models if necessary.
+|Lab|Decription|
+|----|------|
+|[Lab200: The Azure ML SDK](./Lab200/200-intro.ipynb)|basic calls|
+|[Lab201: Running Experiments](./Lab200/201-experiments.ipynb) |<li>running experiments using the diabetes sample data set <li> creating .py files from a Jupyter notebook and executing those with logged experiments|
+|[Lab202: Working with conda and python envs using Jupyter notebooks](./Lab200/202-envs.ipynb)|<li>all about python environments <li> When you run a Python script as an experiment in Azure Machine Learning, a Conda environment is created to define the execution context for the script <li>we also create some AMLS datasets|
+|[Lab203: Working with Pipelines](./Lab200/203-pipelines.ipynb)|<li>Pipelines consist of one or more _steps_, which can be Python scripts, or specialized steps like an Auto ML training estimator or a data transfer step that copies data from one location to another. <li>Each step can run in its own compute context. <li>Pipelines are a good start on the automation journey, it also separates work so various team members can focus on particular areas in your solution. |
+|[Lab204: Model Interpretability and Explainability with AMLS](./Lab200/204-interpret.ipynb)|we use features of AMLS and LIME|
+|[Lab205: Monitoring a Model](./Lab200/205-monitor.ipynb)|<li>we quickly train and deploy a model for inferencing<li>we monitor it using the service and AppInsights<li>also sets up conda envs using yaml<li>inference deployment uses ACI and not AKS|
+|[Lab206: Monitor Data Drift](./Lab200/206-drift.ipynb)|Over time, models can become less effective at predicting accurately due to changing trends in feature data. This phenomenon is known as data drift, and it's important to monitor your machine learning solution to detect it so you can retrain your models if necessary.|
+
 
   ## End-to-End Labs 
 
   These are alternate labs with different approaches to solving problems. 
 
-  1. [Lab300: A Day in the Life of a Data Scientist...or...The Data Science Process in Action](./Lab300/README.md)
-    * You are somewhat new to data science and your boss hands you a new dataset and says, "make something out of this."  Where do you even start?  In this lab we do exactly that.  In this lab we are given a dataset of support tickets and we are told, "unlock some insights to help the support team become more efficient and provide better service to customers."  We work through how to get started on an analytics problem like this.  
-    * What do we do?
+  1. [Lab300: A Day in the Life of a Data Scientist...or...The Data Science Process in Action](./Lab300/README.md)  
+You are somewhat new to data science and your boss hands you a new dataset and says, "make something out of this."  Where do you even start?  In this lab we do exactly that.  In this lab we are given a dataset of support tickets and we are told, "unlock some insights to help the support team become more efficient and provide better service to customers."  We work through how to get started on an analytics problem like this.  
+  * What do we do?
       * use standard data science techniques to explore the data
       * determine deductively what are some interesting problems we can solve
       * use automl to see if we can quickly predict those problems
       * deploy the best model, assuming it meets our goals
       * present your interesting analytics to executive leadership
-    * How we do it?:
+  * How we do it?:
       * AMLS
       * Jupyter/python/pandas/visualizations
       * automl
       * deploy an automl "no-code" container
       * consume the model's REST API 
       * Power BI for the final data presentation
+1. [Lab301: Text Analytics from Cognitive Services to a custom solution (wip)](./Lab301/README.md)
+Companies would like to do text analytics but they want to move quickly and iterate.  The goal is to have a solution quickly (Cognitive Services) and only if the project seems to have a positive NPV then build a custom model (if needed).  CogSvc handles the "80/20" rule.  It will handle 80% of the use cases you'll need and solve problems in 20% of the time.  It's also not required to have a data scientist do this initial work.  We will explore the complete path of integrating text analysis into our business processes, starting from pre-build models available as cognitive services, up to training a third-party neural custom model for Aspect-Based Sentiment Analysis available as part of Intel NLP Architect using Azure Machine Learning Service.
+We can talk about cases when one needs a custom model, and demonstrate quick ways to create such a model from scratch using AutoML, and show how to fine-tune model hyperparameters using HyperDrive
+1. [Lab302: Integrating Pre-Built AI into your application(wip)](./Lab302/README.md)
+  * We are going to use a pre-built e-commerce website and deploy 2 AI services to add a "human touch" <img src="./images/tasks.png" align=right width=200>
+  * First, the website will allow a customer to upload a picture of what they are looking for and it will give a recommendation.  (With some add'l tweaks we could use our phone's camera to take the picture).  The recommendation won't be very accurate using the pre-built Computer Vision model
+  * Next, we'll customize it and train it on additional photos using Azure Custom Vision Service.  Then we'll take the generated model (in ONNX format) and deploy that into our website which will make the item identification much more accurate
+  * Finally, we'll look at using the Personalizer Service (which is reinforcement learning under-the-covers) to quickly make a recommender service for our e-commerce site.  
+  * What you'll learn:
+    * How to integrate AI into a website
+    * How to re-train a pre-built AI model to make it better
+    * How to use pre-built AI to build a recommender engine...QUICKLY
+1. [Lab303: Deep Learning Hack: Build a CNN from scratch, then make it perfect with transfer learning](./Lab303/README.md)  
+We build a computer vision solution entirely from scratch using tensorflow.  First we learn all of the concepts of how neural nets work.  Then we show just how difficult it is to train a CNN from scratch.  But don't dispair...we then look at how to use a pre-built tf model from the internet and use a trick called transfer learning to make our model almost perfect.  
+  
+## Alternative MLOps Labs
 
+1. [Lab400: (wip) training and deployment using AMLS Pipelines](./Lab400/README.md)
+  * we still keep the code in git but we use AMLS Pipelines (via its REST APIs) to call and handle the training and validation
+1. [Lab401: (wip) a simplified Azure DevOps/MLOps solution](./Lab401/README.md)
+  * We deploy a simple model quickly and don't worry about the implementation details of model development
+  * we do focus on how `score.py` works
+  * we build up the azdo pipelines and focus there on how to do the automation
+  * the focus of this lab is simply to understand the patterns for the azdo pipelines
 
 ## WrapUp
 

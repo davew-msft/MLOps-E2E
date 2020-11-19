@@ -1,0 +1,11 @@
+variables:
+  ml-ws-connection: 'aml-workshop' # Workspace Service Connection name
+  ml-ws: 'aml-workshop' # AML Workspace name
+  ml-rg: 'aml-workshop' # AML resource Group name
+
+  ml-ct: 'cpu-cluster' # AML Compute cluster name
+  ml-aks-name: 'aks-prodws' # AKS cluster name
+
+  ml-path: '3-mlops' # Model directory path in repo
+  ml-exp: 'ibm-attrition-ci' # Experiment name
+  ml-model-name: 'IBM_attrition_model' # Model name

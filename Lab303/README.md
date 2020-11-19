@@ -1,0 +1,3 @@
+We build a computer vision solution entirely from scratch using tensorflow.  First we learn all of the concepts of how neural nets work.  Then we show just how difficult it is to train a CNN from scratch.  But don't dispair...we then look at how to use a pre-built tf model from the internet and use a trick called transfer learning to make our model almost perfect.  
+
+I have this in a [separate repo](https://https://git.davewentzel.com/demos/datasciencehack) because it is so popular.  

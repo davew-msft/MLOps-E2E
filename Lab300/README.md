@@ -118,3 +118,5 @@ The models are ordered by best RMSE (assuming you chose that metric).  The votin
 * Interact with the data and visuals
 
 **Can you determine how to publish this report to Power BI Online?  Then, can you make predictions based on your new web service against the data?  Can you then create a visual to display that data for an executive dashboard?**
+
+[Consume an AMLS webservice from Power BI](https://docs.microsoft.com/en-us/azure/machine-learning/how-to-consume-web-service?tabs=python#consume-the-service-from-power-bi)

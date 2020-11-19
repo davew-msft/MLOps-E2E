@@ -1,0 +1,47 @@
+variables: 
+ - template: config.yml
+
+trigger: none
+
+pool:
+  vmImage: 'Ubuntu-16.04'
+
+steps:
+- task: AzureCLI@2
+  displayName: 'Install AML CLI'
+  inputs:
+    azureSubscription: $(ml-ws-connection)
+    scriptLocation: inlineScript
+    scriptType: bash
+    inlineScript: |
+      az extension add -n azure-cli-ml
+
+- task: AzureCLI@2
+  displayName: 'Attach folder to workspace'
+  inputs:
+    azureSubscription: $(ml-ws-connection)
+    workingDirectory: $(ml-path)
+    scriptLocation: inlineScript
+    scriptType: bash
+    inlineScript: |
+      az ml folder attach -w $(ml-ws) -g $(ml-rg)
+
+- task: AzureCLI@2
+  displayName: 'Create CPU-based compute for training'
+  inputs:
+    azureSubscription: $(ml-ws-connection)
+    workingDirectory: $(ml-path)
+    scriptLocation: inlineScript
+    scriptType: bash
+    inlineScript: |
+      az ml computetarget create amlcompute -n $(ml-ct) --vm-size STANDARD_D3_V2 --max-nodes 1 --idle-seconds-before-scaledown 300
+
+- task: AzureCLI@2
+  displayName: 'Create CPU-based AKS cluster for deployment'
+  inputs:
+    azureSubscription: $(ml-ws-connection)
+    workingDirectory: $(ml-path)
+    scriptLocation: inlineScript
+    scriptType: bash
+    inlineScript: |
+      az ml computetarget create aks -n $(ml-aks-name) --vm-size STANDARD_D3_V2 --cluster-purpose DevTest

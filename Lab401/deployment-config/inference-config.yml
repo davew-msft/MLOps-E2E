@@ -1,0 +1,8 @@
+entryScript: score.py
+runtime: python
+condaFile: deployment-config/inference-env.yml
+sourceDirectory": null
+enableGpu: false
+baseImage: null
+baseImageRegistry: null
+

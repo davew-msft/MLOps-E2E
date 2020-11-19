@@ -1,16 +1,3 @@
-https://github.com/microsoft/ignite-learning-paths-training-aiml/blob/main/aiml40/README.md
-
-another mlops demo/lab/workshop
-https://github.com/microsoft/ignite-learning-paths-training-aiml/blob/main/aiml50/README.md
-
-
-containers/onnx:  
-https://github.com/microsoft/ignite-learning-paths-training-aiml/blob/main/aiml20/README.md
-
-
-
-https://github.com/csiebler/azureml-workshop-2020
-
 model deployment to iotedge:  https://github.com/nthacker/AML-service-labs/blob/master/lab-6/visual-studio/README.md
 
 airflow
@@ -18,8 +5,6 @@ airflow
 mlflow
     https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/track-and-monitor-experiments/using-mlflow
     details with dbr:  https://docs.microsoft.com/en-us/azure/machine-learning/how-to-use-mlflow-azure-databricks
-
-https://github.com/danielsc/azureml-workshop-2019
 
 gh actions:  https://techcommunity.microsoft.com/t5/azure-ai/using-github-actions-amp-azure-machine-learning-for-mlops/ba-p/1419027
 https://techcommunity.microsoft.com/t5/azure-ai/using-github-actions-amp-azure-machine-learning-for-mlops/ba-p/1419027
@@ -62,3 +47,27 @@ audio language in containers:  https://techcommunity.microsoft.com/t5/azure-ai/a
 https://techcommunity.microsoft.com/t5/azure-ai/accelerate-self-paced-learning-at-the-edge-with-speech/ba-p/1636986
 
 
+## skipping for now
+
+another mlops demo/lab/workshop
+https://github.com/microsoft/ignite-learning-paths-training-aiml/blob/main/aiml50/README.md
+    this is more of a demo
+    model is already deployed
+    model makes faulty prediction
+    we build up the MLOps solution with azdo
+    we change a parameter and retrain via the azdo pipeline
+    everything gets deployed
+    we prove the pipeline works.  
+
+text analytics from cogs to aml to hyperdrive
+    https://github.com/microsoft/ignite-learning-paths-training-aiml/blob/main/aiml40/README.md
+    I have this started on the Lab301 branch
+
+Lab400 is https://github.com/csiebler/azureml-workshop-2020
+    https://github.com/csiebler/azureml-workshop-2020/blob/master/3-mlops/MLOps_with_ML_pipelines.md
+
+Lab401 is https://github.com/csiebler/azureml-workshop-2020/blob/master/3-mlops/MLOps_basic_example.md
+right now this doesn't deploy correctly
+
+containers/onnx: this is Lab 302 
+https://github.com/microsoft/ignite-learning-paths-training-aiml/blob/main/aiml20/README.md
