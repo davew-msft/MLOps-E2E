@@ -119,6 +119,9 @@ These labs aren't specific to automl but they build upon each other.  In these l
 1. [Lab40: Using Datasets and Datastores in AMLS](./Lab40/README.md):  we'll first get the data into a dataset and explore the data
 1. [Lab41: Automated Machine Learning (automl)](./Lab41/README.md):  we'll use the IBM dataset to look at the causes of employee attrition, using the AMLS GUI.  
 1. [Lab42: automl from a python notebook](./samples/automl-forecast-model.ipynb) :  We will look at running automl from within a python notebook using automl API calls.  We'll forecast energy demand using NYCs open dataset.  **Please see the [sample notebooks area](./samples/README.md) for other approaches using ARIMA and deep learning.**
+1. [Lab43: automl full end-to-end MLOps pipelines](./Lab43/README.md).  We use an open source accounts receivable dataset to predict late payments.  We use that dataset and automl for predictions and we deploy the model to AKS or ACI.  
+  * we use the AMLS UI for most of this but provide some sample notebooks that you can use to do this programmatically if desired.  
+  * we will do `continuous retraining` whenever the dataset changes using AMLS Pipelines.  
 
 ## Other Labs
 
@@ -203,6 +206,11 @@ We can talk about cases when one needs a custom model, and demonstrate quick way
     * How to use pre-built AI to build a recommender engine...QUICKLY
 1. [Lab303: Deep Learning Hack: Build a CNN from scratch, then make it perfect with transfer learning](./Lab303/README.md)  
 We build a computer vision solution entirely from scratch using tensorflow.  First we learn all of the concepts of how neural nets work.  Then we show just how difficult it is to train a CNN from scratch.  But don't dispair...we then look at how to use a pre-built tf model from the internet and use a trick called transfer learning to make our model almost perfect.  
+1. [Lab304 wip: Computer Vision at the Edge, E2E with MLOps/DevOps deployments](./Lab304/README.md)
+  * this is WIP
+  * works with both LVA (Live Video Analytics) and OpenCV module.
+  * create an IoT Edge deployment with simulated cameras
+  * upload simulated video and train/re-train the models and deploy them to the iot edge devices.
   
 ## Alternative MLOps Labs
 

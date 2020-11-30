@@ -13,7 +13,7 @@ transfer learning:  https://github.com/maxluk/dogbreeds-webinar
 
 aml notebooks:  https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml
 
-https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/automated-machine-learning
+
 
 mlops python:  https://github.com/microsoft/MLOpsPython
 mlops:  https://github.com/microsoft/MLOps
@@ -46,7 +46,9 @@ https://github.com/lockedata/realtimeAIpipeline
 audio language in containers:  https://techcommunity.microsoft.com/t5/azure-ai/automatically-detect-audio-language-with-the-speech-language/ba-p/1694363
 https://techcommunity.microsoft.com/t5/azure-ai/accelerate-self-paced-learning-at-the-edge-with-speech/ba-p/1636986
 
+# done
 
+[AMLS automl](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/automated-machine-learning)
 ## skipping for now
 
 another mlops demo/lab/workshop
@@ -71,3 +73,8 @@ right now this doesn't deploy correctly
 
 containers/onnx: this is Lab 302 
 https://github.com/microsoft/ignite-learning-paths-training-aiml/blob/main/aiml20/README.md
+
+vision on edge
+    Lab 304
+    https://github.com/Azure-Samples/azure-intelligent-edge-patterns/tree/master/factory-ai-vision
+    https://docs.microsoft.com/en-us/azure/media-services/live-video-analytics-edge/custom-vision-tutorial?pivots=programming-language-csharp
