@@ -120,8 +120,8 @@ These labs aren't specific to automl but they build upon each other.  In these l
 1. [Lab41: Automated Machine Learning (automl)](./Lab41/README.md):  we'll use the IBM dataset to look at the causes of employee attrition, using the AMLS GUI.  
 1. [Lab42: automl from a python notebook](./samples/automl-forecast-model.ipynb) :  We will look at running automl from within a python notebook using automl API calls.  We'll forecast energy demand using NYCs open dataset.  **Please see the [sample notebooks area](./samples/README.md) for other approaches using ARIMA and deep learning.**
 1. [Lab43: automl full end-to-end MLOps pipelines](./Lab43/README.md).  We use an open source accounts receivable dataset to predict late payments.  We use that dataset and automl for predictions and we deploy the model to AKS or ACI.  
-  * we use the AMLS UI for most of this but provide some sample notebooks that you can use to do this programmatically if desired.  
-  * we will do `continuous retraining` whenever the dataset changes using AMLS Pipelines.  
+  * we use the AMLS UI for the initial setup
+  * we will do `continuous retraining` whenever the dataset changes using AMLS Pipelines. For this we will do everything programmatically from Jupyter notebooks.   
 
 ## Other Labs
 
