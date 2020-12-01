@@ -49,6 +49,8 @@ https://techcommunity.microsoft.com/t5/azure-ai/accelerate-self-paced-learning-a
 # done
 
 [AMLS automl](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/automated-machine-learning)
+
+Lab 43 based on:  https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/continuous-retraining/auto-ml-continuous-retraining.ipynb
 ## skipping for now
 
 another mlops demo/lab/workshop

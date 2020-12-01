@@ -70,4 +70,4 @@ Now that you have a working model, let's look at `continuous retraining` (a type
 
 Now open [amls-automl-continuous-retraining.ipynb](amls-automl-continuous-retraining.ipynb).
 
-Execute each of the cells, changing any parameters as needed.  
+Execute each of the cells, changing any parameters as needed.  **This notebook is not 100% working code.  It shows the basic scaffolding.  You may need to make some slight modifications.  As always, let me know if I can help.**
