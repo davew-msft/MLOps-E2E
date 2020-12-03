@@ -1,13 +1,25 @@
-model deployment to iotedge:  https://github.com/nthacker/AML-service-labs/blob/master/lab-6/visual-studio/README.md
+model deployment to iotedge:  
+    https://github.com/nthacker/AML-service-labs/blob/master/lab-6/visual-studio/README.md
+    https://github.com/Azure/azureml-examples/blob/main/tutorials/deploy-edge/ase-gpu.ipynb
+    https://docs.microsoft.com/en-us/azure/machine-learning/concept-model-management-and-deployment
 
 airflow
 
-mlflow
-    https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/track-and-monitor-experiments/using-mlflow
-    details with dbr:  https://docs.microsoft.com/en-us/azure/machine-learning/how-to-use-mlflow-azure-databricks
+azfunc
+    https://docs.microsoft.com/en-us/azure/machine-learning/how-to-deploy-functions
 
-gh actions:  https://techcommunity.microsoft.com/t5/azure-ai/using-github-actions-amp-azure-machine-learning-for-mlops/ba-p/1419027
-https://techcommunity.microsoft.com/t5/azure-ai/using-github-actions-amp-azure-machine-learning-for-mlops/ba-p/1419027
+full e2e employee attrition model toward end of prezis/MLops Quick Pitch.pptx and airefarch2.pptx
+
+papermill
+    https://github.com/nteract/papermill
+
+interface to adls
+    https://github.com/dask/adlfs
+
+gh actions:  
+    https://techcommunity.microsoft.com/t5/azure-ai/using-github-actions-amp-azure-machine-learning-for-mlops/ba-p/1419027
+    https://github.com/Azure/azureml-examples
+    https://github.com/Azure/azureml-template
 
 transfer learning:  https://github.com/maxluk/dogbreeds-webinar
 
@@ -46,11 +58,20 @@ https://github.com/lockedata/realtimeAIpipeline
 audio language in containers:  https://techcommunity.microsoft.com/t5/azure-ai/automatically-detect-audio-language-with-the-speech-language/ba-p/1694363
 https://techcommunity.microsoft.com/t5/azure-ai/accelerate-self-paced-learning-at-the-edge-with-speech/ba-p/1636986
 
-# done
+dask on amls
+    https://github.com/danielsc/azureml-and-dask
+SparkML on Databricks is more mature  & faster on large dataset and can deal with very large dataset (>100 GB).
+But I don’t like Spark’s set of algorithms with limited  hyper parameters for tunning which may lead to poor prediction performance.
+For example for same Randomforest algorithm on unbalanced dataset, you may have much better performance on Sklearn than on Spark ML.
+If your customer doesn’t have Spark skill and is very familiar with sklearn, XGBoost…then DaskML may be easier to learn for them.
+https://github.com/Azure/azureml-examples/blob/main/tutorials/using-dask
 
-[AMLS automl](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/automated-machine-learning)
+# Other Resources
 
-Lab 43 based on:  https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/continuous-retraining/auto-ml-continuous-retraining.ipynb
+* [AMLS automl](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/automated-machine-learning)
+* [Lab 43 based on this](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/continuous-retraining/auto-ml-continuous-retraining.ipynb)
+* Lab 121:  https://docs.microsoft.com/en-us/azure/machine-learning/how-to-use-mlflow-azure-databricks
+
 ## skipping for now
 
 another mlops demo/lab/workshop

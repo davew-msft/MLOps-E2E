@@ -2,6 +2,8 @@
 
 In this lab we build the build pipeline for our ML model. This lab is lengthy and sometimes frustrating due to connectivity issues.  These are "one-time" issues.  
 
+[More information on MLOps using Azure DevOps](https://github.com/microsoft/MLOpsPython/blob/master/docs/getting_started.md#set-up-the-release-deployment-andor-batch-scoring-pipelines) including samples.  
+
 
 ### Discussion topics before we start this section  
 

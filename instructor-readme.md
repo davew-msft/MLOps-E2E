@@ -66,17 +66,7 @@ Goto the root for other scenarios to complete the hackathon including straight j
 * jupyter
 
 
-## One Day Notes
 
-* Lab 1
-* Create an Azure Machine Learning service workspace in the Resource Group created earlier using the Azure Portal
-* Lab 10
-  * git remote add tmp git@github.com:davew-msft/tmpmlops.git
-* jupyter-notebooks-starter
-  * 01
-  * 02
-* MLOps Lab 21
-* automl labs 40,41,42
 
 
 * databricks stuff

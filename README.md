@@ -156,6 +156,15 @@ Kubeflow is meant to build E2E workflow pipelines, MLFlow is used to track metri
 1. [Lab103: Running JupyterHub with Kubeflow on AKS](./Lab103/README.md)
 1. [Lab104: Using tfjob to run training jobs](./Lab104/README.md)
 
+## Using MLflow with AMLS Labs
+
+[MLflow](https://mlflow.org/) is an OSS platform for tracking machine learning experiments and managing models. You can use MLflow logging APIs with Azure Machine Learning service: the metrics and artifacts are logged to your Azure ML Workspace.  MLflow is deeply embedded with Databricks and is their model management tool-of-choice.  MLflow is a great tool for local ML experimentation tracking. However, using it alone is like using git without GitHub. 
+
+1. [Lab120: Basic MLflow usage in a Jupyter notebook](./Lab120/README.md)
+  * we do "local" training.  The only requirement is AMLS SDK must be installed.  To do that quickly we use an AMLS compute target.  
+1. [Lab121: MLflow with Databricks and AMLS backend](./Lab121/README.md) 
+  * wip
+
 ## AMLS Deeper Dive Labs
 
 These labs will get you a little more intimate with the AMLS service.  You may want to start here on your journey with AMLS. Most of these are ipynb files and can be run either from your local workstation (vscode, pycharm, whatever) or using the JupyterLab notebooks on the AMLS compute engines (or anywhere else supporting .ipynb files)
