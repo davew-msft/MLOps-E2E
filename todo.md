@@ -66,6 +66,11 @@ For example for same Randomforest algorithm on unbalanced dataset, you may have 
 If your customer doesn’t have Spark skill and is very familiar with sklearn, XGBoost…then DaskML may be easier to learn for them.
 https://github.com/Azure/azureml-examples/blob/main/tutorials/using-dask
 
+a/b testing using controlled rolloout
+    https://docs.microsoft.com/en-us/azure/machine-learning/how-to-deploy-azure-kubernetes-service?tabs=python#deploy-models-to-aks-using-controlled-rollout-preview
+
+event grid with AMLS
+    https://docs.microsoft.com/en-us/azure/machine-learning/how-to-use-event-grid#sample-scenarios
 # Other Resources
 
 * [AMLS automl](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/automated-machine-learning)

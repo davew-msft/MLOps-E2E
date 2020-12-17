@@ -4,19 +4,9 @@ Notes:
 
 * check if the starter repo has been updated, and if so, pull that into my repo.  (There's probably an easier way to do this).  [Instructions are here](./Lab20/README.md)
 
-* OriginalDataScientistWork has a version of this for flat Jupyter and pandas.  
-
 ## Other Resources   
 
-also, see OtherResources folder
-
-for future labs:  automl, hyperdrive
-
-[Other Workshops](https://github.com/Azure/data-ai-iot)  
-
 [tweets using DBX, EH, TimeSeries Insights](https://github.com/Azure/data-ai-iot/tree/master/databricks) 
-
-[Search for Azure Machine Learning](https://www.microsoft.com/handsonlabs/SelfPacedLabs)  
 
 ### DBX Notebooks
 
@@ -28,14 +18,8 @@ for future labs:  automl, hyperdrive
  
 
 
-**[ML on Big Data](https://github.com/DataSnowman/MLonBigData/tree/master/BikeBuyer/ADBnotebooks/BikeBuyerOps) This is the scenario where the Data Science is being done using Azure Databricks and the Azure Machine Learning service SDK.  bike buyer data**
-
-* dbx
-* AMLS
-* ACI
-* AKS
-
-Goto the root for other scenarios to complete the hackathon including straight jupyter notebooks
+data generator simulator
+    https://github.com/DataSnowman/iotedgeProject/blob/master/iotedge/datagenerators/SimulatedDevice.py
 
 [dbx training](https://www.linkedin.com/learning/azure-databricks-essential-training/what-you-should-know?u=3322)
 
@@ -51,8 +35,6 @@ Goto the root for other scenarios to complete the hackathon including straight j
 
 [dog breeds classifier](https://github.com/maxluk/dogbreeds-webinar/blob/master/dog-breed-classifier.ipynb)
 
-[AML and IoT](https://onedrive.live.com/view.aspx?resid=B14C36D10ED3D72A!102249&ithint=file%2cdocx&authkey=!AM8pQD9xAAXdips).  gh repo is in the doc
-
 ### DevOps
 
 [Pipelines](https://github.com/microsoft/WhatTheHack/tree/master/010-AzureDevOps)  
@@ -66,13 +48,3 @@ Goto the root for other scenarios to complete the hackathon including straight j
 * jupyter
 
 
-
-
-
-* databricks stuff
-[01.Installation_and_Configuration.ipynb](../DBXNotebooks/01.Installation_and_Configuration.ipynb)  
-[02.Bike_Buyer_Ingest.ipynb](../DBXNotebooks/02.Bike_Buyer_Ingest.ipynb)  
-[03a.Bike_Buyer_Build_model.ipynb](../DBXNotebooks/03a.Bike_Buyer_Build_model.ipynb)  
-[03b.Bike_Buyer_Build_model_runHistory.ipynb](../DBXNotebooks/03b.Bike_Buyer_Build_model_runHistory.ipynb)  
-[04.Bike_Buyer_Deploy_to_ACI.ipynb](../DBXNotebooks/04.Bike_Buyer_Deploy_to_ACI.ipynb)  
-[05.Bike_Buyer_Deploy_to_AKS_existingImage.ipynb](../DBXNotebooks/05.Bike_Buyer_Deploy_to_AKS_existingImage.ipynb)  
