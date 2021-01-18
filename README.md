@@ -230,6 +230,7 @@ We build a computer vision solution entirely from scratch using tensorflow.  Fir
   * we do focus on how `score.py` works
   * we build up the azdo pipelines and focus there on how to do the automation
   * the focus of this lab is simply to understand the patterns for the azdo pipelines
+1. [Lab410: AMLS Compute auto-shutdown](https://github.com/ruoccofabrizio/azureml-compute-instances-shutdown)
 
 ## WrapUp
 
