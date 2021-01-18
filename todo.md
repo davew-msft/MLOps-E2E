@@ -33,6 +33,11 @@ mlops:  https://github.com/microsoft/MLOps
 cogsvc workshop
 https://github.com/Microsoft/MCW-Cognitive-Services-and-Deep-Learning
 
+custom vision
+    You can try the Microsoft COCO DataSet - https://cocodataset.org/#home
+There are implementations around the same for Azure Custom Vision. One such example below- https://github.com/vladkol/CustomVision.COCO
+
+
 dataset labeling:  https://github.com/MercyPrasanna/dataset-labeling/blob/master/dataset-labeling.ipynb
 
 
