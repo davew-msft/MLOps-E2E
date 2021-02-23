@@ -1,3 +1,6 @@
+cogsvc labs ready to go:
+    https://github.com/retkowsky/Azure-CognitiveServices-Labs
+
 model deployment to iotedge:  
     https://github.com/nthacker/AML-service-labs/blob/master/lab-6/visual-studio/README.md
     https://github.com/Azure/azureml-examples/blob/main/tutorials/deploy-edge/ase-gpu.ipynb
