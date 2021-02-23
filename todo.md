@@ -3,6 +3,7 @@ interesting stuff to add now:
 
 cogsvc labs ready to go:
     https://github.com/retkowsky/Azure-CognitiveServices-Labs
+    https://github.com/retkowsky/ai-fundamentals
 
 model deployment to iotedge:  
     https://github.com/nthacker/AML-service-labs/blob/master/lab-6/visual-studio/README.md
