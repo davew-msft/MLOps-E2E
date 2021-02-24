@@ -12,6 +12,9 @@ model deployment to iotedge:
 
 airflow
 
+RFM
+    https://github.com/retkowsky/RFM
+
 azfunc
     https://docs.microsoft.com/en-us/azure/machine-learning/how-to-deploy-functions
 
