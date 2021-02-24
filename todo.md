@@ -14,6 +14,8 @@ airflow
 
 RFM
     https://github.com/retkowsky/RFM
+mask detection on the edge
+    https://github.com/retkowsky/MaskDetection
 
 azfunc
     https://docs.microsoft.com/en-us/azure/machine-learning/how-to-deploy-functions
