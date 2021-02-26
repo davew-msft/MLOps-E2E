@@ -30,6 +30,7 @@ interface to adls
     https://github.com/dask/adlfs
 
 gh actions:  
+    https://mlops.githubapp.com//
     https://techcommunity.microsoft.com/t5/azure-ai/using-github-actions-amp-azure-machine-learning-for-mlops/ba-p/1419027
     https://github.com/Azure/azureml-examples
     https://github.com/Azure/azureml-template
