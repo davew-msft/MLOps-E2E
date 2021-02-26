@@ -41,7 +41,9 @@ aml notebooks:  https://github.com/Azure/MachineLearningNotebooks/tree/master/ho
 
 mlops python:  https://github.com/microsoft/MLOpsPython
 mlops:  https://github.com/microsoft/MLOps
-mlops scripts templates:  https://github.com/anagha-microsoft/ncr-mlops-hol-code
+mlops scripts templates:  
+    https://github.com/anagha-microsoft/ncr-mlops-hol-code
+    https://github.com/retkowsky/ncr-mlops-hol
 
 cogsvc workshop
 https://github.com/Microsoft/MCW-Cognitive-Services-and-Deep-Learning
