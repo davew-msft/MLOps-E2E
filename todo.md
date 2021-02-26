@@ -1,5 +1,6 @@
 interesting stuff to add now:  
     https://github.com/retkowsky/synapseamldemo
+    https://github.com/retkowsky/AMLlabs
 
 cogsvc labs ready to go:
     https://github.com/retkowsky/Azure-CognitiveServices-Labs
