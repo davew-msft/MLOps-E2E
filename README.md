@@ -55,12 +55,6 @@ In this workshop, you will learn how to:
 1. [Lab 2a: Getting Databricks Ready for DevOps/MLOps](Lab2a/README.md)
 1. [Lab 3:  Build and Deploy an ML Model](Lab3/README.md)  
 
-Alternate Labs:  
-
-1. Load data to ADLS2 with ADF and Databricks
-
-
-
 ## Day 2 Agenda - DevOps/MLOps in Depth
 
 We are going to build the DL/NLP model to look at their specification documents.  We'll use Jupyter notebooks, AMLS, and AzDO to manage the MLOps pipelines.  This will build on Day 1 by adding in AzDO Pipelines concepts.  We'll determine how to retrieve the best model, package it with a WebApp, and deploy an inferencing web service.  Then we'll figure out how to monitor the model's performance after it is deployed (on AKS).  Our model will be deployed as ONNX format, which means it can be run on the Edge or anywhere else.  
