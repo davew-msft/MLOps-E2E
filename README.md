@@ -173,7 +173,7 @@ These labs will get you a little more intimate with the AMLS service.  You may w
 
 |Lab|Decription|
 |----|------|
-|[Lab200: The Azure ML SDK](./Lab200/200-intro.ipynb)|basic calls|
+|[Lab200: The Azure ML SDK](./Lab200/200-intro.ipynb)|<li>basic calls to the service <li> getting your env config'd|
 |[Lab201: Running Experiments](./Lab200/201-experiments.ipynb) |<li>running experiments using the diabetes sample data set <li> creating .py files from a Jupyter notebook and executing those with logged experiments|
 |[Lab202: Working with conda and python envs using Jupyter notebooks](./Lab200/202-envs.ipynb)|<li>all about python environments <li> When you run a Python script as an experiment in Azure Machine Learning, a Conda environment is created to define the execution context for the script <li>we also create some AMLS datasets|
 |[Lab203: Working with Pipelines](./Lab200/203-pipelines.ipynb)|<li>Pipelines consist of one or more _steps_, which can be Python scripts, or specialized steps like an Auto ML training estimator or a data transfer step that copies data from one location to another. <li>Each step can run in its own compute context. <li>Pipelines are a good start on the automation journey, it also separates work so various team members can focus on particular areas in your solution. |
@@ -216,21 +216,53 @@ We can talk about cases when one needs a custom model, and demonstrate quick way
 1. [Lab303: Deep Learning Hack: Build a CNN from scratch, then make it perfect with transfer learning](./Lab303/README.md)  
 We build a computer vision solution entirely from scratch using tensorflow.  First we learn all of the concepts of how neural nets work.  Then we show just how difficult it is to train a CNN from scratch.  But don't dispair...we then look at how to use a pre-built tf model from the internet and use a trick called transfer learning to make our model almost perfect.  
 1. [Lab304 wip: Computer Vision at the Edge, E2E with MLOps/DevOps deployments](./Lab304/README.md)
-  * this is WIP
-  * works with both LVA (Live Video Analytics) and OpenCV module.
-  * create an IoT Edge deployment with simulated cameras
-  * upload simulated video and train/re-train the models and deploy them to the iot edge devices.
+    * this is WIP
+    * works with both LVA (Live Video Analytics) and OpenCV module.
+    * create an IoT Edge deployment with simulated cameras
+    * upload simulated video and train/re-train the models and deploy them to the iot edge devices.
   
 ## Alternative MLOps Labs
 
 1. [Lab400: (wip) training and deployment using AMLS Pipelines](./Lab400/README.md)
-  * we still keep the code in git but we use AMLS Pipelines (via its REST APIs) to call and handle the training and validation
+    * we still keep the code in git but we use AMLS Pipelines (via its REST APIs) to call and handle the training and validation
 1. [Lab401: (wip) a simplified Azure DevOps/MLOps solution](./Lab401/README.md)
-  * We deploy a simple model quickly and don't worry about the implementation details of model development
-  * we do focus on how `score.py` works
-  * we build up the azdo pipelines and focus there on how to do the automation
-  * the focus of this lab is simply to understand the patterns for the azdo pipelines
+    * We deploy a simple model quickly and don't worry about the implementation details of model development
+    * we do focus on how `score.py` works
+    * we build up the azdo pipelines and focus there on how to do the automation
+    * the focus of this lab is simply to understand the patterns for the azdo pipelines
 1. [Lab410: AMLS Compute auto-shutdown](https://github.com/ruoccofabrizio/azureml-compute-instances-shutdown)
+
+
+## Cognitive Services Labs
+
+For this set of labs we are going to use the CogSvcs SDKs.  Instead of using a remote AMLS Compute instance we will use a Docker DevContainer and vscode to do our development.  If you don't have Docker Desktop and vscode you can most definitely still use a remote AMLS Compute instance.  
+
+1. Open a new instance of vscode to the folder:  `MLOps-E2E\Lab500`
+1. vscode will prompt you to open the folder in the container.  Do that.  
+
+![](./images/prompt.png)
+
+Now open each ipynb file within the container.  
+
+>> We do this because the docker container already has all of the Azure and AMLS dependencies baked in, saving us a lot ot time and workstation configuration misery.  
+
+|Lab|Decription|
+|----|------|
+|[Lab500: Computer Vision](./Lab500/CompViz.ipynb)|Using CompViz with the SDK from Python|
+|[Lab501: Face API](./Lab500/face.ipynb)|Using the Face API|
+|[Lab502: OCR capabilities](./Lab500/OCR.ipynb)|optical character recognition|
+|[Lab503: text analytics](./Lab500/text.ipynb)|text analytics|
+|[Lab504: Form Recognizer](./Lab500/FormRec.ipynb)|Form Recognizer|
+
+## Other Interesting Labs
+
+1. [Lab900: RFM Analytics](./Lab900/RFM.ipynb)
+1. [Lab901: Association Rules]()
+    * if you have several events we can search for links between those events.  This is useful to determine things like:
+      * cross-selling behaviors of customers
+      * find the links between many products
+      * analyze the paths customers take through our stores/website
+      * what products should be highlighted or removed
 
 ## WrapUp
 

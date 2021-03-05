@@ -1,1 +1,1 @@
-this folder contains various AMLS tutorials
+this folder contains various AMLS tutorials, see [README](../README.md) for details. 

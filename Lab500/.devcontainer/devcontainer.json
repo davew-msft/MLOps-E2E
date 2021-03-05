@@ -1,0 +1,23 @@
+{
+  "name": "Python 3 - Anaconda",
+	"context": "..",
+  "dockerFile": "Dockerfile",
+  
+  // Install python extension"
+  "extensions":["ms-python.python"],
+  
+  //Use Python 3.7 environment by defualt
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash",
+    "python.pythonPath": "/opt/conda/bin/python",
+    "terminal.integrated.inheritEnv": false,
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true,
+    "python.linting.pylintPath": "/opt/conda/bin/pylint",
+    "python.dataScience.alwaysTrustNotebooks":true,
+    "python.showStartPage": false
+  },
+
+  // Run Bash script to finish
+  "postCreateCommand": "sudo bash ./.devcontainer/setup.sh"
+}

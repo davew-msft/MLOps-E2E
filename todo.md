@@ -1,10 +1,7 @@
 interesting stuff to add now:  
-    https://github.com/retkowsky/synapseamldemo
     https://github.com/retkowsky/AMLlabs
 
-cogsvc labs ready to go:
-    https://github.com/retkowsky/Azure-CognitiveServices-Labs
-    https://github.com/retkowsky/ai-fundamentals
+
 
 model deployment to iotedge:  
     https://github.com/nthacker/AML-service-labs/blob/master/lab-6/visual-studio/README.md
@@ -13,8 +10,6 @@ model deployment to iotedge:
 
 airflow
 
-RFM
-    https://github.com/retkowsky/RFM
 mask detection on the edge
     https://github.com/retkowsky/MaskDetection
 
@@ -128,3 +123,5 @@ vision on edge
     Lab 304
     https://github.com/Azure-Samples/azure-intelligent-edge-patterns/tree/master/factory-ai-vision
     https://docs.microsoft.com/en-us/azure/media-services/live-video-analytics-edge/custom-vision-tutorial?pivots=programming-language-csharp
+Lab 901
+    https://github.com/retkowsky/synapseamldemo/blob/main/Associations%20Rules.ipynb
