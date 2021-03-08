@@ -73,10 +73,8 @@ These labs can be divided between data scientists and DevOps engineers.
 These tasks are geared toward data scientists:  
 
 1. [Lab10:  Setup](Lab10/README.md)
-1. [Lab11:  Create a Classifier Model](Lab11/README.md)
+1. [Lab11:  Create a Classifier Model and integrate it with Azure ML Services](./Lab11/README.md)
 1. [Lab12:  Register the Model](Lab12/README.md)
-
-We can now do our MLOps/DevOps processes using either Azure DevOps Pipelines or GitHub Actions.  
 
 ### Azure DevOps 
 
