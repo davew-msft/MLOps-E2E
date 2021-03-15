@@ -251,7 +251,7 @@ Now open each ipynb file within the container.
 ## Other Interesting Labs
 
 1. [Lab900: RFM Analytics](./Lab900/RFM.ipynb)
-1. [Lab901: Association Rules]()
+1. [Lab901: Association Rules](./Lab900/AssociationRules.ipynb)
     * if you have several events we can search for links between those events.  This is useful to determine things like:
       * cross-selling behaviors of customers
       * find the links between many products

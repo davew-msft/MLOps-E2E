@@ -123,5 +123,3 @@ vision on edge
     Lab 304
     https://github.com/Azure-Samples/azure-intelligent-edge-patterns/tree/master/factory-ai-vision
     https://docs.microsoft.com/en-us/azure/media-services/live-video-analytics-edge/custom-vision-tutorial?pivots=programming-language-csharp
-Lab 901
-    https://github.com/retkowsky/synapseamldemo/blob/main/Associations%20Rules.ipynb
