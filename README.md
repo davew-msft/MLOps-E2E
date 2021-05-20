@@ -57,7 +57,7 @@ These labs can be divided between data scientists and DevOps engineers.
 
 These tasks are geared toward data scientists:  
 
-1. [Lab10:  Setup](Lab10/README.md)
+1. [Lab10:  Setup](./Lab10/README.md)
     * make sure you run [Lab 1](./Lab1/README.md) above, which has the prerequisites.  
 1. [Lab11:  Create a Classification Model using JupyterLab](./Lab11/README.md)
 1. [Lab12:  Refactor the Model Training Code to use AMLS](./Lab12/README.md)

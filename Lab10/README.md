@@ -5,7 +5,7 @@
 
 * There are different tools we can use for python/jupyter development including:
   * **Best Approach**:  spin up a compute instance in AMLS and use that for development
-    * compute instances have a built-in JupyterLab server that can be shared among the team
+    * compute instances have a built-in JupyterLab server.  Each data scientist needs their own compute instance, but the underlying storage is shared.  This means everyone in the workspace can collaborate and share code.  
     * you can use vscode as the IDE and use Remote development in vscode using ssh
   * pretty much anything else that supports python and can call an API (basically, python) should work including everything from pyCharm to vim and emacs.  
 

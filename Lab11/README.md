@@ -15,7 +15,7 @@ First we are going to do the absolutely minimum to get a training environment an
 
 1. Navigate to [Lab11/safe-driver-prediction.ipynb](./Lab11/safe-driver-prediction.ipynb). 
     * this is a basic notebook that trains and validates a model.  
-    * upload this file to your JupyterLab environment.  
+    * upload this file to your JupyterLab environment or open it from JupyterLab if you cloned the repo.  
 1. Walk through each cell in the notebook.
 
 >>Let us know if you have any questions or concerns.  
