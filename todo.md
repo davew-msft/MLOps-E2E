@@ -1,3 +1,9 @@
+sdk-v2 is now sync'd with master
+    completed pipelines.ipynb 
+    at next thing
+    VM is still on sdk-v2 but it has latest
+    
+
 interesting stuff to add now:  
     https://github.com/retkowsky/AMLlabs
 
