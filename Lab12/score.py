@@ -8,7 +8,7 @@ def init():
     global LGBM_MODEL
     # Load the model from file into a global object
     model_path = Model.get_model_path(
-        model_name="driver_model.pkl")
+        model_name="driver_model")
     LGBM_MODEL = joblib.load(model_path)
 
 

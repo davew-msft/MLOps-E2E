@@ -16,7 +16,7 @@ In order to improve their insurance application approval software, the team woul
 
 ### Steps
 1. Consider building an Azure ML compute target on which to run the pipeline and its steps.  If you do this now it will save time during the lab.  Any small cluster will do.  
-    * To avoid automatic scale down of Azure ML managed compute the training compute option **Idle seconds before scale down** has been set to 1800. This can save time between pipeline runs if you are frequently debugging AML pipelines.  
+    * To avoid automatic scale down of Azure ML managed compute the training compute option **Idle seconds before scale down** has been set to 1800. This can save time between pipeline runs if you are frequently debugging AML pipelines.  **Or set the minimum nodes to 1.**  
 1. Navigate to [Lab12/pipelines.ipynb](./pipelines.ipynb). 
     * upload this notebook to your JupyterLab and run through the cells
 
