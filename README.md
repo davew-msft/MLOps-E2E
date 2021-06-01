@@ -69,6 +69,11 @@ These tasks are geared toward data scientists:
     * this is very similar to ACI example in Lab14
 1. Lab16:  Monitoring the webservice with AppInsights
     * wip
+
+1. [Lab19:  A different example with deep learning on text](./jupyter-notebooks/DeepLearningwithText.ipynb)
+    * There are a lot of steps to remember with those previous labs.  In this example we'll look at a different example and won't get into the weeds and hopefully you will see the patterns.  
+    * Start by uploading [./jupyter-notebooks/DeepLearningwithText.ipynb](./jupyter-notebooks/DeepLearningwithText.ipynb) to your AMLS environment and begin there.
+
 ## DevOps 
 
 Hopefully your team now understands and has implemented the fundamental concepts in a local development "execute-from-my-notebook" experience and needs to apply all of these concepts to a production-ready workflow.  A notebook is convenient for experimentation, but is not suited for automating a full workflow. You could use AMLS pipelines, like we did above, which is geared to data scientists.  Or our workflows could be implemented in a true DevOps tool like Azure DevOps.  Using Azure Pipelines to operationalize Azure ML pipelines enables powerful tools such as version management, model/data validation, model evaluation/selection, and staged deployments to QA/production. Your team will take the learnings and relevant python scripts from the previous labs to do this.

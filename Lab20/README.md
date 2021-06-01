@@ -1,32 +1,10 @@
 ## Lab 20:  Setup Azure DevOps
 
-This lab assembles all of the pieces needed in AzDO to be ready to deploy an ML model using MLOps principles.  
-
-Creating MLOps pipelines can be a little tough.  Luckily there is a starter repo that can help you with the scaffolding:  
-
-`https://github.com/solliancenet/mcw-mlops-starter` 
-
-Take a few minutes to familiarize yourself with some of the code.  I have already built/merged this code into our repo.  You can use this in the future as the basis for your own MLOps pipelines.  
-
-If you want to merge the starter repo into your code (or you want to update this repo) then follow these steps. (There's probably an easier way to do this). :
-
-```bash
-git clone https://github.com/solliancenet/mcw-mlops-starter
-rm -rf mcw-mlops-starter/.git/
-rm -rf mcw-mlops-starter/README.md 
-cp -R mcw-mlops-starter/. MLOps-E2E/
-# now check to ensure we aren't overwriting any of our custom changes
-rm -rf mcw-mlops-starter/
-```
-
-### Discussion topics before we start this section  
-
-1. Explain the starter repo
-
 
 ## Steps
 
-1. Navigate to your Azure Repo in AzDO for this repo.  
+1. Put your code repo into AzDO.  If you don't have a code repo you can clone MY repo locally and push it to AzDO.
+1. Navigate to your Azure Repo in AzDO.  
 1. Select and open the `azure-pipelines.yml` file.
 
 2. Select **Edit** and update the `variables:` accordingly.  

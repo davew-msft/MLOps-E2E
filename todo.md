@@ -1,19 +1,16 @@
-sdk-v2 is now sync'd with master
-    completed infer-aks.ipynb 
-    at next thing, finish DevOps4DS
-    compute VM is still on sdk-v2 but it has latest
+done with sdk-v2 
+    compute VM use sdk-v2 folder but git is on master
 
-    see mlops bookmarks for where I'm at
-
-measuring model performance and making decsions is Challenge05 in DevOps4DS
-
-Lab 16 maps to Challenge06
-
+HERE:  
 redo the old deep learning text example as a new set of labs.  
 should all be in jupyter-notebooks folder
 
-interesting stuff to add now:  
-    https://github.com/retkowsky/AMLlabs
+
+measuring model performance and making decsions is Challenge05 in DevOps4DS
+
+
+Lab 16 maps to Challenge06
+
 
 
 alternate mlops workshop
@@ -48,11 +45,15 @@ gh actions:
     https://techcommunity.microsoft.com/t5/azure-ai/using-github-actions-amp-azure-machine-learning-for-mlops/ba-p/1419027
     https://github.com/Azure/azureml-examples
     https://github.com/Azure/azureml-template
+    https://github.com/machine-learning-apps/ml-template-azure
 
 transfer learning:  https://github.com/maxluk/dogbreeds-webinar
 
 aml notebooks:  https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml
 
+
+img data labelling?
+    https://github.com/balakreshnan/mlops/tree/master/MLAssitDataLabelling
 
 
 mlops python:  https://github.com/microsoft/MLOpsPython
