@@ -1,11 +1,24 @@
 sdk-v2 is now sync'd with master
-    completed pipelines.ipynb 
-    at next thing
-    VM is still on sdk-v2 but it has latest
-    
+    completed infer-aks.ipynb 
+    at next thing, finish DevOps4DS
+    compute VM is still on sdk-v2 but it has latest
+
+    see mlops bookmarks for where I'm at
+
+measuring model performance and making decsions is Challenge05 in DevOps4DS
+
+Lab 16 maps to Challenge06
+
+redo the old deep learning text example as a new set of labs.  
+should all be in jupyter-notebooks folder
 
 interesting stuff to add now:  
     https://github.com/retkowsky/AMLlabs
+
+
+alternate mlops workshop
+    I have most of this
+    https://github.com/microsoft/MCW-ML-Ops/blob/master/Hands-on%20lab/HOL%20step-by-step%20-%20MLOps.md
 
 
 
@@ -55,6 +68,13 @@ custom vision
     You can try the Microsoft COCO DataSet - https://cocodataset.org/#home
 There are implementations around the same for Azure Custom Vision. One such example below- https://github.com/vladkol/CustomVision.COCO
 
+edge models 
+    simplified 
+    end-to-end AI object detection on a Raspberry Pi 3 edge
+device, starting (almost) “from scratch” to consider each builing blocks of such a solution. This guide is designed
+for developers as well as data scientists who wish to easily put their AI models in practice on edge devices without
+focusing too much on the deployment.
+    see "Bringing Computer Vision models to the Intelligent Edge with Azure IoT Edge - A guide for developers and data scientists.pdf"
 
 dataset labeling:  https://github.com/MercyPrasanna/dataset-labeling/blob/master/dataset-labeling.ipynb
 
@@ -80,6 +100,13 @@ https://github.com/lockedata/realtimeAIpipeline
 
 audio language in containers:  https://techcommunity.microsoft.com/t5/azure-ai/automatically-detect-audio-language-with-the-speech-language/ba-p/1694363
 https://techcommunity.microsoft.com/t5/azure-ai/accelerate-self-paced-learning-at-the-edge-with-speech/ba-p/1636986
+
+autonomous driver e2e deep learning tutorial 
+    https://github.com/Microsoft/AutonomousDrivingCookbook
+    https://github.com/microsoft/AutonomousDrivingCookbook/tree/master/AirSimE2EDeepLearning
+    seems cool
+    "ML-Blueprints-for-Finance.pdf"
+
 
 dask on amls
     https://github.com/danielsc/azureml-and-dask

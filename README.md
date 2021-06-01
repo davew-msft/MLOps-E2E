@@ -6,7 +6,6 @@ https://github.com/davew-msft/MLOps-E2E
 
 In this workshop, you will learn how to:
 
-* use the az cli to deploy resources to Azure
 * setup and configure Azure Databricks for analytics
 * setup and configure Azure ML Services to integrate your data science work into your DevOps pipelines.  
 * *Think Like a Data Scientist* by looking at a few different use cases
@@ -65,12 +64,29 @@ These tasks are geared toward data scientists:
 1. [Lab13:  Build Pipelines and Deploy the Model for Inferencing](./Lab12/README-13.md)
 1. [Lab14:  Deploy a Real-time Inferencing Service](./Lab12/inferencing.ipynb)
     * open this notebook in your AMLS compute environment and follow the steps
+1. [Lab15:  Deploy a Real-time Inferencing Service to AKS (kubernetes)](./Lab12/inferencingAKS.ipynb)
+    * open this notebook in your AMLS compute environment and follow the steps to deploy to AKS
+    * this is very similar to ACI example in Lab14
+1. Lab16:  Monitoring the webservice with AppInsights
+    * wip
+## DevOps 
+
+Hopefully your team now understands and has implemented the fundamental concepts in a local development "execute-from-my-notebook" experience and needs to apply all of these concepts to a production-ready workflow.  A notebook is convenient for experimentation, but is not suited for automating a full workflow. You could use AMLS pipelines, like we did above, which is geared to data scientists.  Or our workflows could be implemented in a true DevOps tool like Azure DevOps.  Using Azure Pipelines to operationalize Azure ML pipelines enables powerful tools such as version management, model/data validation, model evaluation/selection, and staged deployments to QA/production. Your team will take the learnings and relevant python scripts from the previous labs to do this.
+
+* The word 'pipeline' has started to take on multiple meanings - make sure you don't get pipeline types mixed up. See [here](https://docs.microsoft.com/azure/machine-learning/concept-ml-pipelines#which-azure-pipeline-technology-should-i-use) for a description of the pipeline types. For clarity, these challenges are referring to 'Azure Pipelines' as 'DevOps pipelines'.
+
+These tasks are geared toward **Azure DevOps** engineers and can be done in parallel with the tasks above, if desired.  If you are using **GitHub Actions** please see Labs 30-34. 
+
+
+[Overview of the MLOps/DevOps Approach for Data Science](./Lab20/overview.md)
+
+* recommended reading 
+* a templatized approach to do MLOps using a starter repo.  This should work for gh actions or azdo pipelines but focuses on the latter.   
 
 ### Azure DevOps 
 
-These tasks are geared toward **Azure DevOps** engineers and can be done in parallel with the tasks above, if desired.  If you are using **GitHub Actions** please see Labs 30-34.  
-
-1. [Lab20:  Setup AzDO](./Lab20/README.md)
+1. [Lab20:  Setup AzDO](./Lab20/README.md).  
+    * This also includes some _Recommended Reading_.  
 
 This task should be done by both the data scientist and DevOps engineer **when using Azure DevOps**:  
 
