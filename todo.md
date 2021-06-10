@@ -11,6 +11,8 @@ measuring model performance and making decsions is Challenge05 in DevOps4DS
 
 Lab 16 maps to Challenge06
 
+good project template:  https://dev.azure.com/DAISolutions/MLOperationalization/_git/MLOpsBasic
+
 
 
 alternate mlops workshop
