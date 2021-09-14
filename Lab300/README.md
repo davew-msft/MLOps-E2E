@@ -1,19 +1,20 @@
 ## A Day in the Life of a Data Scientist  - The Data Science Process
 
 You are somewhat new to data science and your boss hands you a new dataset and says, "make something out of this."  Where do you even start?  In this lab we do exactly that.  In this lab we are given a dataset of support tickets and we are told, "unlock some insights to help the support team become more efficient and provide better service to customers."  We work through how to get started on an analytics problem like this.  
+
     * What do we do?
-      * use standard data science techniques to explore the data
-      * determine deductively what are some interesting problems we can solve
-      * use automl to see if we can quickly predict those problems
-      * deploy the best model, assuming it meets our goals
-      * present your interesting analytics to executive leadership
+        * use standard data science techniques to explore the data
+        * determine deductively what are some interesting problems we can solve
+        * use automl to see if we can quickly predict those problems
+        * deploy the best model, assuming it meets our goals
+        * present your interesting analytics to executive leadership
     * How we do it?:
-      * AMLS
-      * Jupyter/python/pandas/visualizations
-      * automl
-      * deploy an automl "no-code" container
-      * consume the model's REST API 
-      * Power BI for the final data presentation
+        * AMLS
+        * Jupyter/python/pandas/visualizations
+        * automl
+        * deploy an automl "no-code" container
+        * consume the model's REST API 
+        * Power BI for the final data presentation
 
 
 ## Getting Your Environment Ready
