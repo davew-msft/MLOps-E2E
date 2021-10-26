@@ -76,7 +76,7 @@ mkdir -p git && cd $_
 git clone https://github.com/davew-msft/MLOps-E2E mlops
 cd mlops
 
-az group deployment create \
+az deployment group create \
     -g $ResGroup \
     --template-file setup/azureclideploy.json \
     --parameters setup/parameters.json

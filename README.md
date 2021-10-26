@@ -250,14 +250,15 @@ For this set of labs we are going to use the CogSvcs SDKs.  Instead of using a r
 
 Now open each ipynb file within the container.  
 
->> We do this because the docker container already has all of the Azure and AMLS dependencies baked in, saving us a lot ot time and workstation configuration misery.  
+>> We do this because the docker container already has all of the Azure and AMLS dependencies baked in, saving us a lot of time and workstation configuration misery.  
 
-|Lab|Decription|
+|Lab|Description|
 |----|------|
 |[Lab500: Computer Vision](./Lab500/CompViz.ipynb)|Using CompViz with the SDK from Python|
 |[Lab501: Face API](./Lab500/face.ipynb)|Using the Face API|
 |[Lab502: OCR capabilities](./Lab500/OCR.ipynb)|optical character recognition|
 |[Lab503: text analytics](./Lab500/text.ipynb)|text analytics|
+|[Lab503a:sentiment analysis on Yelp! data](./Lab500/yelp.ipynb)|text analytics|
 |[Lab504: Form Recognizer](./Lab500/FormRec.ipynb)|Form Recognizer|
 
 ## Other Interesting Labs
