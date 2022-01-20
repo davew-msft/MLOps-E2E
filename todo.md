@@ -1,5 +1,7 @@
-done with sdk-v2 
-    compute VM use sdk-v2 folder but git is on master
+demo:
+    Lab11/safe-driver.ipynb
+    Lab12/safe-driver-prediction-v2.ipynb
+    Lab12/pipelines.ipynb
 
 HERE:  
 redo the old deep learning text example as a new set of labs.  

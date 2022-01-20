@@ -32,6 +32,8 @@ We are going to build something like this:
 
 * To open a terminal (command prompt) in Jupyter, click the "New" button on the notebook dashboard and select "Terminal".
 * To connect to your workspace from the Jupyter environment, the best practice when using the Azure ML SDK is to use the `Workspace.from_config()` method to read the connection information from a workspace configuration file. On compute instances in your workspace, this file is created automatically. When using your own development environment, you must create this file in the same folder as your code. See [Configure a development environment for Azure Machine Learning](https://docs.microsoft.com/azure/machine-learning/how-to-configure-environment#workspace) for details.
+
+
 ## Resources
 
 * [Documentation - How to monitor Azure ML experiment runs and metrics](https://docs.microsoft.com/azure/machine-learning/how-to-track-experiments)
