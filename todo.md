@@ -2,6 +2,7 @@ demo:
     Lab11/safe-driver.ipynb
     Lab12/safe-driver-prediction-v2.ipynb
     Lab12/pipelines.ipynb
+    Lab12/inferencing.ipynb
 
 HERE:  
 redo the old deep learning text example as a new set of labs.  

@@ -11,7 +11,7 @@
 
 ### Steps
 
-1. Navigate to [Lab12/pipelines.ipynb](./pipelines.ipynb). 
+1. Navigate to [Lab12/inferencing.ipynb](./inferencing.ipynb). 
     * upload this notebook to your JupyterLab and run through the cells
 
 
